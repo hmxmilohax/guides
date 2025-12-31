@@ -9,6 +9,9 @@ sidebar:
 ---
 import rpcs3customconfigchange from '@assets/rb3/rpcs3/config/rpcs3customconfigchangees.png';
 import audiom from '@assets/rb3/rpcs3/config/audiomes.png';
+import micstartmenu from '@assets/rb3/rpcs3/troubleshoot/audio-micstartmenues.png';
+import micwindows from '@assets/rb3/rpcs3/troubleshoot/audio-micwindowses.png';
+import micvol from '@assets/rb3/rpcs3/troubleshoot/audio-micvoles.png';
 import { Image } from 'astro:assets';
 import { Aside } from '@astrojs/starlight/components';
 import { Steps } from '@astrojs/starlight/components';
@@ -32,4 +35,17 @@ Para empezar a configurar micrófonos, asegúrate que Rock Band 3 no este inicia
 4. Cuando termines, haz click en <span title="Applicar">"<code>Apply</code>"</span> y luego `Guardar configuración personalizada`.  
 Ahora puedes abrir Rock Band 3 cantar todo lo que quieras.
 </Steps>
-<Aside type="danger">**Asegúrate que tengas <a href="https://rb3pc.milohax.org/ctrls#gamepads" target="_blank" rel="noopener noreferrer">[algo configurado para controlar el juego]</a>. No puedes elegir que vas a cantar sin esto.**</Aside>
+<details>
+<summary>Ajustando nivel de micrófonos</summary>
+Si tu juego tiene problemas detectando tu voz, trata de ajustar el volumen de los micrófonos en Windows.  
+Rock Band 3 requiere un nivel de micrófono que no es tan fuerte ni tan quedito.
+<Steps>
+1. Haz click en el icono de altavoz abajo a la derecha en la barra de tareas de Windows y haz click en `Configuración de sonido`.
+     > <Image src={micstartmenu} alt="Un menu despegable del altavoz con el cursor sobre 'Configuración de sonido'." />
+2. Ve para abajo a la sección de `Entrada` y haz click en el micrófono con problemas.
+     > <Image src={micwindows} alt="La configuración de sonido dentro de Windows. En la sección de entrada, el cursor esta sobre un dispositivo llamado 'Mic'." />
+3. Ajusta el `volumen de entrada` hasta que el micrófono funcione mejor.
+     > <Image src={micvol} alt="La configuración de sonido dentro de Windows. Esta en la configuración de un dispositivo llamado 'Mic'. El cursor esta adjustando el nivel." />
+</Steps>
+</details>
+<Aside type="danger">**Asegúrate que tengas <a href="../../controllers/main/#mandos" target="_blank" rel="noopener noreferrer">[algo configurado para controlar el juego]</a>. No puedes elegir que vas a cantar sin esto.**</Aside>

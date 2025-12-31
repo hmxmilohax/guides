@@ -9,6 +9,9 @@ sidebar:
 ---
 import rpcs3customconfigchange from '@assets/rb3/rpcs3/config/rpcs3customconfigchange.png';
 import audiom from '@assets/rb3/rpcs3/config/audiom.png';
+import micstartmenu from '@assets/rb3/rpcs3/troubleshoot/audio-micstartmenu.png';
+import micwindows from '@assets/rb3/rpcs3/troubleshoot/audio-micwindows.png';
+import micvol from '@assets/rb3/rpcs3/troubleshoot/audio-micvol.png';
 import { Image } from 'astro:assets';
 import { Aside } from '@astrojs/starlight/components';
 import { Steps } from '@astrojs/starlight/components';
@@ -21,7 +24,7 @@ To get started setting up microphones, make sure Rock Band 3 isn't running.
 
 <Steps>
 1. **Right click on Rock Band 3** in RPCS3, then click **`Change Custom Configuration`**.
-     > <Image src={rpcs3customconfigchange} alt="RPCS3's right click menu" />
+     > <Image src={rpcs3customconfigchange} alt="RPCS3's right click menu." />
 
 2. Switch to the `Audio` tab.
      > <Image src={audiom} alt="Audio settings" />
@@ -32,6 +35,20 @@ To get started setting up microphones, make sure Rock Band 3 isn't running.
 
 4. When you're done, click `Apply` then `Save custom configuration`.
 </Steps>
+
+<details>
+<summary>Adjusting microphone volume</summary>
+If the game is having issues detecting your voice, try adjusting the mic levels in Windows.  
+Rock Band 3 requires a microphone volume that isn't too loud nor too quiet.  
+<Steps>
+1. Right click on speaker icon in the bottom right of Windows' taskbar and click on `Sound settings`.
+     > <Image src={micstartmenu} alt="A right click menu from the speaker icon in the taskbar. The cursor hovers over 'Sound settings'." />
+2. Scroll down to the `Input` section and click on the microphone having issues with levels.
+     > <Image src={micwindows} alt="Windows' Sound settings. A cursor is hovering over an input device named 'Mic'." />
+3. Adjust the `Input volume` slider until detection improves.
+     > <Image src={micvol} alt="Windows' Sound settings within an input device's properties. A cursor is adjusting the input volume for an input device named 'Mic'." />
+</Steps>
+</details>
 <Aside type="danger">
 **Make sure you have [something set up to control your game](../../controllers/main#gamepads).** You can't select a song to sing otherwise.
 </Aside>
