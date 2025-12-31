@@ -1,0 +1,53 @@
+---
+title: "RPCN - Empezando"
+slug: "es/rb3pc/online/intro"
+description: "Como configurar RPCN para jugar en linea."
+tableOfContents: false
+prev: false
+sidebar:
+  order: 1
+---
+import rpcn from '@assets/rb3/rpcs3/online/rpcnes.png';
+import rpcnpopup from '@assets/rb3/rpcs3/online/rpcnpopupes.png';
+import rpcnaccount from '@assets/rb3/rpcs3/online/rpcnaccountes.png';
+import rpcnuser from '@assets/rb3/rpcs3/online/rpcnuseres.png';
+import rpcnpassword from '@assets/rb3/rpcs3/online/rpcnpasswordes.png';
+import rpcnemail from '@assets/rb3/rpcs3/online/rpcnemailes.png';
+import rpcnconfirm from '@assets/rb3/rpcs3/online/rpcnconfirmes.png';
+import rpcnemailtoken from '@assets/rb3/rpcs3/online/rpcnemailtoken.png';
+import rpcncreated from '@assets/rb3/rpcs3/online/rpcncreatedes.png';
+import { Steps } from '@astrojs/starlight/components';
+import { Image } from 'astro:assets';
+
+Antes que puedas jugar en linea, vas a necesitar crear una cuenta de RPCN. RPCN es el equivalente de PSN (PlayStation Network) pero para RPCS3.  
+Esta seccion va cubrir como crear una cuenta y administrar tu lista de amigos.
+<Steps>
+1. **Haz click en el boton de `RPCN`**.  
+    > <Image src={rpcn} alt="La pantalla principal de RPCS3 con 'RPCN' resaltado." />
+
+2. Haz click en **`Cuenta`**:  
+    > <Image src={rpcnpopup} alt="La configuración de RPCN con 'Cuenta' resaltada." />
+
+3. Haz click en **`Crear cuenta`**:  
+    > <Image src={rpcnaccount} alt="La configuración de RPCN con 'Crear cuenta' resaltado." />
+
+4. Ingresa un **nombre de usuario** and **contraseña**:  
+    > <Image src={rpcnuser} alt="El menú de nombre de usuario con un nombre de usuario configurado y 'OK' resaltado." />  
+
+    > <Image src={rpcnpassword} alt="El menú de contraseña con una contraseña oculta configurada (dos veces para verificación) y 'OK' resaltado." />
+
+5. Saldrá una ventana pidiendo un **email** para así recibir un **token para validar tu cuenta**:  
+    > <Image src={rpcnemail} alt="El menú de email con un email (dos veces para verificación) configurado y 'OK' resaltado." />
+
+6. Te preguntara que revises los datos. **Haz clic en <span title="Si">"<code>Yes</code>"</span>**.  
+    > <Image src={rpcnconfirm} alt="RPCS3 preguntando si el usuario quiere crear una cuenta de RPCN nueva." />
+
+7. Ve a la bandeja de entrada de tu email. Puede tardar unos minutos para que te llegue el correo. Si todavía sigues esperando, checa la pestaña de **Spam**.  
+El correo se llama **<span title="Tu token para RPCN">"<code>Your token for RPCN</code>"</span>**.  
+**Copia los números y letras abajo de <span title="Tu codigo para [tu usuario] es">"<code>Your token for username [tu usuario] is:</code>"</span>**:  
+    > <Image src={rpcnemailtoken} alt="El correo con la etiqueta 'Your token for RPCN' con un token debajo del nombre de usuario para el que es." />
+
+8. **Pega el token** a RPCS3 Y presiona `OK`.  
+    > <Image src={rpcncreated} alt="RPCS3 anunciando que la cuenta fue creada." />
+
+</Steps>
