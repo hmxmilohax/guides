@@ -9,6 +9,9 @@ import mdx from '@astrojs/mdx';
 export default defineConfig({
   site: 'https://guides.milohax.org/',
   base: '/',
+  redirects: {
+    "/": "/en/",
+  },
   integrations: [
     starlight({
       title: 'MiloHax Guides',
