@@ -1,0 +1,182 @@
+---
+title: Configurando REAPER para hacer charts de Rock Band 3
+slug: "es/charting/reaper"
+description: "Cómo configurar REAPER para chartear customs de Rock Band 3."
+prev: false
+next: false
+sidebar:
+  order: 1
+---
+import intro from '@assets/charting/reaper/intro.png';
+import webreaper from '@assets/charting/reaper/webreaper.png';
+import websws from '@assets/charting/reaper/websws.png';
+import webpython from '@assets/charting/reaper/webpython.png';
+import explorerdrag from '@assets/charting/reaper/explorerdrag.gif';
+import settingsopen from '@assets/charting/reaper/settingsopenes.png';
+import settingsbackup from '@assets/charting/reaper/settingsbackupes.png';
+import settingsaudio from '@assets/charting/reaper/settingsaudioes.png';
+import settingsmidi from '@assets/charting/reaper/settingsmidies.png';
+import settingspython from '@assets/charting/reaper/settingspythones.png';
+import errorplugin from '@assets/charting/reaper/errorplugines.png';
+import errordevice from '@assets/charting/reaper/errordevice.png';
+import { Image } from 'astro:assets';
+import { Steps } from '@astrojs/starlight/components';
+import { Aside } from '@astrojs/starlight/components';
+
+<center><Image src={intro} alt="REAPER showing off its goodness in the current day." /></center>
+
+Esta es una guía para echar andar REAPER sin tener que buscar archivos en varios lugares.  
+Todos los archivos incluidos están hechos para la versiones más actuales de REAPER y Python.
+
+
+<Aside>¡Esta guía no te va a enseñar a chartear!</Aside>
+
+Tristemente, hay pocos recursos escritos en Español por ahora pero puedes traducir <a href="http://docs.c3universe.com/rbndocs/index.php?title=Authoring" target="_blank" rel="noopener noreferrer">[la guía de RBN/C3]</a> ya que se ha usado por muchos años.
+Hay <a href="https://rhythmgamingworld.com/rock-band-3-customs-book" target="_blank" rel="noopener noreferrer">[un libro muy bueno que fue escrito]</a> Hay [[un libro muy bueno que fue escrito]](https://rhythmgamingworld.com/rock-band-3-customs-book) (en Inglés) por doa pero ciertas partes mencionan que instales una versión antigua de REAPER. Puedes y debes de ignorar eso.  
+Igualmente, hay un <a href="https://www.youtube.com/watch?v=FHeGkA4nv4g" target="_blank" rel="noopener noreferrer">[un video (en Inglés) meticuloso hecho por Truce]</a> que existe pero igual te va a decir que instales una versión antigua de REAPER. Puedes y debes de ignorar eso.
+
+Si tienes preguntas o te estás atorado, puedes preguntar en el [[Discord de MiloHax]](https://discord.gg/milohax). Hay <a href="https://discord.com/channels/961352072140324924/1215141843742760980" target="_blank" rel="noopener noreferrer">[un canal dedicado para hablar en español]</a> y también <a href="https://discord.com/channels/961352072140324924/961395145809465405" target="_blank" rel="noopener noreferrer">[un canal en Ingles para chartear]</a>.
+
+<Aside type="caution">This will replace your REAPER keyboard shortcuts!</Aside>
+
+## Instalando REAPER
+<Steps>
+1. <a href="https://www.reaper.fm/download.php" target="_blank" rel="noopener noreferrer">[Descarga la versión actual de 64-bits de REAPER.]</a>.
+    * **¡Por favor NO actives la opción de `Portable install` en el instalador!**  
+    > <a href="https://www.reaper.fm/download.php" target="_blank" rel="noopener noreferrer"><Image src={webreaper} alt="La pagina para descargar REAPER, mostrando el botón de descarga para Windows. El cursor esta sobre el boton verde de descarga." /></a>
+
+2. <a href="https://www.sws-extension.org" target="_blank" rel="noopener noreferrer">[Descarga la versión actual de 64-bits de SWS / S&M Extension.]</a>.
+    * **¡Por favor deja la opción de `Python ReaScript support` activada cuando lo instales!**  
+    > <a href="https://www.sws-extension.org" target="_blank" rel="noopener noreferrer"><Image src={websws} alt="La pagina para descargar la extension SWS/S&M Extension para Windows. El cursor esta sobre el boton de 'Download x64' en la sección de Windows." /></a>
+
+3. <a href="https://www.python.org/downloads" target="_blank" rel="noopener noreferrer">[Descarga la versión actual de Python 3 si no la tienes.]</a>.
+    * **¡No descargues `Python install manager`!**
+    * **Python 2 no es lo mismo y no va a funcionar**.
+    > <a href="https://www.python.org/downloads" target="_blank" rel="noopener noreferrer"><Image src={webpython} alt="La pagina para descargar Python con el cursor sobre el botón de 'get the standalone installer for Python 3.14.2'." /></a>
+4. <a href="https://www.dropbox.com/scl/fi/d095opr4dforkodoyakkv/REAPER-Files.zip?rlkey=in0qshm2g4ng64w3angz8ehfq&st=nvtxmfps&dl=1" target="_blank" rel="noopener noreferrer">[Haz click aquí para descargar los archivos para REAPER de una carpeta `.zip`.]</a>.
+    * a. Extrae el archivo `.zip` a un lugar conveniente.
+    * b. Arrastra la carpeta de `Common` al acceso directo que se llama de `DRAG 'COMMON' HERE`.
+    * c. Arrastra la carpeta de `REAPER` al acceso directo que se llama `DRAG 'REAPER' HERE`.  
+    * d. Reemplaza todos los archivos si te pregunta.
+    > <a href="https://www.dropbox.com/scl/fi/d095opr4dforkodoyakkv/REAPER-Files.zip?rlkey=in0qshm2g4ng64w3angz8ehfq&st=nvtxmfps&dl=1" target="_blank" rel="noopener noreferrer"><Image src={explorerdrag} alt="Las carpetas siendo arrastrados a carpetas en formato de acceso directo." /></a>
+</Steps>
+
+## Ajustes después de instalar REAPER
+<Steps>
+1. Abre REAPER.
+
+2. Haz click en `Opciones` (`Options`) > `Preferencias` (`Preferences`).  
+    > <Image src={settingsopen} alt="REAPER con el cursor sobre 'Preferencias'." />
+
+3. Baja hacia a `Proyecto` (`Project`).
+
+4. Haz click en `Copias de seguridad` (`Backups`).  
+    * a. Activa `Guardar automáticamente en un archivo con marca de tiempo en el directorio del proyecto` (`Auto-save to timestamped file in project directory`).  
+    > <Image src={settingsbackup} alt="Las preferencias de REAPER, mostrando la sección de copias de seguridad." />
+5. Baja hacia a `Audio`.
+
+6. Haz click en `Dispositivo` (`Device`).
+    * a. Cambia `Sistema de audio` (`Audio System`) a `WASAPI`.  
+    > <Image src={settingsaudio} alt="Las preferencias de REAPER, mostrando la sección de Dispositivos." />
+
+7. Baja hacia a `Medios` (`Media`).
+
+8. Haz click en `MIDI`.
+    * a. Cambia `Ticks por negra para nuevos items MIDI` (`Ticks per quarter note for new MIDI items`) a `480`.
+    * b. Cambia `Conjunto de caracteres para exportar Eventos de texto intermedio .MID` (`Character set for exported .MID text events`) a `Latin-1`.  
+    > <Image src={settingsmidi} alt="Las preferencias de REAPER, mostrando la sección de MIDI." />
+
+9. Baja hacia a `Plug-ins`
+
+10. Haz click en `ReaScript`
+
+11. Activa `Activar Python para usar con ReaScript` (`Python for use with ReaScript`).
+    * a. Si REAPER no encuentra Python, usualmente está localizado en `%LOCALAPPDATA%\Programs\Python[version de Python]`
+    * b. La DLL siempre será nombrada `Python[version].dll`, por ejemplo `Python313.dll`
+    > <Image src={settingspython} alt="Las preferencias de REAPER, mostrando la sección de Python." />
+</Steps>
+
+## Important keybinds
+The following shortcuts have been added:
+* F6 - <a href="https://github.com/Loflyinjett/RB-Pro-Keys-Visualizer" target="_blank" rel="noopener noreferrer">[Previsualizar Teclado PRO]</a>: Te muestra tu chart de Teclado PRO en tiempo real.
+* F7 - <a href="https://github.com/RaiderGG/EVENTS-Tools" target="_blank" rel="noopener noreferrer">[EVENTS Tools]</a>: Herramientas para la pista de EVENTS.
+* F8 - <a href="https://github.com/tposejank/EncoreVocalPreview/" target="_blank" rel="noopener noreferrer">[EncoreVoxPreview]</a>: Te muestra tu chart de vocales.
+* F9 - <a href="https://github.com/poliwhirlge/CAT" target="_blank" rel="noopener noreferrer">[CAT]</a>: Varias herramientas para hacer customs.
+* F10 - <a href="https://github.com/Deevun155/venuegen" target="_blank" rel="noopener noreferrer">[VenueGen]</a>: Herramientas para tu VENUE.
+* K - Crea una entrada (1, 2, 1-2-3-4). Tienes que tener el cursor en el segundo compás de la canción.
+  * Recuerda de mapear el tempo de tu canción primero porque esto mueve todo hacia la derecha!
+* Q - Crea un marcador de tempo de compás, depende de donde está el cursor.
+* SHIFT+Q - Mueve la barra de compás más cercano al cursor mientras lo sostienes.
+* SHIFT+L - Importa un archivo de letra y lo coloca en las notas elegidas.
+* NUMPAD 9 - Ajusta la duración de las notas al tamaño de la cuadrícula.
+
+### Otras cosas esenciales
+¡Otras cosas importantes que deberías revisar!
+* <a href="http://docs.c3universe.com/rbndocs/index.php?title=Authoring" target="_blank" rel="noopener noreferrer">[Guía de RBN/C3]</a> - La guía esencial para chartear. Fue hecha por Harmonix con partes agregadas por el equipo de C3. Tristemente, solo está en Inglés pero la puedes traducir.
+  * <a href="https://web.archive.org/web/20250417062932/http://docs.c3universe.com/rbndocs/index.php?title=Authoring" target="_blank" rel="noopener noreferrer">[Versión en Wayback por si acaso la versión principal se cae]</a>  
+* <a href="https://nemosnautilus.com/magma/" target="_blank" rel="noopener noreferrer">[MAGMA]</a> - Una herramienta para compilar tu custom para poder meterla al juego. Sigue siendo usada y se ha mejorado por los años.  
+* <a href="https://nemosnautilus.com/nautilus/" target="_blank" rel="noopener noreferrer">[Nautilus (antes conocido como C3 CON Tools)]</a> - Un programa que ayuda con varias cosas relacionadas a archivos de Rock Band. Tiene varias herramientas integradas para customs.  
+* <a href="https://github.com/mtolly/onyx/releases" target="_blank" rel="noopener noreferrer">[Onyx]</a> - Un programa que necesitas si estás probando con RPCS3, ya que exporta en un formato de PS3 moderno.
+* <a href="https://github.com/Anjok07/ultimatevocalremovergui/releases/download/v5.6/UVR_1_15_25_22_30_BETA_full.exe" target="_blank" rel="noopener noreferrer">[Ultimate Vocal Remover GUI]</a> - Contrario al nombre, esto hace mucho mas que eliminar vocales. Esto es un programa que usa IA para separar canciones a partes individuales, ya que eso ayuda inmensamente cuando charteas. La versión en el enlace tiene la habilidad de importar modelos Roformer. Aquí hay modelos que yo uso y recomiendo:
+  * Demucs:
+    * htdemucs_ft - Esencial. Separa a cuatro partes.
+    * htdemucs_6s - Esencial y te da 6 instrumentos en vez de 4.
+    * hdemucs_mmi
+    * htdemucs
+  * MDX-NET
+    * UVR-MDX-NET INST HQ 3 or 5 - Esencial porque separa vocales mejor que Demucs.
+    * <a href="https://github.com/jarredou/models/releases/tag/aufr33-jarredou_MDX23C_DrumSep_model_v0.1" target="_blank" rel="noopener noreferrer">[Drumsep]</a> - Esencial porque separa pistas de batería a partes individuales. Ayuda demasiado para chartear batería.
+* <a href="https://therogerland.tumblr.com/proguide" target="_blank" rel="noopener noreferrer">[Guía de Guitarra PRO]</a> - Probablemente, nunca vas a tocar Guitarra/Bajo PRO, pero para los masoquistas, aquí está la única guía buena para eso. Tristemente, solo está en Inglés pero la puedes traducir.
+
+## Problemas y soluciones
+* ¡No me carga el plugin para visualizar (RBN Preview)!
+  * Te faltan archivos de Microsoft Visual C++ Redistributable Runtimes. <a href="https://kutt.it/vcpp" target="_blank" rel="noopener noreferrer">[Haz click aquí para descargarlos]</a>.  
+  > <Image src={errorplugin} alt="REAPER mostrando un error con RBN Preview." />
+* ¡REAPER me da `Error abriendo dispositivo` cuando cambio a WASAPI!
+  * `No se pudo encontrar entrada`: Es muy probable que tienes un micrófono conectado.  
+  Cambia `Canales de entrada` a `0` en la sección de `Dispositivos` en las Preferencias.  
+  > <Image src={errordevice} alt="REAPER mostrando un error que dice 'There was an error opening the audio hardware. WASAPI Error: could not find input device'." />
+
+## Créditos
+Este archivo contiene partes de estos proyectos:
+* <a href="https://github.com/cfillion/reaimgui" target="_blank" rel="noopener noreferrer">[reaimgui]</a>  
+* <a href="https://github.com/SuperRiderTH/CAT" target="_blank" rel="noopener noreferrer">[C3 Authoring Tools]</a>  
+* <a href="https://github.com/tposejank/EncoreVocalPreview" target="_blank" rel="noopener noreferrer">[EncoreVocalPreview]</a>  
+* <a href="https://github.com/RaiderGG/EVENTS-Tools" target="_blank" rel="noopener noreferrer">[EVENTS Tools]</a>  
+* <a href="https://github.com/Loflyinjett/RB-Pro-Keys-Visualizer" target="_blank" rel="noopener noreferrer">[RB-Pro-Keys-Visualizer]</a>  
+* <a href="https://github.com/carlmylo/ProToLH" target="_blank" rel="noopener noreferrer">[ProToLH]</a>  
+* <a href="https://github.com/Deevun155/venuegen" target="_blank" rel="noopener noreferrer">[Venuegen]</a>  
+* <a href="https://rhythmgamingworld.com/forums/topic/pro-guitar-preview-for-reaper-v10/" target="_blank" rel="noopener noreferrer">[Pro Guitar Preview for REAPER]</a>  
+* <a href="https://stash.reaper.fm/v/43755/SpanishLA%20%28JEFE01%29.rar" target="_blank" rel="noopener noreferrer">[SpanishLA JEFE01 LangPack]</a>  
+* <a href="https://stash.reaper.fm/v/49463/Portugues%20Brasil.ReaperLangPack" target="_blank" rel="noopener noreferrer">[Português LangPack]</a>  
+* <a href="https://github.com/ruggeryiury/rb-icons" target="_blank" rel="noopener noreferrer">[RB Icons]</a>  
+* Harmonix RBN (Enlace ya no existe)  
+* <a href="https://c3universe.com/" target="_blank" rel="noopener noreferrer">[C3]</a>
+
+Muchas gracias a:
+* AddyMills - Por ayudar a mejorar la plantilla  
+* Aloquendiar - Por contribuir a la versión actualizada de Venuegen y capturas
+* C0Assassin - Por ayudar a mejorar la plantilla  
+* Deevun155 - Por portear la versión actualizada de Venuegen  
+* ElFish - Por llamar mi atención al port a Python3 de CAT  
+* farottone - Por crear y por contribuir a la versión original de C3 Authoring Tools y otros proyectos que crearon la fundación de customs  
+* Glitchgod - Por capturas de ciertos problemas
+* Kueller - Por crear y por contribuir a varias versiones originales de las herramientas  
+* Linos - Por ayudar a mejorar la plantilla y por ser uno de los más informativos en el canal de charteo  
+* Loflyinjett - Por responder a nuestras oraciones y darnos una manera de ver charts de teclado pro  
+* Lore Hero - Por motivarme a mover esta información fuera de un canal de Discord y por darnos tanto contenido bueno  
+* Lunalawl - Por tener la mayoría de la idea. Está trabajando en hacer esto todavia mas facil  
+* Lynxeption - Por ayudar con pruebas, a armar el archivo y capturas
+* maria/solamint - Por contribuir a Encore Vox Preview  
+* TheNathannator - Por tener los archivos originales de RBN y por ser uno de las personas mas agradables  
+* Nemo - Por crear y mantener varios programas esenciales que seguimos usando hasta hoy  
+* Onyxite - Por crear y mantener Onyx, una de las mejores invenciones para juegos de guitarras plásticas  
+* poliwhirlge - Por actualizaciones para CAT
+* RaiderGG - Por crear EVENTS Tools  
+* Ruggy - Por los iconos, cosas de Guitarra Pro y por probar y ayudar a mejorar la plantilla
+* seil - Por crear el plugin para escuchar notas de guitarra PRO
+* Sulfrix - Por ciertas capturas de Python
+* SuperRiderTH - Por portear la versión actualizada de C3 Authoring Tools  
+* ThreeAreEss - Por probar y ayudar a mejorar la plantilla  
+* tposejank - Por crear y contribuir a Encore Vox Preview y por tener actitud positiva 😀  
+* ¡Y muchos mas!
