@@ -14,7 +14,7 @@ Following the guide will help prevent common issues before they happen. There is
 * Incompatibility while playing online and missing leaderboards (caused by wrong ID)
 
 ### Requirements:
-* A modded PS3 console (with a method of transferring files to it) or the <a href="https://rb3pc.milohax.org/gs_disc" target="_blank" rel="noopener noreferrer">[RPCS3 emulator]</a>.
+* A modded PS3 console (with a method of transferring files to it) or the <a href="../../../rb3pc/intro/disclaimers/" target="_blank" rel="noopener noreferrer">[RPCS3 emulator]</a>.
 * <a href="https://rb3dx.milohax.org" target="_blank" rel="noopener noreferrer">[An installation of Rock Band 3 Deluxe]</a> (Needed for certain features).
 * An up to date version of <a href="https://nemosnautilus.com/nautilus" target="_blank" rel="noopener noreferrer">[Nautilus]</a> (Previously known as C3 CON Tools/C3Tools).
 	* <a href="https://github.com/trojannemo/Nautilus/releases" target="_blank" rel="noopener noreferrer">[Mirror Link]</a>
