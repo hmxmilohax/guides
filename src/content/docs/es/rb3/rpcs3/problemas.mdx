@@ -1,0 +1,203 @@
+---
+title: Problemas y soluciones
+slug: "es/rb3pc/troubleshooting"
+description: "Como resolver problemas comunes."
+sidebar:
+    order: 5
+---
+import wcb from '@assets/rb3/rpcs3/troubleshoot/common-wcb.png';
+import wcbon from '@assets/rb3/rpcs3/troubleshoot/common-wcbones.png';
+import flyinst from '@assets/rb3/rpcs3/troubleshoot/teleport/flyinst.png';
+import solol2 from '@assets/rb3/rpcs3/instruments/setup/gtrs/solol2.gif';
+import slotdiag from '@assets/rb3/rpcs3/troubleshoot/online-slotdiag.png';
+import missingsong from '@assets/rb3/rpcs3/troubleshoot/online-missingsonges.png';
+import { Image } from 'astro:assets';
+import { Aside } from '@astrojs/starlight/components';
+
+## Gráficas
+<details>
+<summary>Los personajes tiene gráficas corruptas. <Image src={wcb} alt="Rock Band 3 con un personaje que tiene texturas corruptas." /></summary>
+
+No leíste la guía y no **<a href="../intro/quickconfig" target="_blank" rel="noopener noreferrer">[instalaste un archivo de configuración rápida]</a>** o no <a href="../customconfig/gpu" target="_blank" rel="noopener noreferrer">[activaste `Escribir búfers de color` en la pestaña de la configuración de GPU]</a>.
+
+<Image src={wcbon} alt="La configuración personalizada de la GPU de Rock Band 3, resaltando Write Color Settings en un cuadro verde con una línea discontinua." />
+</details>
+
+<details>
+<summary>Los accesorios de mi personaje están volando. <Image src={flyinst} alt="Rock Band 3 con un personaje que tiene problemas con sus accesorios." /></summary>
+  
+Esto pasa en PlayStation 3 pero es peor en RPCS3.  
+Afortunadamente, hay un parche que arregla todo esto.  
+<a href="../../rb3/teleport" target="_blank" rel="noopener noreferrer">[Haz click para mas información]</a>.
+</details>
+
+## Sonido
+<details>
+<summary>Hay demasiada latencia, especialmente en micrófono.</summary>
+* Bájale a la `Duración del búfer de audio` en la [[pestaña de Audio en la configuración personalizada para Rock Band 3]](../customconfig/audio).
+* Desactiva la `Corrección de Tono` dentro de Rock Band 3.
+    * Puedes hacer esto en `Menú > Opciones > Opciones de Voz > Corrección de Tono`
+* Desactiva Dolby Digital.
+* Conecta directamente a tu sistema de sonido y evita conectar el sonido a la televisión y usar HDMI ARC.
+</details>
+
+<details>
+<summary>El juego no se siente bien.</summary>
+* Necesitas calibrar tu juego dentro de los ajustes de sistema.
+    * Puedes hacer esto en: `Menú > Opciones > Ajustes del sistema`. 
+    ¡Rock Band 3 Deluxe te deja calibrar con una canción también! Elige una canción que es familiar y calibra así.
+</details>
+
+## Controles
+<details>
+<summary>[Batería MIDI] Mi batería no funciona.</summary>
+* Windows no deja que aplicaciones compartan instrumentos de MIDI. Si hay algo usando el instrumento (incluso MIDI Monitor), ciérralo antes de iniciar Rock Band 3.
+* Asegurate que tu batería este en la configuración correcta y esta usando Canal 10. Revisa <a href="../controllers/drums/midi/" target="_blank" rel="noopener noreferrer">[la pagina de información para baterías MIDI]</a>.
+</details>
+
+<details>
+<summary>[Teclado MIDI] Mi teclado no funciona.</summary>
+* Windows no deja que aplicaciones compartan instrumentos de MIDI. Si hay algo usando el instrumento (incluso MIDI Monitor), ciérralo antes de iniciar Rock Band 3.
+* Asegúrate que tu teclado este mapeado correctamente y en el canal correcto (Canal 1). Revisa <a href="../controllers/keys/midi/" target="_blank" rel="noopener noreferrer">[la pagina de información para teclados MIDI]</a>.
+* Si estas usando un teclado de 25, asegúrate de cambiar la octava cuando juegues y cuando estés interactuando con los menús.
+* Si estas usando un teclado de Rock Band 3 conectado por el puerto de MIDI, es posible que activaste el modo de batería. Presiona la Cruceta: Arriba para desactivarlo.
+</details>
+
+<details>
+<summary>[Guitarras de Guitar Hero] Los solos auto-rasguean/tienen auto-strum.</summary>
+En la configuración de `Mandos`, borra cualquier botón tienes mapeado a L2.  
+<Image src={solol2} alt="Borrando 'L2' de la configuración de Mandos." />
+</details>
+
+<details>
+<summary>Mi instrumento de Rock Band para PS3 se conecto dos veces.</summary>
+Mapeaste los instrumentos <a href="../controllers/main/" target="_blank" rel="noopener noreferrer">[eso que la guia dice que no hagas eso]</a> para instrumentos de Rock Band 3. Esto no se necesita porque porque tiene conexión directa. Borra la configuración y todo debe de estar bien.
+</details>
+
+<details>
+<summary>[Batería Pro] Si toco dos platillos, se registra como un tom.</summary>
+Este es un problema conocido de Rock Band 3 que afecta todas las versiones, incluso las de consolas. Puedes tocar estas cosas con un <a href="https://es.wikipedia.org/wiki/Rudimento#Terminolog%C3%ADa" target="_blank">[flam/mordente]</a> para evitar esto.
+</details>
+
+<details>
+<summary>Mi juego se queda atorado cuando nombro algo o invito a alguien.</summary>
+Esto depende mucho del control.
+* Trata de mover la palanca de whammy o el switch de efectos en tu guitarra.
+* Re-conecta el control.
+* Abre el menú de `Mandos` y haz click en `Guardar`. Esto va a reiniciar tus controles.
+* Desactiva `Utilizar interfaz nativa` <a href="../customconfig/emulator" target="_blank" rel="noopener noreferrer">[en la sección de `Emulador` en la configuración personalizada de Rock Band 3]</a>.
+* Usa un <a href="../controllers/main#gamepads" target="_blank" rel="noopener noreferrer">[mando o teclado]</a> para cualquier cosa que requiera el teclado virtual.
+</details>
+
+<details>
+<summary>No puedo usar la Calibración Automática.</summary>
+La calibración automática solo funciona con las guitarras de Rock Band 2 (o después) para PS3 con conexión directa.
+</details>
+
+<details>
+<summary>[Guitarra Pro] Mi guitarra pro no funciona.</summary>
+* Guitarras Pro requieren una interfaz de MIDI a USB que tome datos SYSEX. Revisa <a href="../controllers/protars/midi/" target="_blank" rel="noopener noreferrer">[la pagina de tu guitarra Pro]</a> para ver cuales interfaces son compatible.
+* Windows no deja que aplicaciones compartan instrumentos de MIDI. Si hay algo usando el instrumento (incluso MIDI Monitor), ciérralo antes de iniciar Rock Band 3.
+</details>
+
+## Crasheos
+<details>
+<summary>Mi juego no inicia.</summary>
+* Descarga Rock Band 3 Deluxe otra vez. Es posible que GitHub corrompió tu descarga.
+* Si estas actualizando de una versión antigua de Deluxe, es posible que tengas archivos de Rock Band 3 Deluxe incompatibles. Tienes que ir a los archivos de Rock Band 3 en `dev_hdd0\game\BLUS30463\USRDIR` para borrar los archivos `.dta`, **menos el archivo de `dx_high_memory.dta`**.
+* Asegúrate que tengas firmware actual.
+* Revisa tu copia de Rock Band 3.
+* Asegúrate que tienes los requisitos para emular este juego.
+* Es probable que instalaste el **<a href="../advanced/memory/" target="_blank" rel="noopener noreferrer">[archivo de memoria adicional]</a>** y se te olvido activar `Modo de consola de depuración` dentro de <a href="../customconfig/advanced" target="_blank" rel="noopener noreferrer">[pestaña de `Avanzada` dentro de la configuración personalizada de Rock Band 3]</a> para Rock Band 3.
+</details>
+
+<details>
+<summary>Mi juego crashea cuando practico guitarra/bajo.</summary>
+Vas mal xd. No leíste la guía que te dice que instalas Deluxe, porque arregla esto.
+</details>
+
+## Online
+<details>
+<summary>¡No puedo encontrar el tercero/cuarto jugador cuando busco!</summary>
+* El puerto 9103 esta bloqueado. Puedes activar el UPNP en la <a href="../customconfig/network" target="_blank" rel="noopener noreferrer">[configuración de Red para Rock Band 3]</a> o reenviar el puerto 9103 (UDP) en tu corta fuegos manualmente.
+    **¡No actives UPNP y reenvíes el puerto al mismo tiempo!**
+* Las salas de Rock Band 3 solo aceptan 2 slots (puestos) de Guitarra/Bajo/Teclado, un slot de batería y un slot para el vocalista.  
+<Image src={slotdiag} alt="Un diagrama mostrando los slots disponibles de Rock Band 3. Muestra una guitarra, bajo y teclado en el slot primero y cuarto, bateria en el slot segundo, y vocales en el slot tercero." />
+    * Puedes sobrepasarte de esto con Deluxe, ya que te deja cambiar slot de instrumento.  
+    Puedes hacer esto en  
+        `Menú > Opciones > Configuración Deluxe > Avanzado > Controlador > Cambiar Instrumento`  
+        Todavía podrás elegir la parte que quieras antes de empezar una canción/lista de canciones.  
+        
+<Aside>**No puedes jugar dos de la misma cosa**, excepto vocales. Por ejemplo, no puedes tener salas con dos baterías.</Aside>
+</details>
+
+<details>
+<summary>Estoy atorado en `Registrándose Online` cuando trato de jugar en GoCentral.</summary>
+* Asegúrate que todo este correcto en la <a href="../customconfig/network" target="_blank" rel="noopener noreferrer">[pestaña de Network dentro de la configuración personalizada de Rock Band 3]</a>.
+* Perdiste la conexión a RPCN y vas a tener que reiniciar el juego.
+</details>
+
+<details>
+<summary>Sigo perdiendo la conexión en canciones.</summary>
+* Asegúrate que tu conexión sea estable
+ Trata de conectar por cable en vez de Wi-Fi.
+* Si aumentaste tu VBlank a mas de 60 Hz, <a href="../customconfig/advanced" target="_blank" rel="noopener noreferrer">[bájalo de vuelta a 60 Hz]</a>.
+* Manda una queja a tu proveedor de internet o cámbialo.
+</details>
+
+<details>
+<summary>Mis customs (canciones adicionales) están desactivadas eso que todos tenemos las mismas canciones descargadas. <Image src={missingsong} alt="Rock Band 3 mostrando canciones desactivadas en una sala de multijugador." /></summary>
+Lee la guía de customs, especialmente la **<a href="../../rb3/ps3customs/troubleshoot#canciones-no-están-en-mi-colección-no-salen-en-línea--puntajes-no-se-guardan" target="_blank" rel="noopener noreferrer">[sección aplicable a este problema]</a>**.
+</details>
+
+<details>
+<summary>Mi juego crashea cuando busco a/me invitan jugadores.</summary>
+Tu rúter tiene problemas con UPNP.  
+* Ve a la <a href="../customconfig/network" target="_blank" rel="noopener noreferrer">[pestaña de Red en la configuración personalizada de Rock Band 3]</a>, y desactiva `Activar UPNP`.  
+    * Vas a necesitar investigar como <a href="https://es.wikihow.com/configurar-el-reenv%C3%ADo-de-puertos-en-un-router" target="_blank" rel="noopener noreferrer">[reenviar los puertos en tu rúter]</a>.
+</details>
+
+## Deluxe
+<details>
+<summary>Mis configuración de Deluxe no se guarda.</summary>
+Necesitas cambiar `Auto-Guardado de Conf. DX` a `Si`.  
+    * Puedes hacer esto en `Menú > Opciones > Configuración Deluxe > Avanzado > Opciones Del Juego`
+</details>
+
+<details>
+<summary>Arruine la camera de pista.</summary>
+Reinicia el juego y todo va estar bien.
+</details>
+
+## Otros
+<details>
+<summary>Problemas de rendimiento comunes.</summary>
+* Activa <a href="https://help.ableton.com/hc/es/articles/115000211304-Utilizar-el-plan-de-energ%C3%ADa-de-alto-rendimiento-Windows" target="_blank">[el plan de energía de alto rendimiento]</a>.
+* Regresa a la <a href="../customconfig/main" target="_blank" rel="noopener noreferrer">[sección de configuración personalizada]</a> y trata la los ajustes recomendados para computadoras de baja gama.
+* Desactiva los efectos en la configuración de Deluxe.
+    * Puedes hacer esto en `Menú > Opciones > Configuración Deluxe > Gráficos > Post-Procesado`
+* Si tu placa base tiene un chip de Realtek (mayoría de las computadoras), trata de instalar los drivers de la pagina de "Descargas" de tu placa. Esto es un <a href="https://github.com/RPCS3/rpcs3/issues/14648" target="_blank" rel="noopener noreferrer">[problema conocido]</a> causado por usar el controlador integrado de Microsoft llamado “Sonido de Alta Definición.” Este controlador no usa todos los hilos del procesador.
+* Cierra el cliente de Discord y ábrelo en tu navegador o tu celular. También puedes usar un cliente alternativo <a href="https://github.com/Vencord/Vesktop" target="_blank">[como Vesktop]</a>, pero no somos responsables por tu cuenta de Discord.
+* Aumenta la `Duración del búfer de audio` como fue mencionado <a href="../customconfig/audio" target="_blank">[en la pestaña de la configuración de Audio]</a> hasta que no tengas problemas. Empieza en 64 ms.
+</details>
+
+<details>
+<summary>Navegando la biblioteca causa que el juego se trabe.</summary>
+Ctm. Se te olvido poner `Estado de la red` a `Conectado` <a href="../customconfig/network" target="_blank" rel="noopener noreferrer">[en la pestaña de la configuración de Audio]</a> para Rock Band 3.
+</details>
+
+<details>
+<summary>El juego no llena toda la pantalla.</summary>
+Activa la opción de `Tamaño` en Rock Band 3.  
+    * Puedes hacer esto en `Menú > Opciones > Ajustes del Sistema`
+</details>
+
+<details>
+<summary>No puedo arrastra PKGs a RPCS3.</summary>
+Esto es un error común de RPCS3. Reinicíalo y va a funcionar.
+</details>
+
+<details>
+<summary>No mencionaste ajustando (OPCIÓN) en la guía, pero a mi me ayudo.</summary>
+<a href="https://github.com/hmxmilohax/guides/issues" target="_blank" rel="noopener noreferrer">[Abre un asunto nuevo]</a> o manda un mensaje por **<a href="https://discord.gg/milohax" target="_blank" rel="noopener noreferrer">[el Discord de MiloHax]</a>** con tu sugerencia. Si se verifica, puedo ser incluido en la guía.
+</details>
