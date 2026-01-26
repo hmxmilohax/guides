@@ -1,6 +1,16 @@
 ---
-import Icon from '../user-components/Icon.astro';
+/**
+ * Simplified approach of HiDeoo's version search but for topic filtering.
+ * @see https://github.com/HiDeoo/starlight-versions/blob/7b8be0ca8b775ffb16d6bbe033fe3330e9b26ed0/packages/starlight-versions/libs/versions.ts
+ * Starlight's `<Search>` component grabbed from here.
+ * @see https://github.com/withastro/starlight/blob/879d6b347ffca43e98afae30417582c3921a0c8f/packages/starlight/components/Search.astro
+ */
+
+import { Icon } from '@astrojs/starlight/components'
 import project from 'virtual:starlight/project-context';
+
+import { getTopicFromSlug } from 'src/libs/topics';
+const { entry } = Astro.locals.starlightRoute
 
 const pagefindTranslations = {
 	placeholder: Astro.locals.t('search.label'),
@@ -11,7 +21,14 @@ const pagefindTranslations = {
 	),
 };
 
-const dataAttributes: DOMStringMap = { 'data-translations': JSON.stringify(pagefindTranslations) };
+const topic = getTopicFromSlug(entry.slug)
+
+const dataAttributes: DOMStringMap = { 
+    // Sets the topic tag based on the file directory.
+    'data-pagefind-filter': `topic:${topic}`,
+    'data-topic': topic,
+    'data-translations': JSON.stringify(pagefindTranslations),
+};
 if (project.trailingSlash === 'never') dataAttributes['data-strip-trailing-slash'] = '';
 ---
 
@@ -74,7 +91,7 @@ if (project.trailingSlash === 'never') dataAttributes['data-strip-trailing-slash
 </script>
 
 <script>
-	import { pagefindUserConfig } from 'virtual:starlight/pagefind-config';
+import { pagefindUserConfig } from 'virtual:starlight/pagefind-config';
 
 	class SiteSearch extends HTMLElement {
 		constructor() {
@@ -131,6 +148,7 @@ if (project.trailingSlash === 'never') dataAttributes['data-strip-trailing-slash
 			const shouldStrip = this.dataset.stripTrailingSlash !== undefined;
 			const stripTrailingSlash = (path: string) => path.replace(/(.)\/(#.*)?$/, '$1$2');
 			const formatURL = shouldStrip ? stripTrailingSlash : (path: string) => path;
+            const topic = this.dataset['topic']
 
 			window.addEventListener('DOMContentLoaded', () => {
 				if (import.meta.env.DEV) return;
@@ -138,7 +156,7 @@ if (project.trailingSlash === 'never') dataAttributes['data-strip-trailing-slash
 				onIdle(async () => {
 					// @ts-expect-error — Missing types for @pagefind/default-ui package.
 					const { PagefindUI } = await import('@pagefind/default-ui');
-					new PagefindUI({
+					const search = new PagefindUI({
 						...pagefindUserConfig,
 						element: '#starlight__search',
 						baseUrl: import.meta.env.BASE_URL,
@@ -154,6 +172,8 @@ if (project.trailingSlash === 'never') dataAttributes['data-strip-trailing-slash
 							});
 						},
 					});
+                    // If the current page has a topic, set it on the topic checkboxes upon opening search.
+                    topic ? search.triggerFilters({ topic: [topic] }) : null
 				});
 			});
 		}
