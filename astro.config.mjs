@@ -15,6 +15,9 @@ export default defineConfig({
   integrations: [
     starlight({
       title: 'MiloHax Guides',
+      components: {
+        Search: './src/components/Search.astro',
+      },
       logo: {
         dark: './public/milohax.png',
         light: './public/milohax-dark.png',
