@@ -1,0 +1,213 @@
+---
+title: Estado de la actividad para Discord
+slug: "es/rb3/richpresence"
+description: "Como compartir tu actividad en Rock Band 3 Deluxe por Discord."
+template: splash
+prev: false
+next: false
+---
+import webpython from '@assets/charting/reaper/webpython.png';
+import discordrp from '@assets/rb3/general/discordrp/discordrpes.png';
+import pyinstall from '@assets/rb3/general/discordrp/pyinstall.png';
+import pydl from '@assets/rb3/general/discordrp/pydles.png';
+import cmdopen from '@assets/rb3/general/discordrp/cmdopen.png';
+import cmdpip from '@assets/rb3/general/discordrp/cmdpip.png';
+import cmdlastfmintro from '@assets/rb3/general/discordrp/cmdlastfmintro.png';
+import lastfm1 from '@assets/rb3/general/discordrp/lastfm1es.png';
+import lastfm2 from '@assets/rb3/general/discordrp/lastfm2es.png';
+import cmdlastfm from '@assets/rb3/general/discordrp/cmdlastfm.png';
+import pyopen from '@assets/rb3/general/discordrp/pyopen.png';
+import cmdrun from '@assets/rb3/general/discordrp/cmdrun.png';
+import pydefault from '@assets/rb3/general/discordrp/pydefaultes.png';
+import rpcs3config from '@assets/rb3/general/discordrp/rpcs3configes.png';
+import rpcs3discord from '@assets/rb3/general/discordrp/rpcs3discordes.png';
+import cmdrpcs3 from '@assets/rb3/general/discordrp/cmdrpcs3.png';
+import cmdrpcs3dir from '@assets/rb3/general/discordrp/cmdrpcs3dir.gif';
+import cmdconsoles from '@assets/rb3/general/discordrp/cmdconsoles.png';
+import cmdps3intro from '@assets/rb3/general/discordrp/cmdps3intro.png';
+import ps3ip from '@assets/rb3/general/discordrp/ps3ipes.png';
+import cmdps3 from '@assets/rb3/general/discordrp/cmdps3.png';
+import { Image } from 'astro:assets';
+import { Steps } from '@astrojs/starlight/components';
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+import { Aside } from '@astrojs/starlight/components';
+
+¿Quieres mostrarle a tus amigos que canción estas tocando?  
+Puedes hacer esto con un archivo Python hecho para Rock Band 3.    
+<Image src={discordrp} alt="A Discord profile showing that they're playing Rock Band 3 Deluxe." />
+
+¡Es compatible con RPCS3, Xbox 360 y PlayStation 3!
+## Configuración inicial
+<Tabs>
+  <TabItem label="RPCS3">
+<Steps>
+1. Primero, vamos a desactivar la actividad reciente para Discord de RPCS3.  
+Abre RPCS3 y haz click el botón de `Configurar`.  
+	> <Image src={rpcs3config} alt="RPCS3 con el cursor sobre 'Configurar'" />
+
+2. En la pestaña de `GUI`, desactiva `Activar Discord Rich Presence`.  
+	> <Image src={rpcs3discord} alt="RPCS3 con la opción de 'Activar Discord Rich Presence' desactivada." />
+
+3. Ahora, necesitas bajar la versión mas actual de <a href="https://www.python.org/downloads/" target="_blank" rel="noopener noreferrer">[Python 3]</a>.  
+	<a href="https://www.python.org/downloads/" target="_blank" rel="noopener noreferrer">[Haz click aquí para ir a la pagina de Python 33]</a>.  
+	* ¡No descargues `Python install manager`!
+	> <a href="https://www.python.org/downloads" target="_blank" rel="noopener noreferrer"><Image src={webpython} alt="La pagina de descarga para Python. El cursor esta sobre 'Download Python 3.12.6.'." /></a>
+
+4. Cuando termine, abre el instalador.  
+En el instalador:  
+	* Activa <span title="Agregar python.exe a PATH">"`Add python.exe to PATH`"</span>
+	* Haz click en <span title="Instalar ahora">"<code>Install now</code>"</span>  
+	> <Image src={pyinstall} alt="El instalador de Python. 'Add python.exe to PATH' y 'Install now' estan resaltados en cuadros bronceados con contornos sólidos." />
+
+5. Después de Python termine de instalarse, necesitas descargar el archivo de `dx_discordrp.py`.  
+<a href="https://raw.github.com/hmxmilohax/rock-band-3-deluxe/develop/scripts/dx_discordrp.py" target="_blank" rel="noopener noreferrer">[Haz click derecho aquí y elige "Guardar vínculo como" para descargar]</a>
+	> <Image src={pydl} alt="dx_discordrp.py en la bandeja de descargas." />
+
+	Colócalo en un lugar donde se pueda encontrar fácilmente, ya que vas a tener que abrirlo cada vez que quieras compartir tu estado.
+
+6. Ve a la carpeta donde colocaste el archivo.  
+En la barra de dirección, hacia arriba del explorador de archivos, escribe `cmd` y luego presiona la tecla de Enter.  
+	> <Image src={cmdopen} alt="El explorador de archivos con 'cmd' escrito en la barra de direcciones." />
+
+7. Cuando se abra el símbolo de sistema, escribe:  
+`pip install requests pypresence pylast`  
+	> <Image src={cmdpip} alt="El símbolo del sistema ejecutando el comando de 'pip install requests pypresence pylast'." />
+
+8. Después de que se instalen las dependencias, escribe:  
+`py dx_discordrp.py`  
+en el símbolo del sistema y presiona la tecla de Enter.  
+
+9. Te preguntara si quieres especificar donde esta la carpeta de datos de RPCS3.  
+Escribe `1` y presiona Enter.  
+	> <Image src={cmdrpcs3} alt="La script de 'py dx_discordrp.py' preguntando si quieres especificar donde esta la carpeta de datos." />
+
+10. Después de eso, te va a preguntar por la carpeta de RPCS3.  
+Arrastra la carpeta que contiene `dev_hdd0` al símbolo del sistema y presiona la tecla de Enter.  
+Esto suele ser `C:\Juegos\RPCS3`.  
+**¡Si la dirección tiene comillas, bórralas!**  
+	> <Image src={cmdrpcs3dir} alt="Arrastrando la carpeta de RPCS3 al símbolo del sistema ejecutando 'py dx_discordrp.py'." />
+
+11. Te preguntara si quieres configurar la script con Xbox 360 o PlayStation 3.  
+Presiona `1` para "Si", `2` para "Ahorita no" y `3` para "Nunca".  
+Si quieres configurarlos, revisa las otras pestañas para instrucciones.  
+	> <Image src={cmdconsoles} alt="'dx_discordrp.py' preguntando si quieres configurar un Xbox 360 o PlayStation 3." />
+
+12. El ultimo paso te preguntara si quieres ingresar a una cuenta de Last.fm.  
+Escribe `1` y expande la sección abajo para mas información.  
+Sino, escribe `2` para configurarlo después o `3` para que vuelva a preguntarte otra vez.  
+	> <Image src={cmdlastfmintro} alt="La script preguntando si quieres ingresar a una cuenta de Last.fm." />
+</Steps>
+<details>
+<summary>Usando Last.fm</summary>
+¿Tienes una <a href="https://www.last.fm/es/home" target="_blank" rel="noopener noreferrer">[cuenta de Last.fm]</a> y quieres usarla con Rock Band 3 Deluxe? ¡Justo puedes hacer eso!
+<Steps>
+1. Crea <a href="https://www.last.fm/es/api/account/create" target="_blank" rel="noopener noreferrer">[una cuenta de API en Last.fm]</a>.  
+Ingresa la información requerida, incluyendo email, nombre de aplicación y descripción de aplicación.  
+Puedes nombrar la aplicación lo que tu quieras y también describirla como quieras.
+Cuando termines, haz click en `Envitar`.
+	> <a href="https://www.last.fm/es/api/account/create" target="_blank" rel="noopener noreferrer"><Image src={lastfm1} alt="Una pagina de creación de cuenta de API. Pregunta por un correo electrónico de contacto, nombre de aplicación, y descripción de aplicación." /></a>
+
+2. Después de enviar la información, te dará una `Clave API` y un `Secreto compartido`.  
+	> <Image src={lastfm2} alt="Last.fm mostrando que la cuenta de API fue creada. Esta mostrando el nombre de aplicación, la Clave API, el Secreto compartido y a quien esta registrada." />
+
+3. Copia esta información en el símbolo de sistema.  
+`Clave API` va a `API Key` y `Secreto compartido` va a `API Secret`.  
+Igual te preguntara por tu usuario y contraseña de Last.fm.  
+Ingresa esos también.  
+	> <Image src={cmdlastfm} alt="El símbolo de sistema preguntando por una API Key, API Secret, usuario y contraseña." />
+</Steps>
+</details>
+</TabItem>
+  <TabItem label="Xbox 360">
+<Aside type="caution">La guía de Xbox 360 esta bajo construcción!  
+Si quieres ayudar, únete al Discord de MiloHax.</Aside>
+</TabItem>
+  <TabItem label="PlayStation 3">
+<Aside>Obviamente necesitas Rock Band 3 Deluxe, así que debes de tener una PlayStation 3 con CFW o HEN.</Aside>
+<Aside>Esto requiere usar webMAN-MOD.  
+Puedes descargarlo de <a href="https://github.com/aldostools/webMAN-MOD/releases" target="_blank" rel="noopener noreferrer">[el GitHub oficial]</a> o del <a href="http://ps3.aldostools.org/links.html" target="_blank" rel="noopener noreferrer">[sitio de aldostools]</a>.</Aside>
+<Steps>
+1. Necesitas bajar la versión mas actual de <a href="https://www.python.org/downloads/" target="_blank" rel="noopener noreferrer">[Python 3]</a>.  
+	<a href="https://www.python.org/downloads/" target="_blank" rel="noopener noreferrer">[Haz click aquí para ir a la pagina de Python 33]</a>.  
+	* ¡No descargues `Python install manager`!
+	> <a href="https://www.python.org/downloads" target="_blank" rel="noopener noreferrer"><Image src={webpython} alt="La pagina de descarga para Python. El cursor esta sobre 'Download Python 3.12.6.'." /></a>
+
+2. Cuando termine, abre el instalador.  
+En el instalador:  
+	* Activa <span title="Agregar python.exe a PATH">"`Add python.exe to PATH`"</span>
+	* Haz click en <span title="Instalar ahora">"<code>Install now</code>"</span>  
+	> <Image src={pyinstall} alt="El instalador de Python. 'Add python.exe to PATH' y 'Install now' estan resaltados en cuadros bronceados con contornos sólidos." />
+
+3. Después de Python termine de instalarse, necesitas descargar el archivo de `dx_discordrp.py`.  
+<a href="https://raw.github.com/hmxmilohax/rock-band-3-deluxe/develop/scripts/dx_discordrp.py" target="_blank" rel="noopener noreferrer">[Haz click derecho aquí y elige "Guardar vínculo como" para descargar]</a>
+	> <Image src={pydl} alt="dx_discordrp.py en la bandeja de descargas." />
+
+	Colócalo en un lugar donde se pueda encontrar fácilmente, ya que vas a tener que abrirlo cada vez que quieras compartir tu estado.
+
+4. Ve a la carpeta donde colocaste el archivo.  
+En la barra de dirección, hacia arriba del explorador de archivos, escribe `cmd` y luego presiona la tecla de Enter.  
+	> <Image src={cmdopen} alt="El explorador de archivos con 'cmd' escrito en la barra de direcciones." />
+
+5. Cuando se abra el símbolo de sistema, escribe:  
+`pip install requests pypresence pylast`  
+	> <Image src={cmdpip} alt="El símbolo del sistema ejecutando el comando de 'pip install requests pypresence pylast'." />
+
+6. Después de que se instalen las dependencias, escribe:  
+`py dx_discordrp.py`  
+en el símbolo del sistema y presiona la tecla de Enter.  
+
+7. Te preguntara si quieres especificar donde esta la carpeta de datos de RPCS3 o si quieres configurar un IP de Xbox 360.  
+Escribe `1` para configurarlos, `2` para que te pregunte después o `3` para que nunca te pregunte otra vez.  
+Cuando llegues a <span title="IP de PlayStation 3 con configurado">"<code>PlayStation 3 console IP not configured</code>"</span>, escribe `1` y presiona Enter.  
+	> <Image src={cmdps3intro} alt="La script de 'py dx_discordrp.py' script preguntando al usuario que eliga cual sistema configurar." />
+
+8. En la PlayStation 3, ve a `[ Ajustes ]` > `[ Ajustes de red ]` > `[ Ajustes y lista de estado de conexión ]`.  
+Nota la dirección IP.
+	> <Image src={ps3ip} alt="La pagina de 'Ajustes y lista de estado de conexión' mostrando informacion de la red." />
+
+9. De vuelta en la computadora, ingresa la IP de tu PlayStation 3 y presiona Enter.
+	> <Image src={cmdps3} alt="Ingresando la IP del PlayStation 3 a la script de 'py dx_discordrp.py'." />
+
+10. El ultimo paso te preguntara si quieres ingresar a una cuenta de Last.fm.  
+Escribe `1` y expande la sección abajo para mas información.  
+Sino, escribe `2` para configurarlo después o `3` para que vuelva a preguntarte otra vez.  
+	> <Image src={cmdlastfmintro} alt="La script preguntando si quieres ingresar a una cuenta de Last.fm." />
+</Steps>
+<details>
+<summary>Usando Last.fm</summary>
+¿Tienes una <a href="https://www.last.fm/es/home" target="_blank" rel="noopener noreferrer">[cuenta de Last.fm]</a> y quieres usarla con Rock Band 3 Deluxe? ¡Justo puedes hacer eso!
+<Steps>
+1. Crea <a href="https://www.last.fm/es/api/account/create" target="_blank" rel="noopener noreferrer">[una cuenta de API en Last.fm]</a>.  
+Ingresa la información requerida, incluyendo email, nombre de aplicación y descripción de aplicación.  
+Puedes nombrar la aplicación lo que tu quieras y también describirla como quieras.
+Cuando termines, haz click en `Envitar`.
+	> <a href="https://www.last.fm/es/api/account/create" target="_blank" rel="noopener noreferrer"><Image src={lastfm1} alt="Una pagina de creación de cuenta de API. Pregunta por un correo electrónico de contacto, nombre de aplicación, y descripción de aplicación." /></a>
+
+2. Después de enviar la información, te dará una `Clave API` y un `Secreto compartido`.  
+	> <Image src={lastfm2} alt="Last.fm mostrando que la cuenta de API fue creada. Esta mostrando el nombre de aplicación, la Clave API, el Secreto compartido y a quien esta registrada." />
+
+3. Copia esta información en el símbolo de sistema.  
+`Clave API` va a `API Key` y `Secreto compartido` va a `API Secret`.  
+Igual te preguntara por tu usuario y contraseña de Last.fm.  
+Ingresa esos también.  
+	> <Image src={cmdlastfm} alt="El símbolo de sistema preguntando por una API Key, API Secret, usuario y contraseña." />
+</Steps>
+</details>
+</TabItem>
+</Tabs>
+
+## Usando
+Después de la configuración inicial, no vas a tener que configurarlo de nuevo.
+
+Solo tienes que hacer click doble en el archivo `dx_discordrp.py`.  
+> <Image src={pyopen} alt="el explorador de archivos con el cursor sobre el archivo de 'dx_discordrp.py'." />
+
+Si hiciste todo correcto, debe de decir tu status actual (Current Status) y va a actualizar tu actividad en Discord.  
+> <Image src={cmdrun} alt="El símbolo ejecutando la script de 'dx_discordrp'." />
+
+¡Eso es todo! Recuerda cerrar el símbolo del sistema cuando termines de jugar y abrirlo cuando quieras jugar de nuevo.
+
+Si el archivo no abre correctamente, verifica que tengas Python como la aplicación predeterminada para archivos `.py`.  
+> <Image src={pydefault} alt="Windows preguntando cual es la aplicación predeterminada para abrir archivos .py." />
+
+Si estas en el <a href="https://discord.gg/milohax" target="_blank" rel="noopener noreferrer">[Discord de MiloHax]</a>, puedes usar el comando de `!wrapped` para ver información, como estadísticas de "Wrapped/Tu año en Rock Band".
