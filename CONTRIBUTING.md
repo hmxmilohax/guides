@@ -1,5 +1,5 @@
 # How to contribute
-This new guide page was made so more things can have documentation. Any contribution is welcomed and higly encouraged!
+This new guide page was made so more things can have documentation. Any contribution is welcomed and highly encouraged!
 
 ## Authoring
 This project is powered by Astro Starlight and they have amazing [[documentation available here]](https://starlight.astro.build/getting-started/).  
@@ -17,7 +17,7 @@ Images are stored in two different places:
 * `/src/assets` for optimized images - These will be converted to `.webp` when the site builds. Suggested for images that aren't repeated, like console logos and symbols.
 * `/public/assets` for raw images - These images will be displayed as is. Make sure they are small because they will not be optimized.
 
-Try to optimize your images preemptively ahead of time as well.  
+Try to optimize any images stored in `public/assets` preemptively.  
 [[ImageOptim]](https://imageoptim.com/mac) is recommended for Mac.  
 There are [[alternatives for other operating systems too]](https://imageoptim.com/versions.html).
 
@@ -30,3 +30,8 @@ Please read [[Starlight's documentation on this]](https://starlight.astro.build/
 
 ## Localizing
 Currently, English and Spanish are supported but more languages can be added. Languages are usually split into folder in the `docs` folder. If you want to add another language, keep this in mind.
+
+## Search
+We have a modified search plugin that will search by URL.  
+For example, any pages with a URL prefixed with `en/rb3pc/` will be put into the `rb3pc` category.  
+Anything that's universal should be put into the main game category, like `en/rb3/`.

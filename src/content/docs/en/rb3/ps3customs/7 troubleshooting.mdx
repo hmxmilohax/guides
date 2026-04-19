@@ -36,7 +36,7 @@ Songs with alphabetic IDs will generate a new ID and wipe your score every time 
 While online, these songs will grey even if you and other players have the same song installed. To avoid this, the song needs to have a numeric ID.
 > <Image src={missingsong} alt="Rock Band 3 showing songs with a darker color as they are disabled." />
 
-If the songs have a duplicate ID, one of them will never show up.
+If the songs have a duplicate ID, only one of them will show up.
 > <Image src={nautilusidclash} alt="Nautilus showing two songs with duplicate IDs." />
 
 You can solve both of these issues by correcting the IDs with Nautilus.
@@ -63,27 +63,6 @@ After finding it, select the `songs.dta` file within the folder.
 4. Wait for it to finish correcting every song within that pack.  
 When it finishes, you can share the fixed `songs.dta` file with your friends to play the previously unavailable songs together.
     > <Image src={nautilusps3batchdone} alt="Nautilus's PS3 Converter. It has just finished replacing custom songs without numeric IDs." />
-</Steps>
-
-## Songs Stuck Looping at the End
-Occasionally certain songs may freeze toward the end of the chart, constantly looping the last bits of the audio endlessly.  
-* **You will need to uninstall the song. Check [[the deletion guide]](../delete) if needed!**
-* **You will need need the original CON file to fix this issue!**
-* **Do not run every song through this if it does not need fixing, the audio will be re-encoded and will have a slight decrease in audio quality**
-
-<Steps>
-1. Open Nautilus and select `PS3 Converter`.
-    > <Image src={nautilushomeps3} alt="Nautilus' main screen. A cursor hovers over 'PS3 Converter'." />
-
-2. At the top of the `PS3 Converter` window, go to:  
-`Tools > Batch fix looping songs`
-    > <Image src={nautilusps3batchloop} alt="Nautilus's PS3 Converter. A cursor hovers over 'Batch fix looping songs' under the 'Tools' menu." />
-
-3. Go to the folder where the problematic CON is at and select the folder.  
-Wait for it to finish.
-    > <Image src={nautilusps3batchloopproc} alt="Nautilus's PS3 Converter. It is in the process of fixing a looping file." />
-
-4. After it's done, you can go back to step 4 of [[the main tutorial]](./360tops3/).
 </Steps>
 
 ## PS3: Greyed out customs
@@ -146,4 +125,25 @@ There will be a `.mogg` file in the song's folder.
 Go into the new `decrypted` folder and cut the `.mogg` file inside of it.  
 Go back to the song's main folder and replace the old `.mogg` file.
     > <Image src={moggreplace} alt="An animation of a .mogg file within the 'decrypted' folder being cut then pasted in the folder before it. It replaces the old .mogg file." />
+</Steps>
+
+## Songs Stuck Looping at the End
+Occasionally certain songs may freeze toward the end of the chart, constantly looping the last bits of the audio endlessly.  
+* **You will need to uninstall the song. Check [[the deletion guide]](../delete) if needed!**
+* **You will need need the original CON file to fix this issue!**
+* **Do not run every song through this if it does not need fixing, the audio will be re-encoded and will have a slight decrease in audio quality**
+
+<Steps>
+1. Open Nautilus and select `PS3 Converter`.
+    > <Image src={nautilushomeps3} alt="Nautilus' main screen. A cursor hovers over 'PS3 Converter'." />
+
+2. At the top of the `PS3 Converter` window, go to:  
+`Tools > Batch fix looping songs`
+    > <Image src={nautilusps3batchloop} alt="Nautilus's PS3 Converter. A cursor hovers over 'Batch fix looping songs' under the 'Tools' menu." />
+
+3. Go to the folder where the problematic CON is at and select the folder.  
+Wait for it to finish.
+    > <Image src={nautilusps3batchloopproc} alt="Nautilus's PS3 Converter. It is in the process of fixing a looping file." />
+
+4. After it's done, you can go back to step 4 of [[the main tutorial]](./360tops3/).
 </Steps>
