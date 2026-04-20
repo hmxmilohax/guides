@@ -24,10 +24,7 @@ import { Image } from 'astro:assets';
 
 <center><Image src={rbgtrscontroller} alt="Controller" /></center>
 
-<Aside>RPCN Menus (for sending or accepting online invites) _may_ cause a softlock. You will need an alternative input method to navigate these menus, such as a <a href="../../main#gamepads" target="_blank" rel="noopener noreferrer">[typing keyboard or a gamepad.]</a></Aside>
-* The effects switch seems to reset to the middle when it's adjusted, so you'll be locked to flanger.
-	* It can be unmapped by removing the Right Stick: Up/Down mappings.
-	* You can alternatively configure the Device Class as a Guitar Hero Guitar to remove the option. You will have to swap Blue and Yellow frets.
+* There is no input profile as all controls are default
 * Rock Band 1 guitars **require their respective guitar dongles to connect to your computer.**  
 Rock Band 1 guitars have a maple (cream color) neck with a fully white dongle.  
 ![White Nintendo Wii Rock Band Guitar Dongle](/assets/instruments/adapters/wiiguitarrb1.png "White Nintendo Wii Rock Band Guitar Dongle")
@@ -56,52 +53,14 @@ Follow the instructions and/or match the assignments below.
 
 | Handlers | Devices |
 |:--------:|:-------:|
-| MMJoystick | Joystick |
+| SDL | Licensed by Nintendo of America Harmonix Guitar Controller for Nintendo Wii |
 
 | Device Class | Device Subtype |
 |:------------:|:--------------:|
 | Guitar | Rock Band |
 
 ## Mappings
-
-| **RPCS3** | **Guitar** |
-|:------------------:|:---------------------:|
-| Cross | ![Green Fret](/assets/instruments/buttons/guitars/gf.png "Green Fret") |
-| Circle | ![Red Fret](/assets/instruments/buttons/guitars/rf.png "Red Fret") |
-| Square | ![Blue Fret](/assets/instruments/buttons/guitars/bf.png "Blue Fret") |
-| Triangle | ![Yellow Fret](/assets/instruments/buttons/guitars/yf.png "Yellow Fret") |
-| L1 | ![Orange Fret](/assets/instruments/buttons/guitars/of.png "Orange Fret") |
-| D-Pad: Up | ![Strumbar Up](/assets/instruments/buttons/guitars/sbu.png "Strumbar Up") |
-| D-Pad: Down | ![Strumbar Down](/assets/instruments/buttons/guitars/sbd.png "Strumbar Down") |
-| D-Pad: Left | ![D-Pad: Left](/assets/instruments/buttons/guitars/dpl.png "D-Pad: Left") |
-| D-Pad: Right | ![D-Pad: Right](/assets/instruments/buttons/guitars/dpr.png "D-Pad: Right") |
-| Right Stick: <br/> Left/Right | ![Whammy Bar](/assets/instruments/buttons/guitars/wb.png "Whammy Bar") |
-| Right Stick: <br/> Up/Down | ![Effects Switch](/assets/instruments/buttons/guitars/fx.png "Effects Switch") |
-| L2 | ![Solo Buttons](/assets/instruments/buttons/guitars/solo.png "Solo Buttons") |
-| R1 | ![Tilt](/assets/instruments/buttons/guitars/ts.gif "Tilt") |
-| Start | ![Plus](/assets/instruments/buttons//wii/plu.png "Plus") |
-| Select | ![Minus](/assets/instruments/buttons//wii/min.png "Minus") |
-| PS Button | ![Home](/assets/instruments/buttons/guitars/home.png "Home") |
-
-## Profile
-[[Download Profile]](/../downloads/rb3/rpcs3//instrument-repo/Wii%20Rock%20Band%20Guitar.7z)
-
-<details>
-<summary>How do I use profiles?</summary>
-
-<Aside type="caution">This is not recommended if you're using multiple controllers at once.</Aside>
-
-After downloading the profile,
-
-1. Extract the .7z file.
-2. Drag the `input_configs` folder into the `configs` folder where you have RPCS3 in.  
-> <Image src={instrepoinstall} alt="Installing a configuration profile from the Instrument Repo" />
-
-3. After that, you can select the profile in the **“Pads”** menu.  
-> <Image src={rpcs3padprofile} alt="RPCS3's Gamepad Settings, showing the cursor over a profile." />
-
-Most of the time, these controller profiles should work out of the box. If they don’t, try changing the controller listed in `Devices`, next to the `Refresh` button until it receives an input. You can edit this while the game is running.
-</details>
+**By default, everything is bound correctly. You don’t need to remap anything or download a profile.**
 
 <center><Image src={gtrwiirbmapping} alt="Mapping" /></center>
 
