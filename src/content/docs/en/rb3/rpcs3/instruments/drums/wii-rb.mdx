@@ -14,16 +14,14 @@ import wiirbdrmscontroller from '@assets/rb3/rpcs3/instruments/controller/wiirbd
 import rpcs3pad from '@assets/rb3/rpcs3/instruments/rpcs3pad.png';
 import rpcs3padprofadd from '@assets/rb3/rpcs3/instruments/rpcs3padprofadd.png';
 import padlegend from '@assets/rb3/rpcs3/instruments/padlegend.png';
-import drmswiirbmapping from '@assets/rb3/rpcs3/instruments/maps/drmswiirbmapping.png';
-import instrepoinstall from '@assets/rb3/rpcs3/instruments/instrepoinstall.gif';
-import rpcs3padprofile from '@assets/rb3/rpcs3/instruments/rpcs3padprofile.png';
+import drmswiirbmapping from '@assets/rb3/rpcs3/instruments/maps/drmswiirbmappinges.png';
 import { Image } from 'astro:assets';
 
 <div align="center"> ![Nintendo Wii](/assets/instruments/logos/wii.png "Nintendo Wii")</div>
 
 <center><Image src={wiirbdrmscontroller} alt="Controller" /></center>
 
-<Aside>RPCN Menus (for sending or accepting online invites) _may_ cause a softlock. You will need an alternative input method to navigate these menus, such as a <a href="../../main#gamepads" target="_blank" rel="noopener noreferrer">[typing keyboard or a gamepad.]</a></Aside>
+* There is no input profile as all controls are default
 * Rock Band 1 Drums are connected via USB. Rock Band 1 drums are white with grey pads and lack the connectors for cymbals. 
 * Rock Band 2 (and later) Drums **require their respective drum dongles to connect to your computer.**  
 Rock Band 2 and The Beatles: Rock Band drum dongles are compatible with either revisions.  
@@ -52,58 +50,16 @@ Follow the instructions and/or match the assignments below.
 
 | Handlers | Devices |
 |:--------:|:-------:|
-| MMJoystick | Joystick |
+| SDL | Licensed by Nintendo of America Harmonix Drum Controller for Nintendo Wii |
 
 | Device Class | Device Subtype |
 |:------------:|:--------------:|
 | Drums | Rock Band Pro |
 
 ## Mapping
-
-* Rock Band Drums send multiple button presses out at once. Keep in mind these are needed to the emulator to tell your cymbals apart.
-* To bind multiple buttons to one RPCS3 button, hold Shift then click on the RPCS3 button you want to assign multiple buttons to.
-
-| **RPCS3**    | **Rock Band Drums** |
-|:--------:|:-------------------:|
-| Cross | ![Green Pad](/assets/instruments/buttons/drums/rb/gp.png "Green Pad") |
-| Circle | ![Red Pad](/assets/instruments/buttons/drums/rb/rp.png "Red Pad") |
-| Square | ![Blue Pad](/assets/instruments/buttons/drums/rb/bp.png "Blue Pad") |
-| Triangle | ![Yellow Pad](/assets/instruments/buttons/drums/rb/yp.png "Yellow Pad") |
-| R3 | Cymbal Modifier |
-| L3 | Pad Modifier |
-| L1 | ![Foot Pedal](/assets/instruments/buttons/drums/rb/kp.png "Foot Pedal") |
-| R1 | ![Second Foot Pedal](/assets/instruments/buttons/drums/rb/kp2.png "Second Foot Pedal") |
-| Cross | ![A Button](/assets/instruments/buttons//wii/a.png "A Button") |
-| Circle | ![B Button](/assets/instruments/buttons//wii/b.png "B Button") |
-| Square | ![1 Button](/assets/instruments/buttons//wii/1.png "1 Button") |
-| Triangle | ![2 Button](/assets/instruments/buttons//wii/2.png "2 Button") |
-| D-Pad | ![D-Pad](/assets/instruments/buttons//wii/dpad.png "D-Pad") |
-| PS Button | ![Home](/assets/instruments/buttons/drums/rb/home.png "Home") |
-| Start | ![Plus Button](/assets/instruments/buttons//wii/plu.png "Plus Button") |
-| Select | ![Minus Button](/assets/instruments/buttons//wii/min.png "Minus Button") |
+**By default, everything is bound correctly. You don’t need to remap anything or download a profile.**
 
 <center><Image src={drmswiirbmapping} alt="Mapping" /></center>
-
-## Profile
-
-[[Download Profile]](/../downloads/rb3/rpcs3//instrument-repo/Wii%20Rock%20Band%20Drums.7z)
-
-<details>
-<summary>How do I use profiles?</summary>
-
-<Aside type="caution">This is not recommended if you're using multiple controllers at once.</Aside>
-
-After downloading the profile,
-
-1. Extract the .7z file.
-2. Drag the `input_configs` folder into the `configs` folder where you have RPCS3 in.  
-><Image src={instrepoinstall} alt="Installing a configuration profile from the Instrument Repo" />
-
-3. After that, you can select the profile in the `Pads` menu.  
-><Image src={rpcs3padprofile} alt="RPCS3's Gamepad Settings, showing the cursor over a profile." />
-
-Most of the time, these controller profiles should work out of the box. If they don’t, try changing the controller listed in `Devices`, next to the `Refresh` button until it receives an input. You can edit this while the game is running.
-</details>
 
 [[Back to Controllers]](../../main/)
 
