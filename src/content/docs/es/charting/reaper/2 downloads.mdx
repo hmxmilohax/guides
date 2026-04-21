@@ -18,6 +18,17 @@ import explorerdrag from '@assets/charting/reaper/explorerdrag-win.gif';
 import archreaperdl from '@assets/charting/reaper/arch-reaperdles.png';
 import archtermchartfiles from '@assets/charting/reaper/arch-termchartfiles.png';
 import archsymlink from '@assets/charting/reaper/arch-symlink.png';
+import fedreaperdl from '@assets/charting/reaper/fed-reaperdl.png';
+import fedreaperins from '@assets/charting/reaper/fed-reaperinses.png';
+import fedtermreaper1 from '@assets/charting/reaper/fed-termreaper1.png';
+import fedtermreaper2 from '@assets/charting/reaper/fed-termreaper2.png';
+import fedreaperopen from '@assets/charting/reaper/fed-reaperopenes.png';
+import fedreaperpath from '@assets/charting/reaper/fed-reaperpath.png';
+import fedreapercls from '@assets/charting/reaper/fed-reapercls.png';
+import fedswsdl from '@assets/charting/reaper/fed-swsdl.png';
+import fedswsdnd from '@assets/charting/reaper/fed-swsdndes.gif';
+import fedreapackdnd from '@assets/charting/reaper/fed-reapackdndes.gif';
+import fedtermchartfiles from '@assets/charting/reaper/fed-termchartfiles.png';
 import gnureaperdl from '@assets/charting/reaper/gnu-reaperdl.png';
 import gnureaperins from '@assets/charting/reaper/gnu-reaperins.png';
 import gnutermreaper1 from '@assets/charting/reaper/gnu-termreaper1.png';
@@ -93,15 +104,75 @@ Instalando REAPER en Arch es demasiado fácil. ¡Se hace con tres comandos! Solo
     > <Image src={archtermchartfiles} alt="Una terminal descargando los archivos para chartear con REAPER con el comando de curl." />
 </Steps>
 </TabItem>
-<TabItem label="Otros Distros">
+<TabItem label="Fedora">
 <Aside type="caution">¡Esta parte esta diseñada para instalaciones de Linux de x86-64/AMD64 64-bits **y no para ARM**!</Aside>
+<Steps>
+1. <a href="https://www.reaper.fm/download.php" target="_blank" rel="noopener noreferrer">[Descarga la versión actual de 64-bits de REAPER compatible con tu Distro]</a>.
+    > <a href="https://www.reaper.fm/download.php" target="_blank" rel="noopener noreferrer"><Image src={webreapernix} alt="La pagina para descargar REAPER, mostrando el botón de descarga para Windows." /></a>
 
-<Aside>Esta guía asume que tienes estos paquetes instalados:  
-`bzip2`  
-`curl`  
-`python3`  
-`python3-tk`  
-Revisa la documentación de tu Distro para ver como instalar estos paquetes si te faltan.</Aside>
+2. <a href="https://www.sws-extension.org" target="_blank" rel="noopener noreferrer">[Descarga la versión actual de 64-bits de SWS / S&M Extension]</a>.
+    > <a href="https://www.sws-extension.org" target="_blank" rel="noopener noreferrer"><Image src={webswsnix} alt="La pagina para descargar la extension SWS/S&M Extension para Linux. El cursor esta sobre el boton de 'Download x64' en la sección de Linux." /></a>
+
+3. <a href="https://reapack.com" target="_blank" rel="noopener noreferrer">[Descarga la versión actual de 64-bits de ReaPack]</a>.
+    > <a href="https://reapack.com" target="_blank" rel="noopener noreferrer"><Image src={webreapackgnu} alt="La pagina para descargar la extension ReaPack. El cursor esta sobre el boton de 'x86 64-bit' en la sección de Linux." /></a>
+
+4. Ve al archivo de REAPER que se descargo para extraerlo y luego entra a la carpeta que sale después de extraerlo.
+    > <Image src={fedreaperdl} alt="Una carpeta extraída de REAPER con el cursor sobre el icono." />
+
+5. Ejecuta la script de de `install-reaper.sh`.
+    > <Image src={fedreaperins} alt="El cursor esta sobre la script de 'install-reaper.sh'." />
+
+6. En la primera parte de la script, elige `I` para instalar REAPER.
+    > <Image src={fedtermreaper1} alt="Una terminal preguntado si quieres abrir o instalar REAPER, leer el README o agregar integración con el escritorio." />
+
+7. En la siguiente parte, te preguntara si quieres instalar REAPER a la carpeta del sistema o del usuario.  
+    **¡Debes de instalar REAPER a la carpeta del usuario con `2`!**  
+
+    Después de eso, te preguntara si quieres activar integración de archivos.  
+    Esto se recomienda para fácilmente poder abrir archivos `.RPP` (archivos de proyecto de REAPER).  
+    Elige `2` para activar esto.
+
+    Finalmente, te preguntara si quieres continuar.  
+    Elige `Y` y deja que termine instalando REAPER.
+    > <Image src={fedtermreaper2} alt="Una continuación de la instalación de REAPER. Esta preguntando de lo que se hablo arriba." />
+
+8. Abre REAPER después de que termine de instalar.
+    > <Image src={fedreaperopen} alt="REAPER en la búsqueda de programas. El cursor esta sobre el icono del programa." />
+
+    Si REAPER te pregunta si quieres elegir una dispositivo de audio ("audio device driver"), elige `No` por ahora.
+    > <Image src={settingsaudioalert} alt="REAPER alertando el usuario que no ha elegido un dispositivo de audio." />
+
+    Si REAPER te alerta que no se puede abrir los dispositivos de audio ("audio hardware"), ignóralo por ahora.
+    > <Image src={errordevicegnu} alt="REAPER alertando el usuario que no se puede abrir el dispositivo de audio." />
+
+9. Ve a <span title="Opciones">"`Options`"</span> > <span title="Mostrar la ruta del recurso REAPER en el explorador/buscador">"`Show REAPER resource path in explorer/finder...`"</span>
+    > <Image src={fedreaperpath} alt="REAPER in the search results, ready to open. The cursor is over the program icon." />
+
+10. Después de que se abra la carpeta con los recursos de REAPER, cierra REAPER.
+    > <Image src={fedreapercls} alt="El cursor sobre el botón de cerrar REAPER." />
+
+11. Deja la carpeta de recursos de REAPER abierta y abre otro navegador de archivos. Ve a donde se descargo el archivo de SWS y extráelo.  
+Ahora, ve a la carpeta que salio.
+    > <Image src={fedswsdl} alt="Una carpeta extraída de SWS con el cursor sobre el icono." />
+
+12. Arrastra la carpetas dentro de la carpeta de SWS a la carpeta de recursos de REAPER, escribiendo sobre cualquier cosa.
+    > <Image src={fedswsdnd} alt="Las carpetas de SWS siendo arrastrados a la carpeta de recursos de REAPER." />
+
+13. Deja la carpeta de recursos de REAPER abierta y con el otro navegador, busca el archivo que se descargo de ReaPack.  
+    Arrástralo ese archivo a la carpeta de `UserPlugins` que esta en la carpeta de recursos de REAPER.
+    > <Image src={fedreapackdnd} alt="Arrastrando el archivo de ReaPack a 'UserPlugins' dentro de la carpeta de recursos de REAPER." />
+
+14. Después de todo eso, necesitas descargar e instalar los archivos para chartear con REAPER.
+    Ejecuta este comando en la terminal:  
+    ```bash
+    curl https://guides.milohax.org/downloads/chart/download-reaper-files.sh | bash
+    ```
+    Esto va a descargar y colocar todos los archivos que necesitas para chartear con REAPER.
+    > <Image src={fedtermchartfiles} alt="Una terminal descargando los archivos para chartear en REAPER." />
+</Steps>
+</TabItem>
+<TabItem label="Debian">
+<Aside type="caution">¡Esta parte esta diseñada para instalaciones de Linux de x86-64/AMD64 64-bits **y no para ARM**!</Aside>
 <Steps>
 1. <a href="https://www.reaper.fm/download.php" target="_blank" rel="noopener noreferrer">[Descarga la versión actual de 64-bits de REAPER compatible con tu Distro]</a>.
     > <a href="https://www.reaper.fm/download.php" target="_blank" rel="noopener noreferrer"><Image src={webreapernix} alt="La pagina para descargar REAPER, mostrando el botón de descarga para Windows." /></a>
@@ -151,7 +222,7 @@ Revisa la documentación de tu Distro para ver como instalar estos paquetes si t
 Ahora, ve a la carpeta que salio.
     > <Image src={gnuswsdl} alt="Una carpeta extraída de SWS con el cursor sobre el icono." />
 
-12. Arrastra la carpetas dentro de la carpeta de SWS a la carpeta de recursos de REAPER.
+12. Arrastra la carpetas dentro de la carpeta de SWS a la carpeta de recursos de REAPER, combinando todo los archivos que te pregunte.
     > <Image src={gnuswsdnd} alt="Las carpetas de SWS siendo arrastrados a la carpeta de recursos de REAPER." />
 
 13. Deja la carpeta de recursos de REAPER abierta y con el otro navegador, busca el archivo que se descargo de ReaPack.  

@@ -10,42 +10,57 @@ sidebar:
 import errorpluginwin from '@assets/charting/reaper/errorplugin-win.png';
 import errordevicewin from '@assets/charting/reaper/errordevice-win.png';
 import errorjackarch from '@assets/charting/reaper/errorjack-arch.png';
-import archpwjack from '@assets/charting/reaper/arch-pwjackes.png';
 import settingsaudioarch from '@assets/charting/reaper/settingsaudioes-arch.png';
+import errorreascriptfed from '@assets/charting/reaper/errorreascriptes-fed.png';
+import fedtermtk from '@assets/charting/reaper/fed-termtk.png';
+import archpwjack from '@assets/charting/reaper/arch-pwjackes.png';
 import errordevicegnu from '@assets/charting/reaper/errordevicees-gnu.png';
 import { Image } from 'astro:assets';
 import { Tabs, TabItem } from '@astrojs/starlight/components';
 
 <Tabs>
   <TabItem label="Windows">
-* ¡REAPER me da `Error al abrir dispositivos` cuando cambio a WASAPI!
+* ¡REAPER me da `WASAPI: no se pudo activar dispositivo de entrada` cuando cambio a `WASAPI`!
   > <Image src={errordevicewin} alt="REAPER mostrando un error que dice 'There was an error opening the audio hardware. WASAPI Error: could not find input device'." />
-  * `No se pudo encontrar entrada`: Es muy probable que tienes un micrófono conectado o el formato no coincide con la de tu salida (i.e. altavoces están a 48,000 Hz y el micrófono esta a 44,100 Hz).  
+  * `WASAPI: no se pudo activar dispositivo de entrada`: Es muy probable que tienes un micrófono conectado o el formato no coincide con la de tu salida (i.e. altavoces están a 48,000 Hz y el micrófono esta a 44,100 Hz).  
   Si es la primera, cambia `Canales de entrada` a `0` en la sección de `Dispositivos` en las Preferencias.  
   Si es la segunda, cambia el formato para que coinciden juntos.
 * ¡No me carga el plugin para visualizar (RBN Preview)!
   > <Image src={errorpluginwin} alt="REAPER mostrando un error con RBN Preview." />
-  * No deberias de seguir usando este plugin, pero si quieres ser terco, te faltan archivos de Microsoft Visual C++ Redistributable Runtimes.  
+  * No deberías de seguir usando este plugin, pero si quieres ser terco, te faltan archivos de Microsoft Visual C++ Redistributable Runtimes.  
   <a href="https://kutt.it/vcpp" target="_blank" rel="noopener noreferrer">[Haz click aquí para descargarlos]</a>.  
 </TabItem>
 <TabItem label="Arch">
-* I get "`JACK: error creating client`" when swapping to JACK!
-  > <Image src={errorjackarch} alt="REAPER showing an error that says 'There was an error opening the audio hardware. WASAPI Error: could not find input device'." />
-  #### Solution A:
-  * You have `jack2` installed and need to replace it with `pipewire-jack`.
-    * Install `pipewire-jack` by running this command in a terminal.
+* ¡REAPER me da <span title="JACK: error creando cliente">"`JACK: error creating client`"</span> cuando uso `JACK`!
+  > <Image src={errorjackarch} alt="REAPER mostrando un error que dice 'JACK: error creating client'." />
+  #### Solución A:
+  * Tienes `jack2` instalando y necesitas reemplazarlo con `pipewire-jack`.
+    * Instala `pipewire-jack` ejecutando este comando en la terminal.
         ```bash
         sudo pacman -S pipewire-jack
         ```
-        > <Image src={archpwjack} alt="Una terminal descargando pipewire-jack de pacman." />
-  #### Solution B:
-  * Change to a different audio system, like `PulseAudio` or `ALSA`.
-    > <Image src={settingsaudioarch} alt="REAPER's Preferences showing the Device section." />
+          > <Image src={archpwjack} alt="Una terminal descargando pipewire-jack de pacman." />
+  #### Solución B:
+  * Cambia a otro dispositivo como `PulseAudio` o `ALSA`.
+    > <Image src={settingsaudioarch} alt="Las preferencias de REAPER, mostrando la sección de Dispositivos." />
 </TabItem>
-<TabItem label="Debian (including Ubuntu)">
-* I get "`Error opening devices`" when swapping to JACK!
+<TabItem label="Fedora">
+* Tengo un error de `Error de ejecución del script` cuando trato usar CAT o VenueGen que dice <span title="ModuloNoEncontradoError: No hay un modulo que se llama 'tkinter'">"`ModuleNotFoundError: No module named 'tkinter'`"</span>
+  > <Image src={errorreascriptfed} alt="REAPER mostrando un error con ReaScript." />
+  * Instala "python3-tkinter"
+    ```bash
+    sudo dnf install python3-tkinter
+      ```
+        > <Image src={fedtermtk} alt="Una terminal descargando python3-tkinter de DNF." />
+* ¡REAPER me da `Hubo un error al abrir el hardware de audio` cuando uso `JACK`!
   > <Image src={errordevicegnu} alt="REAPER showing an error that says 'Three was an error opening the audio audio hardware'." />
-  * Change to a different audio system, like `PulseAudio` or `ALSA`.
-    > <Image src={settingsaudioarch} alt="REAPER's Preferences showing the Device section." />
+  * Cambia a otro dispositivo como `PulseAudio` o `ALSA`.
+    > <Image src={settingsaudioarch} alt="Las preferencias de REAPER, mostrando la sección de Dispositivos." />
+</TabItem>
+<TabItem label="Debian">
+* ¡REAPER me da `Hubo un error al abrir el hardware de audio` cuando uso `JACK`!
+  > <Image src={errordevicegnu} alt="REAPER showing an error that says 'Three was an error opening the audio audio hardware'." />
+  * Cambia a otro dispositivo como `PulseAudio` o `ALSA`.
+    > <Image src={settingsaudioarch} alt="Las preferencias de REAPER, mostrando la sección de Dispositivos." />
 </TabItem>
 </Tabs>

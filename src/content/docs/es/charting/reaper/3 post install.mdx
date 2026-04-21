@@ -20,6 +20,8 @@ import settingsmidi from '@assets/charting/reaper/settingsmidies.png';
 import settingspythonwin from '@assets/charting/reaper/settingspythones-win.png';
 import settingspythonarch from '@assets/charting/reaper/settingspythones-arch.png';
 import archfindpython from '@assets/charting/reaper/arch-findpython.png';
+import settingspythonfed from '@assets/charting/reaper/settingspythones-fed.png';
+import fedfindpython from '@assets/charting/reaper/fed-findpython.png';
 import settingspythongnu from '@assets/charting/reaper/settingspythones-gnu.png';
 import gnufindpython from '@assets/charting/reaper/gnu-findpython.png';
 import { Icon } from '@astrojs/starlight/components';
@@ -145,7 +147,21 @@ find /usr/lib -name "libpython3*.so"
 Esto va encontrar todas las instalaciones de Python3 en tu computadora.
 > <Image src={archfindpython} alt="Una terminal mostrando dos entradas de Python3." />
 </TabItem>
-  <TabItem label="Debian (incluso Ubuntu)">
+  <TabItem label="Fedora">
+<Steps>
+3. Activa `Activar Python para usar con ReaScript`.
+    * a. Si REAPER no encuentra Python automáticamente, cambia la ruta personalizada a `/lib64/`
+    * b. Cambia `Obligar a ReaScript a usar Python especifico .so` a `libpython3.so`
+    > <Image src={settingspythonfed} alt="Las preferencias de REAPER, mostrando la sección de Python." />
+</Steps>
+Si esto no funciona, necesitas buscar Python3. La manera mas fácil es usando este comando en la terminal:
+```bash
+ldconfig -p | grep python3
+```
+Esto va encontrar todas las instalaciones de Python3 en tu computadora.
+> <Image src={fedfindpython} alt="Una terminal mostrando dos entradas de Python3." />
+</TabItem>
+  <TabItem label="Debian">
 <Steps>
 3. Activa `Activar Python para usar con ReaScript`.
     * a. Si REAPER no encuentra Python automáticamente, cambia la ruta personalizada a `/usr/lib/x86_64-linux-gnu/libpeas-1.0/loaders/`

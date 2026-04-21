@@ -11,6 +11,8 @@ import errorpluginwin from '@assets/charting/reaper/errorplugin-win.png';
 import errordevicewin from '@assets/charting/reaper/errordevice-win.png';
 import errorjackarch from '@assets/charting/reaper/errorjack-arch.png';
 import settingsaudioarch from '@assets/charting/reaper/settingsaudio-arch.png';
+import errorreascriptfed from '@assets/charting/reaper/errorreascript-fed.png';
+import fedtermtk from '@assets/charting/reaper/fed-termtk.png';
 import archpwjack from '@assets/charting/reaper/arch-pwjack.png';
 import errordevicegnu from '@assets/charting/reaper/errordevice-gnu.png';
 import { Image } from 'astro:assets';
@@ -42,7 +44,20 @@ import { Tabs, TabItem } from '@astrojs/starlight/components';
   * Change to a different audio system, like `PulseAudio` or `ALSA`.
     > <Image src={settingsaudioarch} alt="REAPER's Preferences showing the Device section." />
 </TabItem>
-<TabItem label="Debian (including Ubuntu)">
+<TabItem label="Fedora">
+* I get a `Script execution` error when opening CAT or VenueGen that says "ModuleNotFoundError: No module named 'tkinter'".
+  > <Image src={errorreascriptfed} alt="REAPER showing a broken ReaScript." />
+  * Install "python3-tkinter"
+    ```bash
+    sudo dnf install python3-tkinter
+      ```
+      > <Image src={fedtermtk} alt="A terminal downloading python3-tkinter via DNF." />
+* I get "`Error opening devices`" when swapping to JACK!
+  > <Image src={errordevicegnu} alt="REAPER showing an error that says 'Three was an error opening the audio audio hardware'." />
+  * Change to a different audio system, like `PulseAudio` or `ALSA`.
+    > <Image src={settingsaudioarch} alt="REAPER's Preferences showing the Device section." />
+</TabItem>
+<TabItem label="Debian">
 * I get "`Error opening devices`" when swapping to JACK!
   > <Image src={errordevicegnu} alt="REAPER showing an error that says 'Three was an error opening the audio audio hardware'." />
   * Change to a different audio system, like `PulseAudio` or `ALSA`.

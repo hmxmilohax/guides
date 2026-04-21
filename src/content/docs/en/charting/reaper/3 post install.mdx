@@ -20,6 +20,8 @@ import settingsmidi from '@assets/charting/reaper/settingsmidi.png';
 import settingspythonwin from '@assets/charting/reaper/settingspython-win.png';
 import settingspythonarch from '@assets/charting/reaper/settingspython-arch.png';
 import archfindpython from '@assets/charting/reaper/arch-findpython.png';
+import settingspythonfed from '@assets/charting/reaper/settingspython-fed.png';
+import fedfindpython from '@assets/charting/reaper/fed-findpython.png';
 import settingspythongnu from '@assets/charting/reaper/settingspython-gnu.png';
 import gnufindpython from '@assets/charting/reaper/gnu-findpython.png';
 import { Image } from 'astro:assets';
@@ -135,7 +137,7 @@ You will probably get a popup for ReaPack. Simply dismsiss it by clicking `OK`.
   <TabItem label="Arch">
 <Steps>
 3. Enable `Python for use with ReaScript`.
-    * a. If Python isn't found automatically, set the custom path to `usr/lib`
+    * a. If Python isn't found automatically, set the custom path to `/usr/lib`
     * b. Set `Force ReaScript to use specific Python .so` to `/libpython3.so`.
     > <Image src={settingspythonarch} alt="REAPER's Preferences showing the ReaScript section." />
 </Steps>
@@ -146,7 +148,21 @@ find /usr/lib -name "libpython3*.so"
 This will find any Python3 library entries on your computer.
 > <Image src={archfindpython} alt="A terminal showing two Python library entries." />
 </TabItem>
-  <TabItem label="Debian (including Ubuntu)">
+<TabItem label="Fedora">
+<Steps>
+3. Enable `Python for use with ReaScript`.
+    * a. If Python isn't found automatically, set the custom path to `/lib64/`
+    * b. Set `Force ReaScript to use specific Python .so` to `libpython3.so`.
+    > <Image src={settingspythonfed} alt="REAPER's Preferences showing the ReaScript section." />
+</Steps>
+If this does not work, you will have to manually find Python3. The easiest way is to type this command into the terminal:
+```bash
+ldconfig -p | grep python3
+```
+This will find any Python3 library entries on your computer.
+> <Image src={fedfindpython} alt="A terminal showing two Python library entries." />
+</TabItem>
+<TabItem label="Debian">
 <Steps>
 3. Enable `Python for use with ReaScript`.
     * a. If Python isn't found automatically, set the custom path to `/usr/lib/x86_64-linux-gnu/libpeas-1.0/loaders/`
