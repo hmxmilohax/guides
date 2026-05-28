@@ -2,7 +2,6 @@
 title: Mandos desconocidos
 slug: "es/rb3pc/controllers/pads/generic"
 description: "Mapeo general para mandos desconocidos en RPCS3."
-tableOfContents: false
 prev: false
 next: false
 sidebar:
@@ -12,6 +11,7 @@ sidebar:
 import mystcontrollers from '@assets/rb3/rpcs3/instruments/controller/mystcontrollers.png';
 import rpcs3pad from '@assets/rb3/rpcs3/instruments/rpcs3pades.png';
 import rpcs3padprofadd from '@assets/rb3/rpcs3/instruments/rpcs3padprofaddes.png';
+import navpad from '@assets/rb3/rpcs3/instruments/setup/midi/navpades.png';
 import gamepadlegend from '@assets/rb3/rpcs3/instruments/gamepadlegend.png';
 import padps3mapping from '@assets/rb3/rpcs3/instruments/maps/padps3mapping.png';
 import { Image } from 'astro:assets';
@@ -40,8 +40,7 @@ Sigue las instrucciones y/o copia el mapeo de la lista para tu mando.
 |:------------:|:--------------:|
 | Estándar (mando) | Mando de PS3 |
 
-### Guitarra/Bajo/Teclado:
-
+## Guitarra/Bajo/Teclado
 | **RPCS3**          | **Rock Band** |
 |:------------------:|:---------------------:|
 | L2 | ![Traste Verde](/assets/instruments/buttons/guitars/gf.png "Traste Verde") |
@@ -52,8 +51,7 @@ Sigue las instrucciones y/o copia el mapeo de la lista para tu mando.
 | Joystick izquierdo | ![Palanca de whammy](/assets/instruments/buttons/guitars/wb.png "Palanca de whammy") |
 | SELECT | Sobrecarga |
 
-### Batería: 
-
+## Batería
 | **RPCS3**    | **Batería de Rock Band** |
 |:--------:|:-------------------:|
 | L2 | ![Pedal/Kick](/assets/instruments/buttons/drums/rb/kp.png "Pedal/Kick") |
@@ -62,8 +60,7 @@ Sigue las instrucciones y/o copia el mapeo de la lista para tu mando.
 | R2 | ![Parche Azul](/assets/instruments/buttons/drums/rb/bp.png "Parche Azul") |
 | Cruz/Equis | ![Parche Verde](/assets/instruments/buttons/drums/rb/gp.png "Parche Verde") |
 
-### Vocales:
-
+## Vocales
 | **RPCS3** | **Uso** | **Uso alternativo** |
 |:---------------------:|:-------------------------------:|:-------------------:|
 | Joystick izquierdo | Navegación | |
@@ -71,12 +68,32 @@ Sigue las instrucciones y/o copia el mapeo de la lista para tu mando.
 | Cruz/Equis | Seleccionar | |
 | Círculo | Atrás | Volumen micro 3 (Canción) |
 | Cuadrado | Volumen micro 1 (Canción) | |
-| Triángulo | Ver Más Información (Biblioteca) | Volumen micro 2 (Canción) |
+| Triángulo | Ver más información (Biblioteca) | Volumen micro 2 (Canción) |
 | START | Opciones | Pausa (Canción) |
 | SELECT | Filtros (Biblioteca) | Sobrecarga (Canción) |
-| L1 | Selección de Parte de Guía (Práctica) | |
-| L2 | Selección de Parte Vocal (Práctica) | |
-| R1 | Volumen de Pista Vocal (Canción) | |
-| R2 | Corrección de Tono (Canción) | |
+| L1 | Selección de parte de guía (Práctica) | |
+| L2 | Selección de parte vocal (Práctica) | |
+| R1 | Volumen de pista vocal (Canción) | |
+| R2 | Corrección de tono (Canción) | |
+
+## Mando de navegación
+Activa esta función para dedicar un mando a navegación. Ayuda demasiado con instrumentos de MIDI.
+	* Puedes activar esto en `[Menú] > [Opciones] > [Configuración Deluxe] > [Controlador] > [Mando de Nav.]`
+	><Image src={navpad} alt="El menú de mando de navegación dentro de los menús de Rock Band 3." />
+
+| **RPCS3** | **Uso** | **Uso alternativo** |
+|:---------------------:|:-------------------------------:|:-------------------:|
+| Joystick izquierdo | Navegación | |
+| Botones de dirección | Navegación | |
+| Cruz/Equis | Elegir | |
+| Círculo | Atrás | |
+| Cuadrado | Reseña (Biblioteca) | |
+| Triángulo | Ver más información (Biblioteca) | |
+| START | Opciones | Pausa (Canción) |
+| SELECT | Filtros (Biblioteca) | Sobrecarga (Canción) |
+| L1 | Atajos de de colección musical | |
+| L2 | Abrir búsqueda de canciones | Cancelar repertorio |
+| R1 | | |
+| R2 | Crear repertorio | |
 
 [[Regresar a la lista de instrumentos]](../../main/)

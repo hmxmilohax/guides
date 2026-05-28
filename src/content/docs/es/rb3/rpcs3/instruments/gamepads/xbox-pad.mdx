@@ -2,7 +2,6 @@
 title: "Mando de Xbox One/Series"
 slug: "es/rb3pc/controllers/pads/xbox"
 description: "Como configurar mandos de Xbox en RPCS3."
-tableOfContents: false
 prev: false
 next: false
 sidebar:
@@ -12,6 +11,7 @@ sidebar:
 import xbxcontroller from '@assets/rb3/rpcs3/instruments/controller/xbxcontroller.png';
 import rpcs3pad from '@assets/rb3/rpcs3/instruments/rpcs3pades.png';
 import rpcs3padprofadd from '@assets/rb3/rpcs3/instruments/rpcs3padprofaddes.png';
+import navpad from '@assets/rb3/rpcs3/instruments/setup/midi/navpades.png';
 import gamepadlegend from '@assets/rb3/rpcs3/instruments/gamepadlegend.png';
 import padxboxmapping from '@assets/rb3/rpcs3/instruments/maps/padxboxmapping.png';
 import { Image } from 'astro:assets';
@@ -51,7 +51,6 @@ Sigue las instrucciones y/o copia el mapeo de la lista para tu mando.
 | Estándar (mando) | Mando de PS3 |
 
 ## Guitarra/Bajo/Teclado
-
 | **Mando de Xbox One/Series** | **Rock Band** |
 |:------------------:|:---------------------:|
 | ![Gatillo Izquierdo](/assets/instruments/buttons/xbox/lt.png "Gatillo Izquierdo") | ![Traste Verde](/assets/instruments/buttons/guitars/gf.png "Traste Verde") |
@@ -64,7 +63,6 @@ Sigue las instrucciones y/o copia el mapeo de la lista para tu mando.
 | ![Botón de View](/assets/instruments/buttons/xbox/viw.png "Botón de View") | Sobrecarga |
 
 ## Batería
-
 | **Mando de Xbox One/Series** | **Rock Band** |
 |:----------------------:|:---------------------:|
 | ![Gatillo Izquierdo](/assets/instruments/buttons/xbox/lt.png "Gatillo Izquierdo") | ![Pedal](/assets/instruments/buttons/drums/rb/kp.png "Pedal") |
@@ -75,7 +73,6 @@ Sigue las instrucciones y/o copia el mapeo de la lista para tu mando.
 | ![D-Pad (Cruceta)](/assets/instruments/buttons/xbox/dp.png "D-Pad (Cruceta)") | Navegación |
 
 ## Vocales
-
 | **Mando de Xbox One/Series** | **Uso** | **Uso alternativo** |
 |:---------------------:|:----------------:|:-----------:|
 | ![Palanca Izquierda](/assets/instruments/buttons/xbox/ls.png "Palanca Izquierda") | Navegación |
@@ -83,13 +80,33 @@ Sigue las instrucciones y/o copia el mapeo de la lista para tu mando.
 | ![Botón A](/assets/instruments/buttons/xbox/a.png "Botón A") | SELECT |
 | ![Botón B](/assets/instruments/buttons/xbox/b.png "Botón B") | Atrás | Volumen micro 3 (Canción) |
 | ![Botón X](/assets/instruments/buttons/xbox/x.png "Botón X") | Volumen micro 1 (Canción) |
-| ![Botón Y](/assets/instruments/buttons/xbox/y.png "Botón Y") | Ver Más Información (Biblioteca) | Volumen micro 2 (Canción) |
+| ![Botón Y](/assets/instruments/buttons/xbox/y.png "Botón Y") | Ver más información (Biblioteca) | Volumen micro 2 (Canción) |
 | ![Botón de Options](/assets/instruments/buttons/xbox/opt.png "Botón de Options") | Opciones | Pausa (Canción) |
 | ![Botón de View](/assets/instruments/buttons/xbox/viw.png "Botón de View") | Filtros (Biblioteca) | Sobrecarga (Canción) |
-| ![Botón Bumper Izquierdo](/assets/instruments/buttons/xbox/lb.png "Botón Bumper Izquierdo") | Selección de Parte de Guía (Práctica) |
-| ![Gatillo Izquierdo](/assets/instruments/buttons/xbox/lt.png "Gatillo Izquierdo") | Chat de voz | Selección de Parte Vocal (Práctica) |
-| ![Botón Bumper Derecho](/assets/instruments/buttons/xbox/rb.png "Botón Bumper Derecho") | Volumen de Pista Vocal (Canción) |
-| ![Gatillo Derecho](/assets/instruments/buttons/xbox/rt.png "Gatillo Derecho") | Corrección de Tono (Canción) |
+| ![Botón Bumper Izquierdo](/assets/instruments/buttons/xbox/lb.png "Botón Bumper Izquierdo") | Selección de parte de guía (Práctica) |
+| ![Gatillo Izquierdo](/assets/instruments/buttons/xbox/lt.png "Gatillo Izquierdo") | Chat de voz | Selección de parte vocal (Práctica) |
+| ![Botón Bumper Derecho](/assets/instruments/buttons/xbox/rb.png "Botón Bumper Derecho") | Volumen de pista vocal (Canción) |
+| ![Gatillo Derecho](/assets/instruments/buttons/xbox/rt.png "Gatillo Derecho") | Corrección de tono (Canción) |
+
+## Mando de navegación
+Activa esta función para dedicar un mando a navegación. Ayuda demasiado con instrumentos de MIDI.
+	* Puedes activar esto en `[Menú] > [Opciones] > [Configuración Deluxe] > [Controlador] > [Mando de Nav.]`
+	><Image src={navpad} alt="El menú de mando de navegación dentro de los menús de Rock Band 3." />
+
+| **Mando de Xbox One/Series** | **Uso** | **Uso alternativo** |
+|:---------------------:|:----------------:|:-----------:|
+| ![Palanca Izquierda](/assets/instruments/buttons/xbox/ls.png "Palanca Izquierda") | Navegación |
+| ![Palanca Izquierda](/assets/instruments/buttons/xbox/dp.png "D-Pad (Cruceta)") | Navegación |
+| ![Botón A](/assets/instruments/buttons/xbox/a.png "Botón A") | Elegir | |
+| ![Botón B](/assets/instruments/buttons/xbox/b.png "Botón B") | Atrás | |
+| ![Botón X](/assets/instruments/buttons/xbox/x.png "Botón X") | Reseña (Biblioteca) | |
+| ![Botón Y](/assets/instruments/buttons/xbox/y.png "Botón Y") | Ver más información (Biblioteca) | |
+| ![Botón de Options](/assets/instruments/buttons/xbox/opt.png "Botón de Options") | Opciones | Pausa (Canción) |
+| ![Botón de View](/assets/instruments/buttons/xbox/viw.png "Botón de View") | Filtros (Biblioteca) | Sobrecarga (Canción) |
+| ![Botón Bumper Izquierdo](/assets/instruments/buttons/xbox/lb.png "Botón Bumper Izquierdo") | Atajos de de colección musical | |
+| ![Gatillo Izquierdo](/assets/instruments/buttons/xbox/lt.png "Gatillo Izquierdo") | Abrir búsqueda de canciones | Cancelar repertorio |
+| ![Botón Bumper Derecho](/assets/instruments/buttons/xbox/rb.png "Botón Bumper Derecho") | |
+| ![Gatillo Derecho](/assets/instruments/buttons/xbox/rt.png "Gatillo Derecho") | Crear repertorio | |
 
 <center><Image src={padxboxmapping} alt="Mapeo" /></center>
 

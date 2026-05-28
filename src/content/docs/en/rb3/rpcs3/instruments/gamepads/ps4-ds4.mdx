@@ -2,7 +2,6 @@
 title: PlayStation 4 DualShock 4
 slug: "en/rb3pc/controllers/pads/ps4"
 description: "How to setup PS3 DualShock 3 gamepads on RPCS3."
-tableOfContents: false
 prev: false
 next: false
 sidebar:
@@ -12,6 +11,7 @@ sidebar:
 import ps4ds4controller from '@assets/rb3/rpcs3/instruments/controller/ps4ds4controller.png';
 import rpcs3pad from '@assets/rb3/rpcs3/instruments/rpcs3pad.png';
 import rpcs3padprofadd from '@assets/rb3/rpcs3/instruments/rpcs3padprofadd.png';
+import navpad from '@assets/rb3/rpcs3/instruments/setup/midi/navpad.png';
 import gamepadlegend from '@assets/rb3/rpcs3/instruments/gamepadlegend.png';
 import padps4mapping from '@assets/rb3/rpcs3/instruments/maps/padps4mapping.png';
 import { Image } from 'astro:assets';
@@ -49,8 +49,7 @@ Follow the instructions and/or match the assignments below.
 |:------------:|:--------------:|
 | Standard (Pad) | PS3 Controller |
 
-## Default Guitars/Bass/Keys
-
+## Guitars/Bass/Keys
 | **PlayStation 4 (DS4)** | **Rock Band** |
 |:------------------:|:---------------------:|
 | ![L2 Trigger](/assets/instruments/buttons//ps4/l2.png "L2 Trigger") | ![Green Fret](/assets/instruments/buttons/guitars/gf.png "Green Fret") |
@@ -61,8 +60,7 @@ Follow the instructions and/or match the assignments below.
 | ![Left Stick](/assets/instruments/buttons//ps4/ls.png "Left Stick") | ![Whammy Bar](/assets/instruments/buttons/guitars/wb.png "Whammy Bar") |
 | ![Share Button](/assets/instruments/buttons//ps4/shr.png "Share Button") | Overdrive |
 
-## Default Drums
-
+## Drums
 | **PlayStation 4 (DS4)** | **Rock Band** |
 |:------------------:|:---------------------:|
 | ![L2 Trigger](/assets/instruments/buttons//ps4/l2.png "L2 Trigger") | ![Foot Pedal](/assets/instruments/buttons/drums/rb/kp.png "Foot Pedal") |
@@ -73,21 +71,40 @@ Follow the instructions and/or match the assignments below.
 
 
 ## Vocals
+| **PlayStation 4 (DS4)** | **Use** | **Alt Use** |
+|:---------------------:|:---------:|:-----------:|
+| ![Left Stick](/assets/instruments/buttons//ps4/ls.png "Left Stick") | Navigation | |
+| ![D-Pad](/assets/instruments/buttons//ps4/dp.png "D-Pad") | Navigation | |
+| ![Cross Button](/assets/instruments/buttons//ps4/x.png "Cross Button") | Select | |
+| ![Circle Button](/assets/instruments/buttons//ps4/o.png "Circle Button") | Back | Mic 3 volume (Song) |
+| ![Square Button](/assets/instruments/buttons//ps4/s.png "Square Button") | Mic 1 volume (Song) | |
+| ![Triangle Button](/assets/instruments/buttons//ps4/t.png "Triangle Button") | View more info (Library) | Mic 2 volume (Song) |
+| ![Start Button](/assets/instruments/buttons//ps4/opt.png "Start Button") | Options | Pause (Song) |
+| ![Share Button](/assets/instruments/buttons//ps4/shr.png "Share Button") | Filters (Library) | Overdrive (Song) |
+| ![L1 Button](/assets/instruments/buttons//ps4/l1.png "L1 Button") | Guide part selection (Practice) | |
+| ![L2 Trigger](/assets/instruments/buttons//ps4/l2.png "L2 Trigger") | Voice Chat | Vocal part selection (Practice) |
+| ![R1 Button](/assets/instruments/buttons//ps4/r1.png "R1 Button") | Vocal track volume (Song) | |
+| ![R2 Trigger](/assets/instruments/buttons//ps4/r2.png "R2 Trigger") | Pitch correction (Song) | |
+
+## Navigation Pad
+Enable this to dedicate a gamepad for navigation. Great for MIDI instruments!
+	* You can enable this in `[Menu] > [Options] > [Deluxe Settings] > [Controller] > [Navigation Pad]`
+	><Image src={navpad} alt="Rock Band 3 Deluxe's Navigation Pad menu." />
 
 | **PlayStation 4 (DS4)** | **Use** | **Alt Use** |
 |:---------------------:|:---------:|:-----------:|
 | ![Left Stick](/assets/instruments/buttons//ps4/ls.png "Left Stick") | Navigation | |
 | ![D-Pad](/assets/instruments/buttons//ps4/dp.png "D-Pad") | Navigation | |
 | ![Cross Button](/assets/instruments/buttons//ps4/x.png "Cross Button") | Select | |
-| ![Circle Button](/assets/instruments/buttons//ps4/o.png "Circle Button") | Back | Mic 3 Volume (Song) |
-| ![Square Button](/assets/instruments/buttons//ps4/s.png "Square Button") | Mic 1 Volume (Song) | |
-| ![Triangle Button](/assets/instruments/buttons//ps4/t.png "Triangle Button") | View More Info (Library) | Mic 2 Volume (Song) |
+| ![Circle Button](/assets/instruments/buttons//ps4/o.png "Circle Button") | Back | |
+| ![Square Button](/assets/instruments/buttons//ps4/s.png "Square Button") | Rate song (Library) | |
+| ![Triangle Button](/assets/instruments/buttons//ps4/t.png "Triangle Button") | View more info (Library) | |
 | ![Start Button](/assets/instruments/buttons//ps4/opt.png "Start Button") | Options | Pause (Song) |
 | ![Share Button](/assets/instruments/buttons//ps4/shr.png "Share Button") | Filters (Library) | Overdrive (Song) |
-| ![L1 Button](/assets/instruments/buttons//ps4/l1.png "L1 Button") | Guide Part Selection (Practice) | |
-| ![L2 Trigger](/assets/instruments/buttons//ps4/l2.png "L2 Trigger") | Voice Chat | Vocal Part Selection (Practice) |
-| ![R1 Button](/assets/instruments/buttons//ps4/r1.png "R1 Button") | Vocal Track Volume (Song) | |
-| ![R2 Trigger](/assets/instruments/buttons//ps4/r2.png "R2 Trigger") | Pitch Correction (Song) | |
+| ![L1 Button](/assets/instruments/buttons//ps4/l1.png "L1 Button") | Song shortcuts | |
+| ![L2 Trigger](/assets/instruments/buttons//ps4/l2.png "L2 Trigger") | Open song search | Cancel setlist |
+| ![R1 Button](/assets/instruments/buttons//ps4/r1.png "R1 Button") | | |
+| ![R2 Trigger](/assets/instruments/buttons//ps4/r2.png "R2 Trigger") | Start setlist | |
 
 <center><Image src={padps4mapping} alt="Mapping" /></center>
 
