@@ -16,6 +16,15 @@ import nautilusps3batchselect from '@assets/rb3/ps3customs/nautilusps3batchselec
 import nautilusps3batchdone from '@assets/rb3/ps3customs/nautilusps3batchdone.png';
 import nautilusps3batchloop from '@assets/rb3/ps3customs/nautilusps3batchloop.png';
 import nautilusps3batchloopproc from '@assets/rb3/ps3customs/nautilusps3batchloopproc.png';
+import ps3brokenvenue from '@assets/rb3/ps3customs/ps3brokenvenue.png';
+import rb3songlocvenue from '@assets/rb3/ps3customs/rb3songlocvenue.png';
+import finddta from '@assets/rb3/ps3customs/finddta.png';
+import dtafindsong from '@assets/rb3/ps3customs/dtafindsong.png';
+import dtawrong from '@assets/rb3/ps3customs/dtawrong.png';
+import dtaright from '@assets/rb3/ps3customs/dtaright.png';
+import dtaregexnpp from '@assets/rb3/ps3customs/dtaregexnpp.png';
+import dtaregexsublime from '@assets/rb3/ps3customs/dtaregexsublime.png';
+import rb3fixedvenue from '@assets/rb3/ps3customs/rb3fixedvenue.png';
 import ps3grey from '@assets/rb3/ps3customs/ps3grey.png';
 import ps3parental from '@assets/rb3/ps3customs/ps3parental.png';
 import rb3songloc from '@assets/rb3/ps3customs/rb3songloc.png';
@@ -64,6 +73,51 @@ After finding it, select the `songs.dta` file within the folder.
 When it finishes, you can share the fixed `songs.dta` file with your friends to play the previously unavailable songs together.
     > <Image src={nautilusps3batchdone} alt="Nautilus's PS3 Converter. It has just finished replacing custom songs without numeric IDs." />
 </Steps>
+
+## Broken venue animations
+Some older customs had incorrect data written in their `songs.dta` file which leads to the animation data not loading correctly.  
+
+You can easily notice this because the camera locks in place while characters slowly move off stage.
+> <Image src={ps3brokenvenue} alt="Rock Band 3 with characters walking over the crowd and the camera stuck in place." />
+
+To fix this, you will need to locate the problematic `songs.dta` file.  
+An easy way to find it is to use Rock Band 3 Deluxe's `Report Song Location` feature.
+> <Image src={rb3songlocvenue} alt="Rock Band 3 Deluxe with a song highlighted and with 'Report Song Location' being selected. A popup with the song's directory is displayed." />
+
+Open the `songs.dta` file in your preferred text editor (like Notepad, Notepad++, or Sublime Text).
+> <Image src={finddta} alt="A 'songs.dta' file selected with a cursor over it." />
+
+Search for the song with venue issues.
+> <Image src={dtafindsong} alt="Searching for a song with problematic values." />
+
+You will notice that there are a couple of values called `'version'` and `'format'` with a number next to them.  
+Songs with `('format' 10)` that also have `('version' 1)` will have issues.
+> <Image src={dtawrong} alt="A 'songs.dta' that has an incorrect 'version' number." />
+
+Simply change `('version' 1)` to `('version' 30)` then save your changes.
+> <Image src={dtaright} alt="A 'songs.dta' that has a corrected 'version' number." />
+
+If you're using an advanced text editor like Notepad++ or Sublime Text, you can take advantage of the Regular Expression (Regex) feature to fix various songs at once.  
+
+Enable Regex and search for
+```regex
+^(\s*)\('version'\s*(?!30)\d+\)\s*\('format'\s*10\)
+```
+in your Rock Band 3 `USRDIR` folder (`dev_hdd0/game/BLUS30463/USRDIR`).  
+You should also add a filter to only search within `.dta` files.
+
+Replace with:
+```regex
+$1('version' 30)
+$1('format' 10)
+```
+Sublime Text:
+> <Image src={dtaregexsublime} alt="Sublime Text ready to replace text with a regex typed up." />
+Notepad++:
+> <Image src={dtaregexnpp} alt="Notepad++ ready to replace text with a regex typed up." />
+
+When you reboot your game, the venue animations should be fixed.
+> <Image src={rb3fixedvenue} alt="Rock Band 3 with a venue working correctly." />
 
 ## PS3: Greyed out customs
 By default, the PlayStation 3's Parental Controls are set to level 9.  
@@ -145,5 +199,5 @@ Occasionally certain songs may freeze toward the end of the chart, constantly lo
 Wait for it to finish.
     > <Image src={nautilusps3batchloopproc} alt="Nautilus's PS3 Converter. It is in the process of fixing a looping file." />
 
-4. After it's done, you can go back to step 4 of [[the main tutorial]](./360tops3/).
+4. After it's done, you can go back to step 4 of [[the main tutorial]](../360tops3/).
 </Steps>

@@ -17,6 +17,15 @@ import nautilusps3batchselectes from '@assets/rb3/ps3customs/nautilusps3batchsel
 import nautilusps3batchdone from '@assets/rb3/ps3customs/nautilusps3batchdone.png';
 import nautilusps3batchloop from '@assets/rb3/ps3customs/nautilusps3batchloop.png';
 import nautilusps3batchloopproc from '@assets/rb3/ps3customs/nautilusps3batchloopproc.png';
+import ps3brokenvenue from '@assets/rb3/ps3customs/ps3brokenvenue.png';
+import rb3songlocvenue from '@assets/rb3/ps3customs/rb3songlocvenuees.png';
+import finddta from '@assets/rb3/ps3customs/finddta.png';
+import dtafindsong from '@assets/rb3/ps3customs/dtafindsong.png';
+import dtawrong from '@assets/rb3/ps3customs/dtawrong.png';
+import dtaright from '@assets/rb3/ps3customs/dtaright.png';
+import dtaregexnpp from '@assets/rb3/ps3customs/dtaregexnpp.png';
+import dtaregexsublime from '@assets/rb3/ps3customs/dtaregexsublime.png';
+import rb3fixedvenue from '@assets/rb3/ps3customs/rb3fixedvenue.png';
 import ps3grey from '@assets/rb3/ps3customs/ps3grey.png';
 import ps3parentales from '@assets/rb3/ps3customs/ps3parentales.png';
 import rb3songloc from '@assets/rb3/ps3customs/rb3songloces.png';
@@ -31,7 +40,8 @@ import moggreplace from '@assets/rb3/ps3customs/moggreplace.gif';
 import { Image } from 'astro:assets';
 
 ## Canciones no están en mi colección/ no salen en línea / Puntajes no se guardan
-Rock Band 3 solo puede guardar puntajes para canciones con IDs que contienen números **únicos** y nada mas. Si una canción tiene letras en el ID, el juego va a crear un ID nuevo cada vez que inicies. Esto significa que tus puntajes nunca se guardaran.
+Rock Band 3 solo puede guardar puntajes para canciones con IDs que contienen números **únicos** y nada mas. Si no seguiste los pasos de [[la guía principal para convertir de Xbox 360 a PS3]](../360tops3) o tienes una versión de <a href="https://nemosnautilus.com/nautilus" target="_blank" rel="noopener noreferrer">[Nautilus]</a> desactualizada, es muy probable que vas a topar con este problema.  
+Si una canción tiene letras en el ID, el juego va a crear un ID nuevo cada vez que inicies. Esto significa que tus puntajes nunca se guardaran.
 
 Igualmente, tendrás problemas jugando en línea con customs por la misma razón. Si el ID tiene letras, la canción va a aparecer en tu biblioteca en gris.
 > <Image src={missingsonges} alt="Rock Band 3 mostrando canciones con un color mas oscuro porque no están disponibles." />
@@ -63,6 +73,51 @@ Busca el archivo que se llama `songs.dta` dentro de la carpeta.
 4. Espera que termine de procesar las canciones de la carpeta. Cuando termine, puedes compartir el archivo `songs.dta` con tus amigos para finalmente poder jugar las canciones juntos.
     > <Image src={nautilusps3batchdone} alt="PS3 Converter dentro de Nautilus. Acababa de terminar con el procesamiento de canciones con IDs malos." />
 </Steps>
+
+## Animaciones de escenarios rotas
+Ciertas customs viejas tenían datos incorrectos en su archivo de `songs.dta` cual provoca que las animaciones no carguen correctamente.  
+
+Se puede notar fácilmente si la cámara se queda en un lugar y los personajes lentamente se alejan del escenario.
+> <Image src={ps3brokenvenue} alt="Rock Band 3 mostrando a personajes caminando sobre el publico y la cámara atorada." />
+
+Para arreglar esto, necesitas encontrar el archivo `songs.dta` con los datos incorrectos.  
+Puedes simplificar el proceso usando la función de `Mostrar carpeta del tema` dentro de Rock Band 3 Deluxe.
+> <Image src={rb3songlocvenue} alt="Rock Band 3 Deluxe con una canción resaltada y 'Mostrar carpeta del tema' elegida en el menú. Salio una pantalla que contiene la dirección de la canción." />
+
+Abre el archivo `songs.dta` en tu editor de texto preferido (como bloc de notas, Notepad++ o Sublime Text).
+> <Image src={finddta} alt="Un archivo de 'songs.dta' en una carpeta. El cursor esta sobre el y esta elegido." />
+
+Busca la canción que tiene problemas con animaciones.
+> <Image src={dtafindsong} alt="Encontrando una canción con animaciones rotas." />
+
+Vas a notar que hay un par de datos que se llaman `'version'` y `'format'` con un numero a su lado.  
+Canciones que tengan `('format' 10)` y también tengan `('version' 1)` tendrán problemas.
+> <Image src={dtawrong} alt="Un archivo de 'songs.dta' en bloc de notas. Tiene un valor de 'version' incorrecto." />
+
+Simplemente cambia `('version' 1)` a `('version' 30)` y guarda tus cambios.
+> <Image src={dtaright} alt="Un archivo de 'songs.dta' en bloc de notas. Tiene un valor de 'version' corregido." />
+
+Si estas usando un editor de texto avanzado como Notepad++ o Sublime Text, puedes usar la función de Regex para corregir varias canciones de un golpe.
+
+Activa la función de Regex y busca
+```regex
+^(\s*)\('version'\s*(?!30)\d+\)\s*\('format'\s*10\)
+```
+en tu carpeta `USRDIR` de Rock Band 3 (`dev_hdd0/game/BLUS30463/USRDIR`).  
+También deberías activar un filtro para solo buscar entre archivos `.dta`
+
+Reemplaza con:
+```regex
+$1('version' 30)
+$1('format' 10)
+```
+Sublime Text:
+> <Image src={dtaregexsublime} alt="Sublime Text listo para reemplazar texto." />
+Notepad++:
+> <Image src={dtaregexnpp} alt="Notepad++: listo para reemplazar texto." />
+
+Cuando reinicies tu juego, las animaciones de escenario deben de funcionar.
+> <Image src={rb3fixedvenue} alt="Rock Band 3 mostrando animaciones de escenario funcionando correctamente." />
 
 ## PS3: Canciones grises
 Por defecto, el control paterno de la PlayStation 3 esta en nivel 9.  
