@@ -2,7 +2,6 @@
 title: Nintendo Switch Pro Controller
 slug: "en/rb3pc/controllers/pads/switchpro"
 description: "How to setup Nintendo Switch Pro Controller gamepads on RPCS3."
-tableOfContents: false
 prev: false
 next: false
 sidebar:
@@ -12,6 +11,7 @@ sidebar:
 import swiprocontroller from '@assets/rb3/rpcs3/instruments/controller/swiprocontroller.png';
 import rpcs3pad from '@assets/rb3/rpcs3/instruments/rpcs3pad.png';
 import rpcs3padprofadd from '@assets/rb3/rpcs3/instruments/rpcs3padprofadd.png';
+import navpad from '@assets/rb3/rpcs3/instruments/setup/midi/navpad.png';
 import gamepadlegend from '@assets/rb3/rpcs3/instruments/gamepadlegend.png';
 import padswipromapping from '@assets/rb3/rpcs3/instruments/maps/padswipromapping.png';
 import { Image } from 'astro:assets';
@@ -51,8 +51,7 @@ Follow the instructions and/or match the assignments below.
 |:------------:|:--------------:|
 | Standard (Pad) | PS3 Controller |
 
-## Default Guitars/Bass/Keys
-
+## Guitars/Bass/Keys
 | **Switch Pro Controller** | **Rock Band** |
 |:------------------:|:---------------------:|
 | ![ZL Trigger](/assets/instruments/buttons//swi/zl.png "ZL Trigger") | ![Green Fret](/assets/instruments/buttons/guitars/gf.png "Green Fret") |
@@ -63,8 +62,7 @@ Follow the instructions and/or match the assignments below.
 | ![Left Stick](/assets/instruments/buttons//swi/ls.png "Left Stick") | ![Whammy Bar](/assets/instruments/buttons/guitars/wb.png "Whammy Bar") |
 | ![Minus Button](/assets/instruments/buttons//swi/minus.png "Minus Button") | Overdrive |
 
-## Default Drums
-
+## Drums
 | **Switch Pro Controller** | **Rock Band** |
 |:------------------:|:---------------------:|
 | ![ZL Trigger](/assets/instruments/buttons//swi/zl.png "ZL Trigger") | ![Foot Pedal](/assets/instruments/buttons/drums/rb/kp.png "Foot Pedal") |
@@ -74,21 +72,40 @@ Follow the instructions and/or match the assignments below.
 | ![B Button](/assets/instruments/buttons//swi/b.png "B Button") | ![Green Pad](/assets/instruments/buttons/drums/rb/gp.png "Green Pad") |
 
 ## Vocals
+| **Switch Pro Controller** | **Use** | **Alt Use** |
+|:---------------------:|:-----------:|:-----------:|
+| ![Left Stick](/assets/instruments/buttons//swi/ls.png "Left Stick") | Navigation | |
+| ![D-Pad](/assets/instruments/buttons//swi/dpad.png "D-Pad") | Navigation | |
+| ![B Button](/assets/instruments/buttons//swi/b.png "B Button") | Select | |
+| ![A Button](/assets/instruments/buttons//swi/a.png "A Button") | Back | Mic 3 volume (Song) |
+| ![Y Button](/assets/instruments/buttons//swi/y.png "Y Button") | Mic 1 volume (Song) | |
+| ![X Button](/assets/instruments/buttons//swi/x.png "X Button") | View more info (Library) | Mic 2 volume (Song) |
+| ![Plus Button](/assets/instruments/buttons//swi/plus.png "Plus Button") | Options | Pause (Song) |
+| ![Minus Button](/assets/instruments/buttons//swi/minus.png "Minus Button") | Filters (Library) | Overdrive (Song) |
+| ![L Button](/assets/instruments/buttons//swi/l.png "L Button") | Guide part selection (Practice) | |
+| ![ZL Trigger](/assets/instruments/buttons//swi/zl.png "ZL Trigger") | Voice Chat | Vocal part selection (Practice) |
+| ![R Button](/assets/instruments/buttons//swi/r.png "R Button") | Vocal track volume (Song) | |
+| ![ZR Trigger](/assets/instruments/buttons//swi/zr.png "RL Trigger") | Pitch correction (Song) | |
+
+## Navigation Pad
+Enable this to dedicate a gamepad for navigation. Great for MIDI instruments!
+	* You can enable this in `[Menu] > [Options] > [Deluxe Settings] > [Controller] > [Navigation Pad]`
+	><Image src={navpad} alt="Rock Band 3 Deluxe's Navigation Pad menu." />
 
 | **Switch Pro Controller** | **Use** | **Alt Use** |
 |:---------------------:|:-----------:|:-----------:|
 | ![Left Stick](/assets/instruments/buttons//swi/ls.png "Left Stick") | Navigation | |
 | ![D-Pad](/assets/instruments/buttons//swi/dpad.png "D-Pad") | Navigation | |
 | ![B Button](/assets/instruments/buttons//swi/b.png "B Button") | Select | |
-| ![A Button](/assets/instruments/buttons//swi/a.png "A Button") | Back | Mic 3 Volume (Song) |
-| ![Y Button](/assets/instruments/buttons//swi/y.png "Y Button") | Mic 1 Volume (Song) | |
-| ![X Button](/assets/instruments/buttons//swi/x.png "X Button") | View More Info (Library) | Mic 2 Volume (Song) |
+| ![A Button](/assets/instruments/buttons//swi/a.png "A Button") | Back | |
+| ![Y Button](/assets/instruments/buttons//swi/y.png "Y Button") | Rate song (Library) | |
+| ![X Button](/assets/instruments/buttons//swi/x.png "X Button") | View more info (Library) | |
 | ![Plus Button](/assets/instruments/buttons//swi/plus.png "Plus Button") | Options | Pause (Song) |
 | ![Minus Button](/assets/instruments/buttons//swi/minus.png "Minus Button") | Filters (Library) | Overdrive (Song) |
-| ![L Button](/assets/instruments/buttons//swi/l.png "L Button") | Guide Part Selection (Practice) | |
-| ![ZL Trigger](/assets/instruments/buttons//swi/zl.png "ZL Trigger") | Voice Chat | Vocal Part Selection (Practice) |
-| ![R Button](/assets/instruments/buttons//swi/r.png "R Button") | Vocal Track Volume (Song) | |
-| ![ZR Trigger](/assets/instruments/buttons//swi/zr.png "RL Trigger") | Pitch Correction (Song) | |
+| ![L Button](/assets/instruments/buttons//swi/l.png "L Button") | Song shortcuts | |
+| ![ZL Trigger](/assets/instruments/buttons//swi/zl.png "ZL Trigger") | Open song search | Cancel setlist |
+| ![R Button](/assets/instruments/buttons//swi/r.png "R Button") | | |
+| ![ZR Trigger](/assets/instruments/buttons//swi/zr.png "RL Trigger") | Start setlist | |
 
 <center><Image src={padswipromapping} alt="Mapping" /></center>
 

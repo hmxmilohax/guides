@@ -2,7 +2,6 @@
 title: Xbox 360 Controller
 slug: "en/rb3pc/controllers/pads/360"
 description: "How to setup Xbox 360 gamepads on RPCS3."
-tableOfContents: false
 prev: false
 next: false
 sidebar:
@@ -12,6 +11,7 @@ sidebar:
 import x360controller from '@assets/rb3/rpcs3/instruments/controller/360controller.png';
 import rpcs3pad from '@assets/rb3/rpcs3/instruments/rpcs3pad.png';
 import rpcs3padprofadd from '@assets/rb3/rpcs3/instruments/rpcs3padprofadd.png';
+import navpad from '@assets/rb3/rpcs3/instruments/setup/midi/navpad.png';
 import gamepadlegend from '@assets/rb3/rpcs3/instruments/gamepadlegend.png';
 import padxboxmapping from '@assets/rb3/rpcs3/instruments/maps/padxboxmapping.png';
 import { Image } from 'astro:assets';
@@ -54,8 +54,7 @@ Follow the instructions and/or match the assignments below.
 |:--------------:|:--------------:|
 | Standard (Pad) | PS3 Controller |
 
-## Default Guitar/Bass/Keys
-
+## Guitar/Bass/Keys
 | **Xbox 360** | **Rock Band** |
 |:------------:|:-------------:|
 | ![Left Trigger](/assets/instruments/buttons/360/lt.png "Left Trigger") | ![Green Fret](/assets/instruments/buttons/guitars/gf.png "Green Fret") |
@@ -67,8 +66,7 @@ Follow the instructions and/or match the assignments below.
 | ![Left Stick](/assets/instruments/buttons/360/ls.png "Left Stick") | ![Whammy Bar](/assets/instruments/buttons/guitars/wb.png "Whammy Bar") |
 | ![Back Button](/assets/instruments/buttons/360/back.png "Back Button") | Overdrive |
 
-## Default Drums
-
+## Drums
 | **Xbox 360** | **Rock Band** |
 |:------------:|:-------------:|
 | ![Left Trigger](/assets/instruments/buttons/360/lt.png "Left Trigger") | ![Kick Pedal](/assets/instruments/buttons/drums/rb/kp.png "Kick Pedal") |
@@ -79,21 +77,40 @@ Follow the instructions and/or match the assignments below.
 | ![D-Pad](/assets/instruments/buttons/360/dp.png "D-Pad") | Navigation |
 
 ## Vocals
+| **Xbox 360 (XInput)** | **Use** | **Alt Use** |
+|:---------------------:|:-------:|:-----------:|
+| ![Left Stick](/assets/instruments/buttons/360/ls.png "Left Stick") | Navigation | |
+| ![Left Stick](/assets/instruments/buttons/360/dp.png "D-Pad") | Navigation | |
+| ![A Button](/assets/instruments/buttons/360/a.png "A Button") | Select | |
+| ![B Button](/assets/instruments/buttons/360/b.png "B Button") | Back | Mic 3 volume (Song) |
+| ![X Button](/assets/instruments/buttons/360/x.png "X Button") | Rate song (Library) | Mic 1 volume (Song) |
+| ![Y Button](/assets/instruments/buttons/360/y.png "Y Button") | View more info (Library) | Mic 2 volume (Song) |
+| ![Options Button](/assets/instruments/buttons/360/start.png "Start Button") | Options | Pause (Song) |
+| ![View Button](/assets/instruments/buttons/360/back.png "Back Button") | Filters (Library) | Overdrive (Song) |
+| ![Left Bumper](/assets/instruments/buttons/360/lb.png "Left Bumper") | Guide part selection (Practice) | |
+| ![Left Trigger](/assets/instruments/buttons/360/lt.png "Left Trigger") | Voice Chat | Vocal part selection (Practice) |
+| ![Right Bumper](/assets/instruments/buttons/360/rb.png "Right Bumper") | Vocal track volume (Song) | |
+| ![Right Trigger](/assets/instruments/buttons/360/rt.png "Right Trigger") | Pitch correction (Song) | |
+
+## Navigation Pad
+Enable this to dedicate a gamepad for navigation. Great for MIDI instruments!
+	* You can enable this in `[Menu] > [Options] > [Deluxe Settings] > [Controller] > [Navigation Pad]`
+	><Image src={navpad} alt="Rock Band 3 Deluxe's Navigation Pad menu." />
 
 | **Xbox 360 (XInput)** | **Use** | **Alt Use** |
 |:---------------------:|:-------:|:-----------:|
 | ![Left Stick](/assets/instruments/buttons/360/ls.png "Left Stick") | Navigation | |
 | ![Left Stick](/assets/instruments/buttons/360/dp.png "D-Pad") | Navigation | |
 | ![A Button](/assets/instruments/buttons/360/a.png "A Button") | Select | |
-| ![B Button](/assets/instruments/buttons/360/b.png "B Button") | Back | Mic 3 Volume (Song) |
-| ![X Button](/assets/instruments/buttons/360/x.png "X Button") | Mic 1 Volume (Song) | |
-| ![Y Button](/assets/instruments/buttons/360/y.png "Y Button") | View More Info (Library) | Mic 2 Volume (Song) |
+| ![B Button](/assets/instruments/buttons/360/b.png "B Button") | Back |  |
+| ![X Button](/assets/instruments/buttons/360/x.png "X Button") | Rate song (Library) | |
+| ![Y Button](/assets/instruments/buttons/360/y.png "Y Button") | View more info (Library) | |
 | ![Options Button](/assets/instruments/buttons/360/start.png "Start Button") | Options | Pause (Song) |
 | ![View Button](/assets/instruments/buttons/360/back.png "Back Button") | Filters (Library) | Overdrive (Song) |
-| ![Left Bumper](/assets/instruments/buttons/360/lb.png "Left Bumper") | Guide Part Selection (Practice) | |
-| ![Left Trigger](/assets/instruments/buttons/360/lt.png "Left Trigger") | Voice Chat | Vocal Part Selection (Practice) |
-| ![Right Bumper](/assets/instruments/buttons/360/rb.png "Right Bumper") | Vocal Track Volume (Song) | |
-| ![Right Trigger](/assets/instruments/buttons/360/rt.png "Right Trigger") | Pitch Correction (Song) | |
+| ![Left Bumper](/assets/instruments/buttons/360/lb.png "Left Bumper") | Song shortcuts | |
+| ![Left Trigger](/assets/instruments/buttons/360/lt.png "Left Trigger") | Open song search | Cancel setlist |
+| ![Right Bumper](/assets/instruments/buttons/360/rb.png "Right Bumper") | | |
+| ![Right Trigger](/assets/instruments/buttons/360/rt.png "Right Trigger") | Start setlist | |
 
 <center><Image src={padxboxmapping} alt="Mapping" /></center>
 

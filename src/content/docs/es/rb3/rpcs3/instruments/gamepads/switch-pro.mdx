@@ -2,7 +2,6 @@
 title: Mando Pro de Nintendo Switch
 slug: "es/rb3pc/controllers/pads/switchpro"
 description: "Como configurar mandos Pro de Switch en RPCS3."
-tableOfContents: false
 prev: false
 next: false
 sidebar:
@@ -12,6 +11,7 @@ sidebar:
 import swiprocontroller from '@assets/rb3/rpcs3/instruments/controller/swiprocontroller.png';
 import rpcs3pad from '@assets/rb3/rpcs3/instruments/rpcs3pades.png';
 import rpcs3padprofadd from '@assets/rb3/rpcs3/instruments/rpcs3padprofaddes.png';
+import navpad from '@assets/rb3/rpcs3/instruments/setup/midi/navpades.png';
 import gamepadlegend from '@assets/rb3/rpcs3/instruments/gamepadlegend.png';
 import padswipromapping from '@assets/rb3/rpcs3/instruments/maps/padswipromapping.png';
 import { Image } from 'astro:assets';
@@ -52,7 +52,6 @@ Sigue las instrucciones y/o copia el mapeo de la lista para tu mando.
 | Estándar (mando) | Mando de PS3 |
 
 ## Guitarra/Bajo/Teclado
-
 | **Mando de Switch Pro** | **Rock Band** |
 |:------------------:|:---------------------:|
 | ![Gatillo ZL](/assets/instruments/buttons//swi/zl.png "Gatillo ZL") | ![Traste Verde](/assets/instruments/buttons/guitars/gf.png "Traste Verde") |
@@ -64,7 +63,6 @@ Sigue las instrucciones y/o copia el mapeo de la lista para tu mando.
 | ![Botón Minus](/assets/instruments/buttons//swi/minus.png "Botón Minus") | Sobrecarga |
 
 ## Batería
-
 | **Mando de Switch Pro** | **Rock Band** |
 |:------------------:|:---------------------:|
 | ![Gatillo ZL](/assets/instruments/buttons//swi/zl.png "Gatillo ZL") | ![Pedal](/assets/instruments/buttons/drums/rb/kp.png "Pedal") |
@@ -74,7 +72,6 @@ Sigue las instrucciones y/o copia el mapeo de la lista para tu mando.
 | ![Botón B](/assets/instruments/buttons//swi/b.png "Botón B") | ![Parche Verde](/assets/instruments/buttons/drums/rb/gp.png "Parche Verde") |
 
 ## Vocales
-
 | **Mando de Switch Pro** | **Uso** | **Uso alternativo** |
 |:---------------------:|:-----------:|:-----------:|
 | ![Palanca Izquierda](/assets/instruments/buttons//swi/ls.png "Palanca Izquierda") | Navegación | |
@@ -82,14 +79,33 @@ Sigue las instrucciones y/o copia el mapeo de la lista para tu mando.
 | ![Botón B](/assets/instruments/buttons//swi/b.png "Botón B") | Elegir | |
 | ![Botón A](/assets/instruments/buttons//swi/a.png "Botón A") | Atrás | Volumen micro 3 (Canción) |
 | ![Botón Y](/assets/instruments/buttons//swi/y.png "Botón Y") | Volumen micro 1 (Canción) | |
-| ![Botón X](/assets/instruments/buttons//swi/x.png "Botón X") | Ver Más Información (Biblioteca) | Volumen micro 2 (Canción) |
+| ![Botón X](/assets/instruments/buttons//swi/x.png "Botón X") | Ver más información (Biblioteca) | Volumen micro 2 (Canción) |
 | ![Botón Plus](/assets/instruments/buttons//swi/plus.png "Botón Plus") | Opciones | Pausa (Canción) |
 | ![Botón Minus](/assets/instruments/buttons//swi/minus.png "Botón Minus") | Filtros (Biblioteca) | Sobrecarga (Canción) |
-| ![Botón L](/assets/instruments/buttons//swi/l.png "Botón L") | Selección de Parte de Guía (Práctica) | |
-| ![Gatillo ZL](/assets/instruments/buttons//swi/zl.png "Gatillo ZL") | Chat de voz | Selección de Parte Vocal (Práctica) |
-| ![Botón R](/assets/instruments/buttons//swi/r.png "Botón R") | Volumen de Pista Vocal (Canción) | |
-| ![Gatillo ZR](/assets/instruments/buttons//swi/zr.png "Gatillo ZR") | Corrección de Tono (Canción) | |
+| ![Botón L](/assets/instruments/buttons//swi/l.png "Botón L") | Selección de parte de guía (Práctica) | |
+| ![Gatillo ZL](/assets/instruments/buttons//swi/zl.png "Gatillo ZL") | Chat de voz | Selección de parte vocal (Práctica) |
+| ![Botón R](/assets/instruments/buttons//swi/r.png "Botón R") | Volumen de pista vocal (Canción) | |
+| ![Gatillo ZR](/assets/instruments/buttons//swi/zr.png "Gatillo ZR") | Corrección de tono (Canción) | |
 
+## Mando de navegación
+Activa esta función para dedicar un mando a navegación. Ayuda demasiado con instrumentos de MIDI.
+	* Puedes activar esto en `[Menú] > [Opciones] > [Configuración Deluxe] > [Controlador] > [Mando de Nav.]`
+	><Image src={navpad} alt="El menú de mando de navegación dentro de los menús de Rock Band 3." />
+
+| **Mando de Switch Pro** | **Uso** | **Uso alternativo** |
+|:---------------------:|:-----------:|:-----------:|
+| ![Palanca Izquierda](/assets/instruments/buttons//swi/ls.png "Palanca Izquierda") | Navegación | |
+| ![D-Pad (Cruceta)](/assets/instruments/buttons//swi/dpad.png "D-Pad (Cruceta)") | Navegación | |
+| ![Botón B](/assets/instruments/buttons//swi/b.png "Botón B") | Elegir | |
+| ![Botón A](/assets/instruments/buttons//swi/a.png "Botón A") | Atrás | |
+| ![Botón Y](/assets/instruments/buttons//swi/y.png "Botón Y") | Reseña (Biblioteca) | |
+| ![Botón X](/assets/instruments/buttons//swi/x.png "Botón X") | Ver más información (Biblioteca) | |
+| ![Botón Plus](/assets/instruments/buttons//swi/plus.png "Botón Plus") | Opciones | Pausa (Canción) |
+| ![Botón Minus](/assets/instruments/buttons//swi/minus.png "Botón Minus") | Filtros (Biblioteca) | Sobrecarga (Canción) |
+| ![Botón L](/assets/instruments/buttons//swi/l.png "Botón L") | Atajos de de colección musical | |
+| ![Gatillo ZL](/assets/instruments/buttons//swi/zl.png "Gatillo ZL") | Abrir búsqueda de canciones | Cancelar repertorio |
+| ![Botón R](/assets/instruments/buttons//swi/r.png "Botón R") | | |
+| ![Gatillo ZR](/assets/instruments/buttons//swi/zr.png "Gatillo ZR") | Crear repertorio | |
 <center><Image src={padswipromapping} alt="Mapeo" /></center>
 
 [[Regresar a la lista de instrumentos]](../../main/)

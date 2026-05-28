@@ -11,6 +11,7 @@ sidebar:
 import { Aside } from '@astrojs/starlight/components';
 import mididrumscontroller from '@assets/rb3/rpcs3/instruments/controller/mididrumscontroller.png';
 import rpcs3nomap from '@assets/rb3/rpcs3/instruments/maps/rpcs3nomapes.png';
+import navpad from '@assets/rb3/rpcs3/instruments/setup/midi/navpades.png';
 import usbdrums from '@assets/rb3/rpcs3/instruments/setup/midi/usbdrums.png';
 import mididrums from '@assets/rb3/rpcs3/instruments/setup/midi/mididrums.png';
 import miditousb from '@assets/rb3/rpcs3/instruments/setup/midi/miditousb.png';
@@ -32,14 +33,11 @@ import { Image } from 'astro:assets';
 	* **en canal de MIDI 10.**
 	* **estar configurada a el mapeo de GM.**  
 Esto debe de ser lo que viene por defecto con mayoría de las baterías MIDI. Consulta el manual de tu batería para estar seguro.
-* <span title="Cruceta">"<code>D-Pad (Cruceta)</code>"</span>: Izquierda y <span title="Cruceta">"<code>D-Pad (Cruceta)</code>"</span>: Derecha no funcionan y no pueden ser usadas. Por esto, no vas a poder ajustar la velocidad de modo de practica o navegar por los entrenadores.
-	* Puedes comprar <a href="https://rolllimitless.com/roll-limitless/" target="_blank" rel="noopener noreferrer">[Roll Limitless]</a> para evitar esto.
-		* Igual puedes conseguir un <a href="https://rolllimitless.com/roll-limitless-mini/" target="_blank" rel="noopener noreferrer">[Roll Limitless Mini]</a> si no necesitas una conexión de MIDI.
-	* También puedes conseguir un <a href="https://shop.retrocultmods.com/products/ace-midi-usb-adapter-for-rock-band-and-guitar-hero" target="_blank" rel="noopener noreferrer">[adaptador ACE de RetroCultMods]</a> para evitar esto.
-		* <a href="https://www.etsy.com/listing/1884328942" target="_blank" rel="noopener noreferrer">[Enlace de Etsy]</a>
+* Necesitas mapear <a href="../../main#mandos" target="_blank" rel="noopener noreferrer">[mando dedicado para navegación]</a>. Puedes usar un teclado de PC o un mando estándar.
+	* Puedes activar esto en `[Menú] > [Opciones] > [Configuración Deluxe] > [Controlador] > [Mando de Nav.]`
+	><Image src={navpad} alt="El menú de mando de navegación dentro de los menús de Rock Band 3." />
 
 ## Instrucciones
-
 **Si tu batería MIDI tiene un puerto de USB**, solo necesitas **conectarla a tu computadora**.  
 ><Image src={usbdrums} alt="El cerebro de la batería MIDI, mostrando un puerto de USB" />
 

@@ -2,7 +2,6 @@
 title: DualShock 4 de PlayStation 4
 slug: "es/rb3pc/controllers/pads/ps4"
 description: "Como configurar mandos DualShock 4 de PS4 en RPCS3."
-tableOfContents: false
 prev: false
 next: false
 sidebar:
@@ -12,6 +11,7 @@ sidebar:
 import ps4ds4controller from '@assets/rb3/rpcs3/instruments/controller/ps4ds4controller.png';
 import rpcs3pad from '@assets/rb3/rpcs3/instruments/rpcs3pades.png';
 import rpcs3padprofadd from '@assets/rb3/rpcs3/instruments/rpcs3padprofaddes.png';
+import navpad from '@assets/rb3/rpcs3/instruments/setup/midi/navpades.png';
 import gamepadlegend from '@assets/rb3/rpcs3/instruments/gamepadlegend.png';
 import padps4mapping from '@assets/rb3/rpcs3/instruments/maps/padps4mapping.png';
 import { Image } from 'astro:assets';
@@ -48,7 +48,6 @@ Sigue las instrucciones y/o copia el mapeo de la lista para tu mando.
 | Estándar (mando) | Mando de PS3 |
 
 ## Guitarra/Bajo/Teclado
-
 | **PlayStation 4 (DS4)** | **Rock Band** |
 |:------------------:|:---------------------:|
 | ![Gatillo L2](/assets/instruments/buttons//ps4/l2.png "Gatillo L2") | ![Traste Verde](/assets/instruments/buttons/guitars/gf.png "Traste Verde") |
@@ -60,7 +59,6 @@ Sigue las instrucciones y/o copia el mapeo de la lista para tu mando.
 | ![Botón de Share](/assets/instruments/buttons//ps4/shr.png "Botón de Share") | Sobrecarga |
 
 ## Batería
-
 | **PlayStation 4 (DS4)** | **Rock Band** |
 |:------------------:|:---------------------:|
 | ![Gatillo L2](/assets/instruments/buttons//ps4/l2.png "Gatillo L2") | ![Pedal](/assets/instruments/buttons/drums/rb/kp.png "Pedal") |
@@ -69,9 +67,7 @@ Sigue las instrucciones y/o copia el mapeo de la lista para tu mando.
 | ![Gatillo R2](/assets/instruments/buttons//ps4/r2.png "Gatillo R2") | ![Parche Azul](/assets/instruments/buttons/drums/rb/bp.png "Parche Azul") |
 | ![Botón Cross (Cruz)](/assets/instruments/buttons//ps4/x.png "Botón Cross (Cruz)") | ![Parche Verde](/assets/instruments/buttons/drums/rb/gp.png "Parche Verde") |
 
-
 ## Vocales
-
 | **PlayStation 4 (DS4)** | **Uso** | **Uso alternativo** |
 |:---------------------:|:---------:|:-----------:|
 | ![Palanca Izquierda](/assets/instruments/buttons//ps4/ls.png "Palanca Izquierda") | Navegación | |
@@ -79,13 +75,33 @@ Sigue las instrucciones y/o copia el mapeo de la lista para tu mando.
 | ![Botón Cross (Cruz)](/assets/instruments/buttons//ps4/x.png "Botón Cross (Cruz)") | Elegir | |
 | ![Botón Circle (Circulo)](/assets/instruments/buttons//ps4/o.png "Botón Circle (Circulo)") | Atrás | Volumen micro 3 (Canción) |
 | ![Botón Square (Cuadro)](/assets/instruments/buttons//ps4/s.png "Botón Square (Cuadro)") | Volumen micro 1 (Canción) | |
-| ![Botón Triangle (Triangulo)](/assets/instruments/buttons//ps4/t.png "Botón Triangle (Triangulo)") | Ver Más Información (Biblioteca) | Volumen micro 2 (Canción) |
+| ![Botón Triangle (Triangulo)](/assets/instruments/buttons//ps4/t.png "Botón Triangle (Triangulo)") | Ver más información (Biblioteca) | Volumen micro 2 (Canción) |
 | ![Botón Start](/assets/instruments/buttons//ps4/opt.png "Botón Start") | Opciones | Pausa (Canción) |
 | ![Botón de Share](/assets/instruments/buttons//ps4/shr.png "Botón de Share") | Filtros (Biblioteca) | Sobrecarga (Canción) |
-| ![Botón L1](/assets/instruments/buttons//ps4/l1.png "Botón L1") | Selección de Parte de Guía (Práctica) | |
-| ![Gatillo L2](/assets/instruments/buttons//ps4/l2.png "Gatillo L2") | Chat de voz | Selección de Parte Vocal (Práctica) |
-| ![Boton R1](/assets/instruments/buttons//ps4/r1.png "Boton R1") | Volumen de Pista Vocal (Canción) | |
-| ![Gatillo R2](/assets/instruments/buttons//ps4/r2.png "Gatillo R2") | Corrección de Tono (Canción) | |
+| ![Botón L1](/assets/instruments/buttons//ps4/l1.png "Botón L1") | Selección de parte de guía (Práctica) | |
+| ![Gatillo L2](/assets/instruments/buttons//ps4/l2.png "Gatillo L2") | Chat de voz | Selección de parte vocal (Práctica) |
+| ![Boton R1](/assets/instruments/buttons//ps4/r1.png "Boton R1") | Volumen de pista vocal (Canción) | |
+| ![Gatillo R2](/assets/instruments/buttons//ps4/r2.png "Gatillo R2") | Corrección de tono (Canción) | |
+
+## Mando de navegación
+Activa esta función para dedicar un mando a navegación. Ayuda demasiado con instrumentos de MIDI.
+	* Puedes activar esto en `[Menú] > [Opciones] > [Configuración Deluxe] > [Controlador] > [Mando de Nav.]`
+	><Image src={navpad} alt="El menú de mando de navegación dentro de los menús de Rock Band 3." />
+
+| **PlayStation 4 (DS4)** | **Uso** | **Uso alternativo** |
+|:---------------------:|:---------:|:-----------:|
+| ![Palanca Izquierda](/assets/instruments/buttons//ps4/ls.png "Palanca Izquierda") | Navegación | |
+| ![D-Pad (Cruceta)](/assets/instruments/buttons//ps4/dp.png "D-Pad (Cruceta)") | Navegación | |
+| ![Botón Cross (Cruz)](/assets/instruments/buttons//ps4/x.png "Botón Cross (Cruz)") | Elegir | |
+| ![Botón Circle (Circulo)](/assets/instruments/buttons//ps4/o.png "Botón Circle (Circulo)") | Atrás | |
+| ![Botón Square (Cuadro)](/assets/instruments/buttons//ps4/s.png "Botón Square (Cuadro)") | Reseña | |
+| ![Botón Triangle (Triangulo)](/assets/instruments/buttons//ps4/t.png "Botón Triangle (Triangulo)") | Ver más información (Biblioteca) | |
+| ![Botón Start](/assets/instruments/buttons//ps4/opt.png "Botón Start") | Opciones | Pausa (Canción) |
+| ![Botón de Share](/assets/instruments/buttons//ps4/shr.png "Botón de Share") | Filtros (Biblioteca) | Sobrecarga (Canción) |
+| ![Botón L1](/assets/instruments/buttons//ps4/l1.png "Botón L1") | Atajos de de colección musical | |
+| ![Gatillo L2](/assets/instruments/buttons//ps4/l2.png "Gatillo L2") | Abrir búsqueda de canciones | Cancelar repertorio |
+| ![Boton R1](/assets/instruments/buttons//ps4/r1.png "Boton R1") | | |
+| ![Gatillo R2](/assets/instruments/buttons//ps4/r2.png "Gatillo R2") | Crear repertorio | |
 
 <center><Image src={padps4mapping} alt="Mapeo" /></center>
 

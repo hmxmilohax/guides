@@ -15,6 +15,7 @@ import { Steps } from '@astrojs/starlight/components';
 import pckeyboardcontroller from '@assets/rb3/rpcs3/instruments/controller/pckeyboardcontroller.png';
 import rpcs3pad from '@assets/rb3/rpcs3/instruments/rpcs3pades.png';
 import rpcs3padprofadd from '@assets/rb3/rpcs3/instruments/rpcs3padprofaddes.png';
+import navpad from '@assets/rb3/rpcs3/instruments/setup/midi/navpades.png';
 import padlegend from '@assets/rb3/rpcs3/instruments/padlegend.png';
 import padpckbdefmapping from '@assets/rb3/rpcs3/instruments/maps/padpckbdefmapping.png';
 import padpckbfnfmapping from '@assets/rb3/rpcs3/instruments/maps/padpckbfnfmapping.png';
@@ -60,20 +61,41 @@ Solo se recomienda **solamente** para controlar menús y para vocalistas que no 
 |:--------------:|:--------------:|
 | Estándar (mando) | Mando de PS3 |
 
+## Vocales
 | **RPCS3** | **Teclado** | **Uso** | **Uso alt.** |
 |:---:|:---:|:---:|:---:|
+| Joystick izquierdo | `W`, `A`, `S` y `D` | Navegación | |
+| Botones de dirección | `Arriba`, `Abajo`, `Izquierda` y `Derecha` | Navegación | |
 | Cruz/Equis | `X` | Elegir | |
 | Círculo | `C` | Atrás | Volumen micro 3 (Canción) |
 | Cuadrado | `Z` | Volumen micro 1 (Canción) | |
-| Triángulo | `V` | Ver Más Información (Biblioteca) | Volumen micro 2 (Canción) |
-| Botones de dirección | `Arriba`, `Abajo`, `Izquierda` y `Derecha` | Navegación | |
-| Joystick izquierdo | `W`, `A`, `S` y `D` | Navegación | |
+| Triángulo | `V` | Ver más información (Biblioteca) | Volumen micro 2 (Canción) |
 | START | `↵` | Opciones | Pausa (Canción) |
-| SELECT | `Espacio` | Sobrecarga | |
-| L1 | `Q` | Selección de Parte de Guía (Práctica) | |
-| L2 | `R` | Selección de Parte Vocal (Práctica) | |
-| R1 | `E` | Volumen de Pista Vocal (Canción) | |
-| R2 | `T` | Corrección de Tono (Canción) | |
+| SELECT | Filtros (Biblioteca) | Sobrecarga (Canción) |
+| L1 | `Q` | Selección de parte de guía (Práctica) | |
+| L2 | `R` | Selección de parte vocal (Práctica) | |
+| R1 | `E` | Volumen de pista vocal (Canción) | |
+| R2 | `T` | Corrección de tono (Canción) | |
+
+## Mando de navegación
+Activa esta función para dedicar tu teclado para navegación. Ayuda demasiado con instrumentos de MIDI.
+  * Puedes activar esto en `[Menú] > [Opciones] > [Configuración Deluxe] > [Controlador] > [Mando de Nav.]`
+  ><Image src={navpad} alt="El menú de mando de navegación dentro de los menús de Rock Band 3." />
+
+| **RPCS3** | **Teclado** | **Uso** | **Uso alt.** |
+|:---:|:---:|:---:|:---:|
+| Joystick izquierdo | `W`, `A`, `S` y `D` | Navegación | |
+| Botones de dirección | `Arriba`, `Abajo`, `Izquierda` y `Derecha` | Navegación | |
+| Cruz/Equis | `X` | Elegir | |
+| Círculo | `C` | Atrás | |
+| Cuadrado | `Z` | Reseña (Biblioteca) | |
+| Triángulo | `V` | Ver más información (Biblioteca) | |
+| START | `↵` | Opciones | Pausa (Canción) |
+| SELECT | Filtros (Biblioteca) | Sobrecarga (Canción) |
+| L1 | `Q` | Atajos de de colección musical | |
+| L2 | `R` | Abrir búsqueda de canciones | Cancelar repertorio |
+| R1 | `E` | | |
+| R2 | `T` | Crear repertorio | |
 
 <center><Image src={padpckbdefmapping} alt="Mapeo" /></center>
   </TabItem>
@@ -93,14 +115,14 @@ Este perfil esta inspirado por la configuración de Fortnite Festival. Modificad
 
 | **RPCS3** | **Teclado** | **Guitarra/Bajo/Teclado** | **Uso** | **Uso alt.** |
 |:---:|:---:|:---:|:---:|:---:|
-| L1 | `D` y `R` | ![Traste Verde](/assets/instruments/buttons/guitars/gf.png "Traste Verde") | Selección de Parte de Guía (Práctica) | |
-| L2 | `F` y `Q` | ![Traste Rojo](/assets/instruments/buttons/guitars/rf.png "Traste Rojo") | Selección de Parte Vocal (Práctica) | |
-| R1 | `E` y `J` | ![Traste Amarillo](/assets/instruments/buttons/guitars/yf.png "Traste Amarillo") | Volumen de Pista Vocal (Canción) | |
-| R2 | `K` y `T` | ![Traste Azul](/assets/instruments/buttons/guitars/bf.png "Traste Azul") | Corrección de Tono (Canción) | |
+| L1 | `D` y `R` | ![Traste Verde](/assets/instruments/buttons/guitars/gf.png "Traste Verde") | Selección de parte de guía (Práctica) | |
+| L2 | `F` y `Q` | ![Traste Rojo](/assets/instruments/buttons/guitars/rf.png "Traste Rojo") | Selección de parte vocal (Práctica) | |
+| R1 | `J` y `E` | ![Traste Amarillo](/assets/instruments/buttons/guitars/yf.png "Traste Amarillo") | Volumen de pista vocal (Canción) | |
+| R2 | `K` y `T` | ![Traste Azul](/assets/instruments/buttons/guitars/bf.png "Traste Azul") | Corrección de tono (Canción) | |
 | Cruz/Equis | `L` y `X` | ![Traste Naranja](/assets/instruments/buttons/guitars/of.png "Traste Naranja") | Elegir | |
 | Círculo | `C` | | Atrás | Volumen micro 3 (Canción) |
 | Cuadrado | `Z` | | Volumen micro 1 (Canción) | |
-| Triángulo | `V` | | Ver Más Información (Biblioteca) | Volumen micro 2 (Canción) |
+| Triángulo | `V` | | Ver más información (Biblioteca) | Volumen micro 2 (Canción) |
 | Joystick izquierdo:<br>Arriba</br> | `W` <br>y `Shift Izq.`</br> | ![Palanca de whammy](/assets/instruments/buttons/guitars/wb.png "Palanca de whammy") | Navegación | |
 | Joystick izquierdo:<br>Izquierda</br> | `A` | | Navegación | |
 | Joystick izquierdo:<br>Abajo</br> | `S` | | Navegación | |
@@ -159,14 +181,14 @@ Un perfil usado por el tecladista favorito de MiloHax. Tiene suficiente teclas p
 
 | **RPCS3** | **Teclado** | **Guitarra/Bajo/Teclado** | **Batería** | **Uso** | **Uso alt.** |
 |:---:|:---:|:---:|:---:|:---:|:---:|
-| L1 | `2`, `8`, `A` y `W` | ![Traste Verde](/assets/instruments/buttons/guitars/gf.png "Traste Verde") | ![Parche Rojo](/assets/instruments/buttons/drums/rb/rp.png "Parche Rojo") | Selección de Parte de Guía (Práctica) | |
-| L2  | `1`, `7`, `Q` y `Espacio` | ![Traste Rojo](/assets/instruments/buttons/guitars/rf.png "Traste Rojo") | ![Pedal](/assets/instruments/buttons/drums/rb/kp.png "Pedal") | Selección de Parte Vocal (Práctica) | |
-| R1 | `3`, `9`, `E` y `S` | ![Traste Amarillo](/assets/instruments/buttons/guitars/yf.png "Traste Amarillo") | ![Parche Amarillo](/assets/instruments/buttons/drums/rb/yp.png "Parche Amarillo") | Volumen de Pista Vocal (Canción) | |
-| R2  | `0`, `4`, `D` y `R` | ![Traste Azul](/assets/instruments/buttons/guitars/bf.png "Traste Azul") | ![Parche Azul](/assets/instruments/buttons/drums/rb/bp.png "Parche Azul") | Corrección de Tono (Canción) | |
+| L1 | `2`, `8`, `A` y `W` | ![Traste Verde](/assets/instruments/buttons/guitars/gf.png "Traste Verde") | ![Parche Rojo](/assets/instruments/buttons/drums/rb/rp.png "Parche Rojo") | Selección de parte de guía (Práctica) | |
+| L2  | `1`, `7`, `Q` y `Espacio` | ![Traste Rojo](/assets/instruments/buttons/guitars/rf.png "Traste Rojo") | ![Pedal](/assets/instruments/buttons/drums/rb/kp.png "Pedal") | Selección de parte vocal (Práctica) | |
+| R1 | `3`, `9`, `E` y `S` | ![Traste Amarillo](/assets/instruments/buttons/guitars/yf.png "Traste Amarillo") | ![Parche Amarillo](/assets/instruments/buttons/drums/rb/yp.png "Parche Amarillo") | Volumen de pista vocal (Canción) | |
+| R2  | `0`, `4`, `D` y `R` | ![Traste Azul](/assets/instruments/buttons/guitars/bf.png "Traste Azul") | ![Parche Azul](/assets/instruments/buttons/drums/rb/bp.png "Parche Azul") | Corrección de tono (Canción) | |
 | Cruz/Equis | `-`, `5`, `F` y `T` | ![Traste Naranja](/assets/instruments/buttons/guitars/of.png "Traste Naranja") | ![Parche Verde](/assets/instruments/buttons/drums/rb/gp.png "Parche Verde") | Elegir | |
 | Círculo | `C` | | | Atrás | Volumen micro 3 (Canción) |
 | Cuadrado | `Z` | | | Volumen micro 1 (Canción) | |
-| Triángulo | `V` | | | Ver Más Información (Biblioteca) | Volumen micro 2 (Canción) |
+| Triángulo | `V` | | | Ver más información (Biblioteca) | Volumen micro 2 (Canción) |
 | Botones de <br> dirección: Arriba</br> | `Arriba` | | | Navegación | |
 | Botones de <br> dirección: Izquierda</br> | `Izquierda` | | | Navegación | |
 | Botones de <br> dirección: Abajo</br> | `Abajo` | | | Navegación | |

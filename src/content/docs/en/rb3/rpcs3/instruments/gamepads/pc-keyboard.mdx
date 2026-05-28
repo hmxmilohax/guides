@@ -15,6 +15,7 @@ import { Steps } from '@astrojs/starlight/components';
 import pckeyboardcontroller from '@assets/rb3/rpcs3/instruments/controller/pckeyboardcontroller.png';
 import rpcs3pad from '@assets/rb3/rpcs3/instruments/rpcs3pad.png';
 import rpcs3padprofadd from '@assets/rb3/rpcs3/instruments/rpcs3padprofadd.png';
+import navpad from '@assets/rb3/rpcs3/instruments/setup/midi/navpad.png';
 import padlegend from '@assets/rb3/rpcs3/instruments/padlegend.png';
 import padpckbdefmapping from '@assets/rb3/rpcs3/instruments/maps/padpckbdefmapping.png';
 import padpckbfnfmapping from '@assets/rb3/rpcs3/instruments/maps/padpckbfnfmapping.png';
@@ -58,23 +59,44 @@ These are the default keyboard mappings that come with RPCS3.
 | Keyboard | Keyboard |
 
 | Device Class | Device Subtype |
-|:--------------:|:--------------:|
+|:------------:|:--------------:|
 | Standard (Pad) | PS3 Controller |
+
+## Vocals
+| **RPCS3** | **Keyboard** | **Alt Use 1** | **Alt Use 2** |
+|:---:|:---:|:---:|:---:|
+| Left Stick | `W`, `A`, `S`, and `D` | Navigation | |
+| D-Pad | `Up`, `Down`, `Left`, and `Right` | Navigation | |
+| Cross | `X` | Select | |
+| Circle | `C` | Back | Mic 3 volume (Song) |
+| Square | `Z` | Mic 1 volume (Song) | |
+| Triangle | `V` | View more info (Library) | Mic 2 volume (Song) |
+| Start | `Return` | Options | Pause (Song) |
+| Select | `Space` | Overdrive | |
+| L1 | `Q` | Guide part selection (Practice) | |
+| L2 | `R` | Vocal part selection (Practice) | |
+| R1 | `E` | Vocal track volume (Song) | |
+| R2 | `T` | Pitch correction (Song) | |
+
+## Navigation Pad
+Enable this to dedicate a gamepad for navigation. Great for MIDI instruments!
+  * You can enable this in `[Menu] > [Options] > [Deluxe Settings] > [Controller] > [Navigation Pad]`
+  ><Image src={navpad} alt="Rock Band 3 Deluxe's Navigation Pad menu." />
 
 | **RPCS3** | **Keyboard** | **Alt Use 1** | **Alt Use 2** |
 |:---:|:---:|:---:|:---:|
-| Cross | `X` | Select | |
-| Circle | `C` | Back | Mic 3 Volume (Song) |
-| Square | `Z` | Mic 1 Volume (Song) | |
-| Triangle | `V` | View More Info (Library) | Mic 2 Volume (Song) |
-| D-Pad | `Up`, `Down`, `Left`, and `Right` | Navigation | |
 | Left Stick | `W`, `A`, `S`, and `D` | Navigation | |
+| D-Pad | `Up`, `Down`, `Left`, and `Right` | Navigation | |
+| Cross | `X` | Select | |
+| Circle | `C` | Back | |
+| Square | `Z` | Rate song (Library) | |
+| Triangle | `V` | View more info (Library) | |
 | Start | `Return` | Options | Pause (Song) |
-| Select | `Space` | Overdrive | |
-| L1 | `Q` | Guide Part Selection (Practice) | |
-| L2 | `R` | Vocal Part Selection (Practice) | |
-| R1 | `E` | Vocal Track Volume (Song) | |
-| R2 | `T` | Pitch Correction (Song) | |
+| Select | `Space` | Filters (Library) | Overdrive (Song) |
+| L1 | `Q` | Song shortcuts | |
+| L2 | `R` | Open song search | Cancel setlist |
+| R1 | `E` | | |
+| R2 | `T` | Start setlist | |
 
 <center><Image src={padpckbdefmapping} alt="Mapping" /></center>
   </TabItem>
@@ -95,14 +117,14 @@ A profile heavily inspired by Fortnite Festival’s keyboard scheme. Modified by
 
 | **RPCS3** | **Keyboard** | **Guitars/Bass/Keys** | **Alt Use 1** | **Alt Use 2** |
 |:---:|:---:|:---:|:---:|:---:|
-| L1 | `D`, and `R` | ![Green Fret](/assets/instruments/buttons/guitars/gf.png "Green Fret") | Guide Part Selection (Practice) | |
+| L1 | `D`, and `R` | ![Green Fret](/assets/instruments/buttons/guitars/gf.png "Green Fret") | Guide part selection (Practice) | |
 | L2 | `F`, and `Q` | ![Red Fret](/assets/instruments/buttons/guitars/rf.png "Red Fret") | Vocal Part Selection (Practice) | |
-| R1 | `E`, and `J` | ![Yellow Fret](/assets/instruments/buttons/guitars/yf.png "Yellow Fret") | Vocal Track Volume (Song) | |
+| R1 | `J`, and `E` | ![Yellow Fret](/assets/instruments/buttons/guitars/yf.png "Yellow Fret") | Vocal Track Volume (Song) | |
 | R2 | `K`, and `T` | ![Blue Fret](/assets/instruments/buttons/guitars/bf.png "Blue Fret") | Pitch Correction (Song) | |
 | Cross | `L`, and `X` | ![Orange Fret](/assets/instruments/buttons/guitars/of.png "Orange Fret") | Select | |
-| Circle | `C` | | Back | Mic 3 Volume (Song) |
-| Square | `Z` | | Mic 1 Volume (Song) |     |
-| Triangle | `V` | | View More Info (Library) | Mic 2 Volume (Song) |
+| Circle | `C` | | Back | Mic 3 volume (Song) |
+| Square | `Z` | | Mic 1 volume (Song) | |
+| Triangle | `V` | | View more info (Library) | Mic 2 volume (Song) |
 | Left Stick:<br>Up</br> | `W`, <br>and `Left Shift`</br> | ![Whammy Bar](/assets/instruments/buttons/guitars/wb.png "Whammy Bar") | Navigation | |
 | Left Stick:<br>Left</br> | `A` | | Navigation | |
 | Left Stick:<br>Down</br> | `S` | | Navigation | |
@@ -163,19 +185,19 @@ A profile used by MiloHax’s favorite keyboard player. Has plenty of alt-keys f
 
 | **RPCS3** | **Keyboard** | **Guitars/Bass/Keys** | **Drums** | **Alt Use 1** | **Alt Use 2** |
 |:---:|:---:|:---:|:---:|:---:|:---:|
-| L1 | `2`, `8`, `A`, and `W` | ![Green Fret](/assets/instruments/buttons/guitars/gf.png "Green Fret") | ![Red Pad](/assets/instruments/buttons/drums/rb/rp.png "Red Pad") | Guide Part Selection (Practice) |     |
-| L2 | `1`, `7`, `Q`, and `SPACE` | ![Red Fret](/assets/instruments/buttons/guitars/rf.png "Red Fret") | ![Foot Pedal](/assets/instruments/buttons/drums/rb/kp.png "Foot Pedal") | Vocal Part Selection (Practice) |     |
-| R1 | `3`, `9`, `E`, and `S` | ![Yellow Fret](/assets/instruments/buttons/guitars/yf.png "Yellow Fret") | ![Yellow Pad](/assets/instruments/buttons/drums/rb/yp.png "Yellow Pad") | Vocal Track Volume (Song) |     |
-| R2 | `0`, `4`, `D`, and `R` | ![Blue Fret](/assets/instruments/buttons/guitars/bf.png "Blue Fret") | ![Blue Pad](/assets/instruments/buttons/drums/rb/bp.png "Blue Pad") | Pitch Correction (Song) |     |
-| Cross | `-`, `5`, `F`, and `T` | ![Orange Fret](/assets/instruments/buttons/guitars/of.png "Orange Fret") | ![Green Pad](/assets/instruments/buttons/drums/rb/gp.png "Green Pad") | Select |     |
-| Circle | `C` |     |     | Back | Mic 3 Volume (Song) |
-| Square | `Z` |     |     | Mic 1 Volume (Song) |     |
-| Triangle | `V` |     |     | View More Info (Library) | Mic 2 Volume (Song) |
-| D-Pad: Up | `Up` |     |     | Navigation |     |
-| D-Pad: Left | `Left` |     |     | Navigation |     |
-| D-Pad: Down | `Down` |     |     | Navigation |     |
-| D-Pad: Right | `Right` |     |     | Navigation |     |
-| Select | `Shift Right` | Overdrive | Overdrive | Filters (Library) |     |
+| L1 | `2`, `8`, `A`, and `W` | ![Green Fret](/assets/instruments/buttons/guitars/gf.png "Green Fret") | ![Red Pad](/assets/instruments/buttons/drums/rb/rp.png "Red Pad") | Guide part selection (Practice) | |
+| L2 | `1`, `7`, `Q`, and `SPACE` | ![Red Fret](/assets/instruments/buttons/guitars/rf.png "Red Fret") | ![Foot Pedal](/assets/instruments/buttons/drums/rb/kp.png "Foot Pedal") | Vocal Part Selection (Practice) | |
+| R1 | `3`, `9`, `E`, and `S` | ![Yellow Fret](/assets/instruments/buttons/guitars/yf.png "Yellow Fret") | ![Yellow Pad](/assets/instruments/buttons/drums/rb/yp.png "Yellow Pad") | Vocal Track Volume (Song) | |
+| R2 | `0`, `4`, `D`, and `R` | ![Blue Fret](/assets/instruments/buttons/guitars/bf.png "Blue Fret") | ![Blue Pad](/assets/instruments/buttons/drums/rb/bp.png "Blue Pad") | Pitch Correction (Song) | |
+| Cross | `-`, `5`, `F`, and `T` | ![Orange Fret](/assets/instruments/buttons/guitars/of.png "Orange Fret") | ![Green Pad](/assets/instruments/buttons/drums/rb/gp.png "Green Pad") | Select | |
+| Circle | `C` | | | Back | Mic 3 volume (Song) |
+| Square | `Z` | | | Mic 1 volume (Song) | |
+| Triangle | `V` | | | View more info (Library) | Mic 2 volume (Song) |
+| D-Pad: Up | `Up` | | | Navigation | |
+| D-Pad: Left | `Left` | | | Navigation | |
+| D-Pad: Down | `Down` | | | Navigation | |
+| D-Pad: Right | `Right` | | | Navigation | |
+| Select | `Shift Right` | Overdrive | Overdrive | Filters (Library) | |
 
 <center><Image src={padpckbghmapping} alt="Mapping" /></center>
 <center><Image src={padpckbghdrmsmapping} alt="Mapping" /></center>
