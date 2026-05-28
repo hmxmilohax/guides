@@ -10,10 +10,10 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/mdx": "^5.0.3",
-    "@astrojs/starlight": "^0.38.3",
+    "@astrojs/mdx": "^5.0.4",
+    "@astrojs/starlight": "^0.38.4",
     "@lorenzo_lewis/starlight-utils": "^0.3.2",
-    "astro": "^6.1.4",
+    "astro": "^6.1.9",
     "astro-icon": "^1.1.5",
     "sharp": "^0.34.2",
     "starlight-auto-sidebar": "^0.1.3"
