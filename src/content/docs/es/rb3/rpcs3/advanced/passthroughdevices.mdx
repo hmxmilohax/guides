@@ -1,0 +1,218 @@
+---
+title: Passthrough Devices
+slug: "es/rb3pc/advanced/passthrough"
+description: "How to add set up passthrough devices for RPCS3."
+tableOfContents: false
+---
+import zadiglistall from '@assets/rb3/rpcs3/instruments/setup/passthrough/zadiglistall.png';
+import zadigsel from '@assets/rb3/rpcs3/instruments/setup/passthrough/zadigsel.png';
+import zadigreplace from '@assets/rb3/rpcs3/instruments/setup/passthrough/zadigreplace.png';
+import zadigwarning from '@assets/rb3/rpcs3/instruments/setup/passthrough/zadigwarning.png';
+import zadigprogress from '@assets/rb3/rpcs3/instruments/setup/passthrough/zadigprogress.png';
+import zadigdone from '@assets/rb3/rpcs3/instruments/setup/passthrough/zadigdone.png';
+import protaron from '@assets/rb3/rpcs3/instruments/setup/passthrough/protaron.png';
+import rb3player from '@assets/rb3/rpcs3/instruments/setup/passthrough/rb3playeres.png';
+import startdevman from '@assets/rb3/rpcs3/instruments/setup/passthrough/startdevmanes.png';
+import devman from '@assets/rb3/rpcs3/instruments/setup/passthrough/devmanes.png';
+import devmanun from '@assets/rb3/rpcs3/instruments/setup/passthrough/devmanunes.png';
+import doludev from '@assets/rb3/rpcs3/instruments/setup/passthrough/doludeves.png';
+import dolnewfile from '@assets/rb3/rpcs3/instruments/setup/passthrough/dolnewfilees.png';
+import dolps3rules from '@assets/rb3/rpcs3/instruments/setup/passthrough/dolps3ruleses.png';
+import kateps3 from '@assets/rb3/rpcs3/instruments/setup/passthrough/kateps3es.png';
+import termreloadrules from '@assets/rb3/rpcs3/instruments/setup/passthrough/termreloadruleses.png';
+import termlsusb from '@assets/rb3/rpcs3/instruments/setup/passthrough/termlsusbes.png';
+import { Image } from 'astro:assets';
+import { Aside } from '@astrojs/starlight/components';
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+import { Steps } from '@astrojs/starlight/components';
+
+<Tabs>
+Ciertos controles de instrumentos requieren acceso directo al emulador, lo cual necesita mas mas configuración.  
+Si te mandaron a esta pagina, es muy probable que necesitas seguir estos pasos para que funcione tu instrumento.
+  <TabItem label="Windows">
+**¡Toma en cuenta que el adaptador de MIDI PRO requiere que repitas este proceso para cada modo [`D`. `K`, `G`]!**  
+**Cierra RPCS3** y **conecta el receptor** de tu instrumento **o adaptador de MIDI PRO** a tu computadora.
+
+## Instalando
+<Steps>
+1. Primero, **<a href="https://zadig.akeo.ie/" target="_blank" rel="noopener noreferrer">[ve al sitio de Zadig]</a>** y **descarga la versión mas actual**.
+
+2. Haz click en <span title="Opciones">"<code>Options</code>"</span> y luego en <span title="Listar todos los dispositivos">"<code>List All Devices</code>"</span>.  
+    > <Image src={zadiglistall} alt="Zadig mostrando 'List All Devices' resaltado bajo 'Options'." />
+
+3. Deberías ver una lista de dispositivos ahora. **Elige el Adaptador MIDI PRO de RB3**.  
+En este ejemplo, sale la Guitarra Mustang Pro (`Harmonix RB3 Mustang Guitar for PlayStation 3®`).  
+    > <Image src={zadigsel} alt="Zadig mostrando 'Harmonix RB3 Mustang Guitar for PlayStation® 3' resaltado en la lista de dispositivos." />
+
+4. **Después de seleccionar el dispositivo correcto, deberías ver la opción para reemplazar el controlador.  
+_¡ASEGÚRATE DE QUE SOLO ESTÁS REEMPLAZANDO EL CONTROLADOR DEL INSTRUMENTO PRO DE ROCK BAND 3!_**  
+Haz click en <span title="Reemplazar controlador">"<code>Replace Driver</code>"</span>.  
+    > <Image src={zadigreplace} alt="Zadig con 'Replace Driver' resaltado." />
+
+5. Va a parecer una advertencia.  
+**Otra vez, asegúrate que solo estés eligiendo tu Adaptador MIDI PRO de RB3.**  
+Después de haberlo verificado, **haz click en <span title="Si">"<code>Yes</code>"</span>**.  
+    > <Image src={zadigwarning} alt="Zadig advirtiendo al usuario que está a punto de modificar un controlador del sistema, con 'Yes' resaltado." />
+
+6. Se instalará el controlador. Como dice el programa, esto puede llevar algunos minutos.  
+    > <Image src={zadigprogress} alt="Zadig en medio de una instalando un controlador." />
+
+7. Si todo sale bien, verás este mensaje:  
+    > <Image src={zadigdone} alt="Zadig indicando que el controlador se instaló correctamente, con 'Close' resaltado." />
+
+8. **Cierra Zadig**.
+
+9. Abre Rock Band 3 en RPCS3 y conecta tu(s) instrumento(s).  
+Deberías de ver que automáticamente se le asigna un número de jugador.  
+	<Image src={protaron} alt="Una Mustang con el LED del segundo jugador activado." />
+	Del mismo modo, en Rock Band 3, verás el instrumento listo para unirse.  
+	<Image src={rb3player} alt="Rock Band 3 con una Guitarra Pro lista para unirse." />
+</Steps>
+<Aside type="caution">Menús de RPCN (para aceptar y mandar invitaciones para jugar en linea) causan que el juego se quede atorado.  
+  Necesitas tener otra manera de controlar estos menús, como <a href="../../main#mandos" target="_blank" rel="noopener noreferrer">[un teclado de PC o un mando estándar.]</a></Aside>
+
+## Desinstalando
+Aplicando un controlador de Zadig restringirá a aplicaciones que usen Passthrough. Esto puede causar problemas con Clone Hero o YARG.  
+Lo bueno es que es fácil revertir esto.
+<Steps>
+1. Abre el menú de Inicio y busca el `Administrador de dispositivos`.  
+Ábrelo.  
+    <Image src={startdevman} alt="El menú de Inicio con un resultado de 'Administrador de dispositivos'." />
+
+2. Baja a la categoría de `Dispositivos de bus seria universal (USB)` y haz click para expandirla.  
+Haz click en el instrumento a cual le modificaste el controlador con Zadig y luego a `Desinstalar dispositivo`.  
+En el ejemplo abajo, se uso la Guitarra Pro (`Harmonix RB3 Mustang Guitar for PlayStation 3®`).  
+    <Image src={devman} alt="El Administrador de dispositivos con un menú despegable abierto. El cursor esta sobre 'Desinstalar dispositivo'." />
+
+3. En la pantalla que se abre, asegúrate de hacer click en `Intenta quitar el controlador para este dispositivo.`  
+4. Después de eso, haz click en `Desinstalar` y eso es todo.  
+    <Image src={devmanun} alt="La pantalla para Desinstalar el dispositivo. 'Intenta quitar el controlador para este dispositivo' esta activado y el cursor esta sobre 'Desinstalar'." />
+</Steps>
+Cuando desconectes y vuelvas a conectar el instrumento, regresara al controlador original.
+</TabItem>
+  <TabItem label="Linux">
+<Aside>Esto requiere permisos de admin/sudo.</Aside>
+
+<Steps>
+1. Navega a `/etc/udev/` en tu explorador de archivos.  
+ Entra a la carpeta de `rules.d`.  
+ Si no existe, créala.
+	> <Image src={doludev} alt="Un navegador de archivos dentro de la carpeta de 'udev', con el cursor resaltando la carpeta de 'rules.d'." />
+
+2. Crea un archivo nuevo.
+	> <Image src={dolnewfile} alt="Creando un archivo vació nuevo dentro de la carpeta de 'rules.d'." />
+	Nómbralo `99-ps3-peripherals.rules`.  
+	> <Image src={dolps3rules} alt="Nombrando el archivo." />
+
+3. Abre el archivo dentro de un editor de texto.  
+Agrega la(s) entrada(s) de para tu(s) control(es) usando este formato::  
+	```
+	SUBSYSTEM=="usb", ATTRS{idVendor}=="ABCD", ATTRS{idProduct}=="1234", MODE="0666"
+	```
+	**Reemplaza `ABCD` con ID de vendedor y `1234` con el ID de producto para tu control**.  
+	Revisa hacia abajo para instrucciones para ver como encontrar esta información.  
+	En este ejemplo, se agrego la Mustang de PS3 y el teclado de PS3.  
+	Cuando termines, guarda tus cambios. Hay dos entradas en el archivo
+	> <Image src={kateps3} alt="Un editor de texto mostrando el archivo de 'rules.d' abierto." />
+
+4. Ejecuta `sudo udevadm control --reload-rules` en una terminal o reinicia tu sistema.
+	> <Image src={termreloadrules} alt="Una terminal abierta con el comando escrito." />
+
+5. Abre Rock Band 3 en RPCS3 y conecta tu(s) instrumento(s).  
+Deberías de ver que automáticamente se le asigna un número de jugador.  
+	<Image src={protaron} alt="Una Mustang con el LED del segundo jugador activado." />
+	Del mismo modo, en Rock Band 3, verás el instrumento listo para unirse.  
+	<Image src={rb3player} alt="Rock Band 3 con una Guitarra Pro lista para unirse." />
+</Steps>
+
+## Encontrando el PID y VID de tu instrumento
+Para encontrar la información de tu control, puedes encontrarla tu mismo o usa la lista abajo.
+
+### Encontrándolo con lsusb
+Para encontrarla tu mismo, escribe `lsusb` a una terminal.  
+Deberías de ver el ID de vendedor y el ID de producto en la lista.
+> <Image src={termlsusb} alt="Una terminal mostrando una lista de varios dispositivos de USB, con su BUS, numero de dispositivo, PID, VID y nombre." />
+
+### Lista de controles
+* Santroller (Señal de modo)
+	```
+	SUBSYSTEM=="usb", ATTRS{idVendor}=="1209", ATTRS{idProduct}=="2882", MODE="0666"
+	```
+
+#### PS3
+* Guitarra de RB1/2
+	```
+	SUBSYSTEM=="usb", ATTRS{idVendor}=="12ba", ATTRS{idProduct}=="0200", MODE="0666"
+	```
+* Batería de RB1/2
+	```
+	SUBSYSTEM=="usb", ATTRS{idVendor}=="12ba", ATTRS{idProduct}=="0210", MODE="0666"
+	```
+* Teclado de RB3
+	```
+	SUBSYSTEM=="usb", ATTRS{idVendor}=="12ba", ATTRS{idProduct}=="2330", MODE="0666"
+	```
+* Adaptador MIDI PRO de RB3 [D]
+	```
+	SUBSYSTEM=="usb", ATTRS{idVendor}=="12ba", ATTRS{idProduct}=="0218", MODE="0666"
+	```
+* Adaptador MIDI PRO de RB3 [K]
+	```
+	SUBSYSTEM=="usb", ATTRS{idVendor}=="12ba", ATTRS{idProduct}=="2338", MODE="0666"
+	```
+* Guitarra Mustang de RB3
+	```
+	SUBSYSTEM=="usb", ATTRS{idVendor}=="12ba", ATTRS{idProduct}=="2430", MODE="0666"
+	```
+* Adaptador MIDI PRO de RB3 [G] (Mustang)
+	```
+	SUBSYSTEM=="usb", ATTRS{idVendor}=="12ba", ATTRS{idProduct}=="2438", MODE="0666"
+	```
+* Adaptador MIDI PRO de RB3 [G] (Squier)
+	```
+	SUBSYSTEM=="usb", ATTRS{idVendor}=="12ba", ATTRS{idProduct}=="2538", MODE="0666"
+	```
+
+#### Wii
+* Guitarra de RB1
+	```
+	SUBSYSTEM=="usb", ATTRS{idVendor}=="1bad", ATTRS{idProduct}=="0004", MODE="0666"
+	```
+* Guitarra de RB2
+	```
+	SUBSYSTEM=="usb", ATTRS{idVendor}=="1bad", ATTRS{idProduct}=="3010", MODE="0666"
+	```
+* Batería de RB1
+	```
+	SUBSYSTEM=="usb", ATTRS{idVendor}=="1bad", ATTRS{idProduct}=="3138", MODE="0666"
+	```
+* Batería de RB2
+	```
+	SUBSYSTEM=="usb", ATTRS{idVendor}=="1bad", ATTRS{idProduct}=="3110", MODE="0666"
+	```
+* Teclado de RB3
+	```
+	SUBSYSTEM=="usb", ATTRS{idVendor}=="1bad", ATTRS{idProduct}=="3330", MODE="0666"
+	```
+* Guitarra Mustang de RB3
+	```
+	SUBSYSTEM=="usb", ATTRS{idVendor}=="1bad", ATTRS{idProduct}=="3430", MODE="0666"
+	```
+* Adaptador MIDI PRO de RB3 [D]
+	```
+	SUBSYSTEM=="usb", ATTRS{idVendor}=="1bad", ATTRS{idProduct}=="3430", MODE="0666"
+	```
+* Adaptador MIDI PRO de RB3 [K]
+	```
+	SUBSYSTEM=="usb", ATTRS{idVendor}=="1bad", ATTRS{idProduct}=="3338", MODE="0666"
+	```
+* Adaptador MIDI PRO de RB3 [G] (Mustang)
+	```
+	SUBSYSTEM=="usb", ATTRS{idVendor}=="1bad", ATTRS{idProduct}=="3438", MODE="0666"
+	```
+* Adaptador MIDI PRO de RB3 [G] (Squier)
+	```
+	SUBSYSTEM=="usb", ATTRS{idVendor}=="1bad", ATTRS{idProduct}=="3538", MODE="0666"
+	```
+</TabItem>
+</Tabs>
