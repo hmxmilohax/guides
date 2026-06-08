@@ -21,10 +21,18 @@ import dolps3rules from '@assets/rb3/rpcs3/instruments/setup/passthrough/dolps3r
 import kateps3 from '@assets/rb3/rpcs3/instruments/setup/passthrough/kateps3.png';
 import termreloadrules from '@assets/rb3/rpcs3/instruments/setup/passthrough/termreloadrules.png';
 import termlsusb from '@assets/rb3/rpcs3/instruments/setup/passthrough/termlsusb.png';
+import macgcdl from '@assets/rb3/rpcs3/instruments/setup/passthrough/macgcdl.png';
+import macfnddnd from '@assets/rb3/rpcs3/instruments/setup/passthrough/macfnddnd.gif';
+import macgcdis from '@assets/rb3/rpcs3/instruments/setup/passthrough/macgcdis.png';
+import macsysex from '@assets/rb3/rpcs3/instruments/setup/passthrough/macsysex.png';
+import macauth from '@assets/rb3/rpcs3/instruments/setup/passthrough/macauth.png';
+import macgcen from '@assets/rb3/rpcs3/instruments/setup/passthrough/macgcen.png';
 import { Image } from 'astro:assets';
 import { Aside } from '@astrojs/starlight/components';
 import { Tabs, TabItem } from '@astrojs/starlight/components';
 import { Steps } from '@astrojs/starlight/components';
+
+<Aside type="caution">RPCN Menus (for sending or accepting online invites) **will** cause a softlock. You will need an alternative input method to navigate these menus, such as a <a href="../../controllers/main#gamepads" target="_blank" rel="noopener noreferrer">[typing keyboard or a gamepad.]</a></Aside>
 
 <Tabs>
 Certain instrument controllers require direct access to the emulator, which call for additional setup.  
@@ -38,42 +46,43 @@ After making sure you have the correct dongle or MIDI PRO Adapter, **close out R
 1. First, [**[go to Zadig's website]**](https://zadig.akeo.ie/) and **download the latest version, then open it** up.
 
 2. Click on **`Options`** then **`List All Devices`**.  
-	<Image src={zadiglistall} alt="Zadig showing 'List All Devices' under 'Options' highlighted." />
+	> <Image src={zadiglistall} alt="Zadig showing 'List All Devices' under 'Options' highlighted." />
 
 3. You should now see devices listed. **Switch it to your Rock Band 3 Pro Instrument**.  
 In this example, we're using the Mustang Pro Guitar, which shows up as `Harmonix RB3 Mustang Guitar for PlayStation® 3`.  
-	<Image src={zadigsel} alt="A screenshot of Zadig showing 'Harmonix RB3 Mustang Guitar for PlayStation® 3' highlighted in the devices listed." />
+	> <Image src={zadigsel} alt="A screenshot of Zadig showing 'Harmonix RB3 Mustang Guitar for PlayStation® 3' highlighted in the devices listed." />
 
 4. **After selecting the right device, you should see the option to replace the driver.  
-_MAKE SURE YOU ARE REPLACING THE DRIVER ONLY FOR THE PRO GUITAR/KEYBOARD/MIDI PRO ADAPTER!!_** Click `Replace Driver`.  
-	<Image src={zadigreplace} alt="Zadig with 'Replace Driver' highlighted." />
+_MAKE SURE YOU ARE REPLACING THE DRIVER ONLY FOR THE PRO GUITAR/KEYBOARD/MIDI PRO ADAPTER!!_**  
+Click `Replace Driver`.
+	> <Image src={zadigreplace} alt="Zadig with 'Replace Driver' highlighted." />
 
-5. A warning will appear. **Again, make sure you have selected your RB3 Pro instrument's receiver or adapter.**  
+5. A warning will appear.  
+**Again, make sure you have selected your RB3 Pro instrument's receiver or adapter.**  
 After you have made sure, **click** **`Yes`**.  
-	<Image src={zadigwarning} alt="A screenshot of Zadig warning the user that they're about to modify a system driver, with 'Yes' highlighted" />
+	> <Image src={zadigwarning} alt="A screenshot of Zadig warning the user that they're about to modify a system driver, with 'Yes' highlighted" />
 
 6. It will then install the driver. As the program says, it may take a few minutes.  
-	<Image src={zadigprogress} alt="A screenshot of Zadig in the middle of a driver install." />
+	> <Image src={zadigprogress} alt="A screenshot of Zadig in the middle of a driver install." />
 
 7. If everything goes well, you will get this message:  
-	<Image src={zadigdone} alt="Zadig telling the user that the driver was installed successfully with 'Close' highlighted." />
+	> <Image src={zadigdone} alt="Zadig telling the user that the driver was installed successfully with 'Close' highlighted." />
 
 8. **Close Zadig**.
 
 9. Open up Rock Band 3 in RPCS3 and connect your controller.  
 You should see it automatically assign a player number.  
-	<Image src={protaron} alt="A Mustang Pro Guitar with the second player LED lit up." />
+	> <Image src={protaron} alt="A Mustang Pro Guitar with the second player LED lit up." />
 	Likewise, in Rock Band 3, you will see the instrument ready to join.  
-	<Image src={rb3player} alt="Rock Band 3 with a Pro Guitar ready to join." />
+	> <Image src={rb3player} alt="Rock Band 3 with a Pro Guitar ready to join." />
 </Steps>
-<Aside type="caution">RPCN Menus (for sending or accepting online invites) **will** cause a softlock. You will need an alternative input method to navigate these menus, such as a <a href="../../controllers/main#gamepads" target="_blank" rel="noopener noreferrer">[typing keyboard or a gamepad.]</a></Aside>
 
 ## Uninstalling
 Applying a Zadig driver on a device will make it only work on applications with passthrough. This may cause issues with Clone Hero or YARG.  
 Thankfully, reverting this is very easy!
 <Steps>
 1. Open the Start menu and search for `Device Manager`. Open it.
-	<Image src={startdevman} alt="Windows' Start menu, with a result of 'Device Manager'." />
+	> <Image src={startdevman} alt="Windows' Start menu, with a result of 'Device Manager'." />
 
 2. Scroll down until you find the `Universal Serial Bus devices` category.  
 Expand it and right click the instrument you applied the Zadig driver on and then select `Uninstall device`.  
@@ -111,15 +120,14 @@ Add an entry for your controller(s) using this format:
 	When you're done, save your edits to the file.
 	> <Image src={kateps3} alt="A text editor showing the '.rules' file open. There are two entries in the text file." />
 
-
 4. Run `sudo udevadm control --reload-rules` in a terminal or reboot your system.
 	> <Image src={termreloadrules} alt="A terminal with the command typed in." />
 
 5. Open up Rock Band 3 in RPCS3 and connect your controller.  
 You should see it automatically assign a player number.  
-	<Image src={protaron} alt="A Mustang Pro Guitar with the second player LED lit up." />
+	> <Image src={protaron} alt="A Mustang Pro Guitar with the second player LED lit up." />
 	Likewise, in Rock Band 3, you will see the instrument ready to join.  
-	<Image src={rb3player} alt="Rock Band 3 with a Pro Guitar ready to join." />
+	> <Image src={rb3player} alt="Rock Band 3 with a Pro Guitar ready to join." />
 </Steps>
 
 ## Finding your instrument's PID and VID
@@ -211,5 +219,38 @@ You should see the vendor ID and product ID for your controller(s) in the list.
 	```
 	SUBSYSTEM=="usb", ATTRS{idVendor}=="1bad", ATTRS{idProduct}=="3538", MODE="0666"
 	```
+</TabItem>
+  <TabItem label="macOS">
+By default, macOS will attempt to load its own drivers when trying to use passthrough instruments on RPCS3.  
+Luckily, this is easy to fix!
+
+<Steps>
+1. First, [[click here download the GCAdapterDriver 1.8 beta]](https://secretkeys.io/gcadapterdriver/GCAdapterDriver-1.8-beta.app.zip)
+	> <Image src={macgcdl} alt="A '.zip' file of GCAdapterDriver being downloaded." />
+
+2. Drag the extracted `GCAdapterDriver-1.8-beta` application to the `Applications` folder.
+	> <Image src={macfnddnd} alt="Dragging GCAdapterDriver to the Applications folder." />
+
+3. In the menu bar, click on the new GCAdapterDriver icon.  
+Click on the slider to try to activate it.
+	> <Image src={macgcdis} alt="GCAdapterDriver is disabled." />
+
+4. It will initially block the system extension.  
+Click on `Open Security Preferences`.
+	> <Image src={macsysex} alt="A popup alerting that the GCAdapterDriver system extension was blocked. The cursor is over 'Open Security Preferences.'" />
+
+5. Unlock the page by click on the lock icon on the bottom left.  
+Click on `Allow` after this.  
+Don't forget to lock the page again when you're done.
+	> <Image src={macauth} alt="The 'Security & Privacy' page in System Preferences. The lock has been clicked on to unlock the page and the cursor hovers over 'Allow.'" />
+
+6. Now, activate GCAdapterDriver's slider in the menu bar now.
+	> <Image src={macgcen} alt="GCAdapterDriver is enabled." />
+	Open up Rock Band 3 in RPCS3 and connect your controller.  
+	You should see it automatically assign a player number.  
+	> <Image src={protaron} alt="A Mustang Pro Guitar with the second player LED lit up." />
+	Likewise, in Rock Band 3, you will see the instrument ready to join.  
+	> <Image src={rb3player} alt="Rock Band 3 with a Pro Guitar ready to join." />
+</Steps>
 </TabItem>
 </Tabs>
