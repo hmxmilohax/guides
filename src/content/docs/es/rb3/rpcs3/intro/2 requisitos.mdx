@@ -8,6 +8,7 @@ sidebar:
 ---
 import rb3box from '@assets/rb3/rpcs3/intro/rb3box.png';
 import { Image } from 'astro:assets';
+import { Icon } from '@astrojs/starlight/components';
 
 Necesitarás:
 #### Una copia de Rock Band 3 para PS3 en tu computadora
@@ -16,19 +17,18 @@ Necesitarás:
 
 #### Un control o instrumento
 Puedes usar:
-* <a href="../../controllers/main#guitarras" target="_blank" rel="noopener noreferrer">[Guitarras de Rock Band y Guitar Hero]</a> (PS2, PS3, PS4, Wii, X360, XBONE) <sup>a</sup>
-* <a href="../../controllers/main#drums" target="_blank" rel="noopener noreferrer">[Baterías de Rock Band y Guitar Hero]</a> (PS3, PS4, Wii, X360, XBONE) <sup>a</sup>
-* <a href="../../controllers/main#teclados" target="_blank" rel="noopener noreferrer">[Teclados PRO de Rock Band 3]</a> (PS3, Wii, X360)
-* <a href="../../controllers/main#guitarras-pro" target="_blank" rel="noopener noreferrer">[Guitarras PRO de Rock Band 3]</a> (PS3, Wii, X360)
+* <a href="../../controllers/main#guitarras" target="_blank" rel="noopener noreferrer">[Guitarras de Rock Band y Guitar Hero]</a> (PS2, PS3, PS4, Wii, X360, XBONE) <sup>a</sup> <sup><Icon name="linux" label="Linux" /></sup>
+* <a href="../../controllers/main#baterías" target="_blank" rel="noopener noreferrer">[Baterías de Rock Band y Guitar Hero]</a> (PS3, PS4, Wii, X360, XBONE) <sup>a</sup> <sup><Icon name="linux" label="Linux" /></sup>
+* <a href="../../controllers/main#teclados" target="_blank" rel="noopener noreferrer">[Teclados PRO de Rock Band 3]</a> (PS3, Wii, X360) <sup><Icon name="linux" label="Linux" /></sup>
+* <a href="../../controllers/main#guitarras-pro" target="_blank" rel="noopener noreferrer">[Guitarras PRO de Rock Band 3]</a> (PS3, Wii, X360) <sup><Icon name="linux" label="Linux" /></sup>
 * <a href="../../controllers/main#mandos" target="_blank" rel="noopener noreferrer">[Mandos/teclados de computadora]</a> para jugar "Padtar" (guitarra por mando) o para vocales <sup>b</sup>
 * Baterías de MIDI
-* Teclados de MIDI (**con 37 teclas a lo mínimo**) <sup>c</sup> 
-* Varios instrumentos conectados con Santroller o Roll Limitless
+* Teclados de MIDI (**con 25 teclas a lo mínimo**)
+* Varios instrumentos conectados con Santroller o Roll Limitless <sup><Icon name="linux" label="Linux" /></sup>
 
 <sup>a</sup> <sub>Whammy, ladeo/'Tilt' y otras cosas no funcionan en ciertos instrumentos. Lee la pagina de instrumentos para mas información.</sub>  
 <sup>b</sup> <sub>Los mandos funcionan con auto-strum/All Taps (rasgueo automático) como en GH1-GH3. Los teclados se pueden configurar para rasgueo manual o auto-strum/All Taps.</sub>  
-<sup>c</sup> <sub>Es posible conectar teclados con MIDI que tengan menos de 37 teclas, pero no es recomendado.</sub>  
-
+<sup><Icon name="linux" label="Linux" /></sup> <sub>Ciertos instrumentos requieren modificaciones de sistema que son incompatible con ciertos "Distros", como con SteamOS o Bazzite.</sub>  
 #### Un micrófono
 Si tu computadora lo detecta, es muy probable que lo puedas usar. Puedes conectar y usar tres micrófonos al mismo tiempo.
 
@@ -37,7 +37,7 @@ Pos obvio.
 
 | | **Mínimo** | **Recomendado** |
 |:-:|:--------:|:---------------:|
-| **Sistema Operativo** | Windows 10 | Windows 10 o mejor |
+| **Sistema Operativo** | Windows 10, Linux | Windows 10 o mejor, Linux |
 | **Procesador** | Intel Core i5-4460 <br>(o equivalente con AVX2)</br> | AMD Ryzen 5 2600 <br>o mejor</br> |
 | **Memoria** | 8 GBs | 16 GBs o mas |
 | **Gráficas** | GeForce GT 730 2GB (o equivalente) <br>con Vulkan</br> | NVIDIA GeForce GTX 1650 o mejor<br>con Vulkan</br> |
