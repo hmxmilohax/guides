@@ -119,8 +119,8 @@ Agrega la(s) entrada(s) de para tu(s) control(es) usando este formato::
 	**Reemplaza `ABCD` con ID de vendedor y `1234` con el ID de producto para tu control**.  
 	Revisa hacia abajo para instrucciones para ver como encontrar esta información.  
 	En este ejemplo, se agrego la Mustang de PS3 y el teclado de PS3.  
-	Cuando termines, guarda tus cambios. Hay dos entradas en el archivo
-	> <Image src={kateps3} alt="Un editor de texto mostrando el archivo de 'rules.d' abierto." />
+	Cuando termines, guarda tus cambios.
+	> <Image src={kateps3} alt="Un editor de texto mostrando el archivo de 'rules.d' abierto. Hay dos entradas en el archivo." />
 
 4. Ejecuta `sudo udevadm control --reload-rules` en una terminal o reinicia tu sistema.
 	> <Image src={termreloadrules} alt="Una terminal abierta con el comando escrito." />
@@ -141,7 +141,8 @@ Deberías de ver el ID de vendedor y el ID de producto en la lista.
 > <Image src={termlsusb} alt="Una terminal mostrando una lista de varios dispositivos de USB, con su BUS, numero de dispositivo, PID, VID y nombre." />
 
 ### Lista de controles
-* Santroller (Señal de modo)
+* Santroller (Señal de modo)  
+	Usa esto en combinación con el instrumento que esta emulando.
 	```
 	SUBSYSTEM=="usb", ATTRS{idVendor}=="1209", ATTRS{idProduct}=="2882", MODE="0666"
 	```

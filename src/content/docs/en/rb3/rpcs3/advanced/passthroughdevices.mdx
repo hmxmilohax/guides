@@ -139,7 +139,8 @@ You should see the vendor ID and product ID for your controller(s) in the list.
 > <Image src={termlsusb} alt="A terminal showing a large list of USB devices connected, with their corresponding bus, device number, PID, VID, and name." />
 
 ### List of controllers
-* Santroller (Mode switch signal)
+* Santroller (Mode switch signal)  
+	Use this in combination with the instrument it's emulating.
 	```
 	SUBSYSTEM=="usb", ATTRS{idVendor}=="1209", ATTRS{idProduct}=="2882", MODE="0666"
 	```
