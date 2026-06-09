@@ -1,15 +1,15 @@
 ---
-title: PlayStation 3 Rock Band MIDI PRO Adapter Drums
-slug: "en/rb3pc/controllers/drums/ps3mpa"
-description: "How to connect and configure a drum kit connected with a PS3 MPA on RPCS3."
+title: Nintendo Wii Rock Band MIDI PRO Adapter Drums
+slug: "en/rb3pc/controllers/drums/wiimpa"
+description: "How to connect and configure a drum kit connected with a Wii MPA on RPCS3."
 tableOfContents: false
 prev: false
 next: false
 sidebar:
-  order: 5
-  label: PS3 Rock Band MPA
+  order: 12
+  label: Wii Rock Band MPA
 ---
-import ps3mpadrmscontroller from '@assets/rb3/rpcs3/instruments/controller/ps3mpadrmscontroller.png';
+import wiimpadrmscontroller from '@assets/rb3/rpcs3/instruments/controller/wiimpadrmscontroller.png';
 import rpcs3nomap from '@assets/rb3/rpcs3/instruments/maps/rpcs3nomap.png';
 import mpadrm from '@assets/rb3/rpcs3/instruments/setup/mpa/mpadrm.png';
 import zadiglistall from '@assets/rb3/rpcs3/instruments/setup/passthrough/zadiglistall.png';
@@ -18,8 +18,6 @@ import zadigreplace from '@assets/rb3/rpcs3/instruments/setup/passthrough/zadigr
 import zadigwarning from '@assets/rb3/rpcs3/instruments/setup/passthrough/zadigwarning.png';
 import zadigprogress from '@assets/rb3/rpcs3/instruments/setup/passthrough/zadigprogress.png';
 import zadigdone from '@assets/rb3/rpcs3/instruments/setup/passthrough/zadigdone.png';
-import protaron from '@assets/rb3/rpcs3/instruments/setup/passthrough/protaron.png';
-import rb3player from '@assets/rb3/rpcs3/instruments/setup/passthrough/rb3player.png';
 import startdevman from '@assets/rb3/rpcs3/instruments/setup/passthrough/startdevman.png';
 import devman from '@assets/rb3/rpcs3/instruments/setup/passthrough/devman.png';
 import devmanun from '@assets/rb3/rpcs3/instruments/setup/passthrough/devmanun.png';
@@ -40,8 +38,9 @@ import { Aside } from '@astrojs/starlight/components';
 import { Tabs, TabItem } from '@astrojs/starlight/components';
 import { Steps } from '@astrojs/starlight/components';
 
-<center><img src="/assets/instruments/logos/ps3.png" alt="Platform" title="Platform"></img></center>
-<center><Image src={ps3mpadrmscontroller} alt="Controller" /></center>
+<div align="center"> ![Nintendo Wii](/assets/instruments/logos/wii.png "Nintendo Wii")</div>
+
+<center><Image src={wiimpadrmscontroller} alt="Controller" /></center>
 
 <Aside type="caution"><Image src={rpcs3nomap} alt="A warning that says not to map this controller!" />  
 Do NOT map this instrument via the `Pads` menu!
@@ -125,7 +124,7 @@ If it doesn't exist, make it.
 3. Open the file in a text editor.  
     Add an entry for your MIDI Pro Adapter:  
     ```
-    SUBSYSTEM=="usb", ATTRS{idVendor}=="12ba", ATTRS{idProduct}=="0218", MODE="0666"
+    SUBSYSTEM=="usb", ATTRS{idVendor}=="1bad", ATTRS{idProduct}=="3430", MODE="0666"
     ```
     In this example, a PS3 Mustang and PS3 Keyboard are being added.  
     When you're done, save your edits to the file.
@@ -173,4 +172,4 @@ Luckily, this is easy to fix!
 </Tabs>
 [[Back to Controllers]](../../main/)
 
-Research by <a href="https://www.youtube.com/@LinosMelendi" target="_blank" rel="noopener noreferrer">[Linos]</a>
+Research by <a href="https://bsky.app/profile/shny-scott.is.sqrk.ing" target="_blank" rel="noopener noreferrer">[scott0852]</a>
