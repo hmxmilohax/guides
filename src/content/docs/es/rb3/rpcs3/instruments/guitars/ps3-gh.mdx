@@ -1,7 +1,7 @@
 ---
 title: PlayStation 3 Guitar Hero Guitars
 slug: "es/rb3pc/controllers/guitars/ps3gh"
-description: "How to setup PS3 Guitar Hero guitars on RPCS3."
+description: "Como configurar guitarras de Guitar Hero para PS3 en RPCS3."
 tableOfContents: false
 prev: false
 next: false
@@ -15,7 +15,8 @@ import rpcs3padprofadd from '@assets/rb3/rpcs3/instruments/rpcs3padprofaddes.png
 import padlegend from '@assets/rb3/rpcs3/instruments/padlegend.png';
 import instrepoinstall from '@assets/rb3/rpcs3/instruments/instrepoinstall.gif';
 import rpcs3padprofile from '@assets/rb3/rpcs3/instruments/rpcs3padprofilees.png';
-import gtrps3ghmapping from '@assets/rb3/rpcs3/instruments/maps/gtrps3ghmapping.png';
+import gtrps3ghmapping from '@assets/rb3/rpcs3/instruments/maps/gtrps3ghmappinges.png';
+import { Icon } from '@astrojs/starlight/components';
 import { Steps } from '@astrojs/starlight/components';
 import { Aside } from '@astrojs/starlight/components';
 import { Image } from 'astro:assets';
@@ -23,12 +24,10 @@ import { Image } from 'astro:assets';
 <center><img src="/assets/instruments/logos/ps3.png" alt="Platform" title="Platform"></img></center>
 <center><Image src={ghgtrscontroller} alt="Control" /></center>
 
-<Aside>Menús de RPCN (para aceptar y mandar invitaciones para jugar en linea) pueden causar que el juego se quede atorado.  
-    Necesitas tener otra manera de controlar estos menús, como <a href="../../main#mandos" target="_blank" rel="noopener noreferrer">[un teclado de PC o un mando estándar.]</a></Aside>
 <Aside type="caution">**¡La Les Paul de PS3 es notoria por tener latencia horrible y latencia inestable!**  
 ¡Calibrando sera difícil!  
 **¡Se recomienda modificar esta guitarra!**</Aside>
-<Aside>El sensor de ladeo (Tilt) no funciona correctamente.</Aside>
+<Aside><Icon name="linux" label="Linux" />Si ladeo/tilt no funciona en tu instalación de Linux, <a href="../../../advanced/hidraw" target="_blank" rel="noopener noreferrer">[necesitas configurar cosas adicionales]</a>.</Aside>
 * Guitarras Les Paul de Guitar Hero 3 **requieren su receptor propio para conectarse.**  
 **¡Este receptor no es intercambiable con otros tipos de guitarras!**  
 ![Receptor de guitarra Les Paul de Guitar Hero 3 para PlayStation 3](/assets/instruments/adapters/ps3guitargh3.png "Receptor de guitarra Les Paul de Guitar Hero 3 para PlayStation 3")
@@ -64,65 +63,19 @@ Sigue las instrucciones y/o copia el mapeo de la lista para tu instrumento.
 ## Información de control
 | Controladores | Dispositivos |
 |:--------:|:-------:|
-| MMJoystick | Joystick |
+| SDL | Licensed by Sony Computer Entertainment Guitar Hero4 for PlayStation (R) 3<sup>*</sup> |
+
+<sup>*\**</sup>Esto es solo uno de los nombres de varios.
 
 | Clase de dispositivo | Subclase de dispositivo |
 |:------------:|:--------------:|
 | Guitarra | Guitar Hero |
 
 ## Mapeo
-¡**BORRA ESTOS BOTONES** o tus solos de guitarra van a auto-rasguear (auto-strum)!  
-Usa el click derecho para borrar botones.
-
-| **RPCS3** | **Guitarra** |
-|:--------:|:-----------:|
-| L2 | Modificador de solo |
-
-**Mapea** esto:
-* Puedes configurar el sensor de ladeo (Tilt) pero es complicado y tomara el botón de SELECT. Tendrás que experimentar con la opción de `Filtrar ruido` hasta que capture el giroscopio correctamente. Se recomienda no molestar con esto y simplemente activar con el botón.
-	* Para mapear mas de una cosa por botón, sostén el Shift (Mayús) y haz click al botón a cual le quieras agregar mas de una cosa.
-* Los instrumentos de Guitar Hero **pueden ser problemáticos para mapear. Si tratas de asignar un botón y todo sale con `U+`, haz click en `Filtrar ruido`** en el lado izquierdo abajo de la ventana de configuración **y luego intenta mapear otra vez**.
-
-| **RPCS3**          | **Controller** |
-|:------------------:|:---------------------:|
-| Cruz/Equis | ![Traste Verde](/assets/instruments/buttons/guitars/gf.png "Traste Verde") |
-| Círculo | ![Traste Rojo](/assets/instruments/buttons/guitars/rf.png "Traste Rojo") |
-| Cuadrado | ![Traste Amarillo](/assets/instruments/buttons/guitars/yf.png "Traste Amarillo") |
-| Triángulo | ![Traste Azul](/assets/instruments/buttons/guitars/bf.png "Traste Azul") |
-| L1 | ![Traste Naranja](/assets/instruments/buttons/guitars/of.png "Traste Naranja") |
-| Botones de <br> dirección: Arriba</br> | ![Rasgueo para arriba](/assets/instruments/buttons/guitars/sbu.png "Rasgueo para arriba") |
-| Botones de <br> dirección: Abajo</br> | ![Rasgueo hacia abajo](/assets/instruments/buttons/guitars/sbd.png "Rasgueo hacia abajo") |
-| Botones de <br> dirección: Izquierda</br> | ![Botones de dirección: Izquierda](/assets/instruments/buttons/guitars/dpl.png "Botones de dirección: Izquierda") |
-| Botones de <br> dirección: Derecha</br> | ![Botones de dirección: Derecha](/assets/instruments/buttons/guitars/dpr.png "Botones de dirección: Derecha") |
-| Joystick derecho:<br>Izquierda/Derecha</br> | ![Palanca de whammy](/assets/instruments/buttons/guitars/wb.png "Palanca de whammy") |
-| Select<br>(No se recomienda)</br> | ![Ladeo](/assets/instruments/buttons/guitars/ts.gif "Ladeo Vertical") |
-| START | ![Botón Start](/assets/instruments/buttons/ps3/sta.png "Botón Start") |
-| SELECT | ![Botón Select](/assets/instruments/buttons/ps3/sel.png "Botón Select") |
-| Botón PS | ![Home](/assets/instruments/buttons/ps3/home.png "Home") |
-
-## Perfil
-[[Descargar perfil]](/../downloads/rb3/rpcs3//instrument-repo/PS3%20Guitar%20Hero%20Guitar.7z)
-
-<details>
-<summary>¿Como uso perfiles?</summary>
-
-<Aside type="caution">Esto no se recomienda si estas conectando mas de un instrumento a la vez.</Aside>
-
-Después de descargar el perfil,
-<Steps>
-1. Extrae el archivo .7z.
-
-2. Arrastra la carpeta `input_configs` a la carpeta de `configs` en la carpeta donde tienes RPCS3.  
-    <Image src={instrepoinstall} alt="Instalando un perfil de la pagina de instrumentos." />
-
-3. Después de eso, puedes elegir el perfil en el menú de `Mandos`.  
-    <Image src={rpcs3padprofile} alt="Gamepad Settings dentro de RPCS3 con el cursor sobre un perfil." />
-</Steps>
-La mayoría del tiempo, estos perfiles funcionan sin necesitar configuración adicional. Por si acaso no, cambia el control en `Dispositivos`, al lado del botón de `Actualizar` hasta que funcione. Puedes cambiar esto mientras el juego esté abierto.
-</details>
+**Todo esta configurado bien por defecto. Solo necesitas elegir controladores, dispositivos y clase de dispositivo.**
 
 <center><Image src={gtrps3ghmapping} alt="Mapeo" /></center>
 
 [[Regresar a la lista de instrumentos]](../../main/)
 
-Mapeado por <a href="https://gonakillya.neocities.org" target="_blank" rel="noopener noreferrer">[gona]</a>
+Investigado por y NarrowCobra. Mapeo previo por <a href="https://gonakillya.neocities.org" target="_blank" rel="noopener noreferrer">[gona]</a>

@@ -23,6 +23,10 @@ import macgcdis from '@assets/rb3/rpcs3/instruments/setup/passthrough/macgcdis.p
 import macsysex from '@assets/rb3/rpcs3/instruments/setup/passthrough/macsysexes.png';
 import macauth from '@assets/rb3/rpcs3/instruments/setup/passthrough/macauthes.png';
 import macgcen from '@assets/rb3/rpcs3/instruments/setup/passthrough/macgcen.png';
+import rpcs3pad from '@assets/rb3/rpcs3/instruments/rpcs3pades.png';
+import rpcs3padprofadd from '@assets/rb3/rpcs3/instruments/rpcs3padprofaddes.png';
+import padlegend from '@assets/rb3/rpcs3/instruments/padlegendes.png';
+import drmswiirbmapping from '@assets/rb3/rpcs3/instruments/maps/drmswiirbmappinges.png';
 import { Aside } from '@astrojs/starlight/components';
 import { Tabs, TabItem } from '@astrojs/starlight/components';
 import { Steps } from '@astrojs/starlight/components';
@@ -77,7 +81,9 @@ No necesitas configurar nada para usar este instrumento. Simplemente conecta el 
 4. Ejecuta `sudo udevadm control --reload-rules` en una terminal o reinicia tu sistema.
     > <Image src={termreloadrules} alt="Una terminal abierta con el comando escrito." />
 
-5. Abre Rock Band 3 en RPCS3 y conecta tu batería.  
+5. Desconecta el receptor de tu batería y reconéctalo.
+
+5. Abre Rock Band 3 en RPCS3 y sincroniza tu batería.  
     Deberías de ver que automáticamente se le asigna un número de jugador.  
     Del mismo modo, en Rock Band 3, verás tu batería listo para unirse.  
 </Steps>
@@ -112,6 +118,35 @@ Por suerte, ¡esto es fácil de corregir!
     Deberías de ver que automáticamente se le asigna un número de jugador.  
     Del mismo modo, en Rock Band 3, verás tu batería listo para unirse.  
 </Steps>
+</TabItem>
+  <TabItem label="Mapeo manual">
+<Aside type="caution">¡Solo mapea manualmente si la conexión directa (passthrough) no funciona!  
+¡Mapeando manualmente puede hacer que se duplique el instrumento!</Aside>
+* No existe un perfil porque todo esta configurado por defecto
+
+<details>
+<summary>¿Como configuro mi batería?</summary>
+**Haz click en el icono de `Mandos` hacia arriba de RPCS3**.  
+<Image src={rpcs3pad} alt="El icono de Pads en RPCS3." />
+Recomendamos crear una configuración nueva con el botón de `Nueva` configuración hacia arriba y a la derecha de pantalla de `Configuración de Mandos`.  
+Esto es por si juegas otros juegos en RPCS3 que no usen instrumentos.  
+<Image src={rpcs3padprofadd} alt="Hacia arriba y a la derecha de la pantalla de 'Configuración de Mandos' en RPCS3. El cursor esta sobre 'Nueva'." />
+Sigue las instrucciones y/o copia el mapeo de la lista para tu instrumento.  
+<Image src={padlegend} alt="La pagina de un instrumento siendo usado como referencia." /></details>
+
+## Información de controls
+| Controladores | Dispositivos |
+|:--------:|:-------:|
+| SDL | Licensed by Nintendo of America Harmonix Drum Controller for Nintendo Wii |
+
+| Clase de dispositivo | Subclase de dispositivo |
+|:------------:|:--------------:|
+| Batería | Rock Band Pro |
+
+## Mapeo
+**Todo esta configurado bien por defecto. Solo necesitas elegir controladores, dispositivos y clase de dispositivo.**
+
+<center><Image src={drmswiirbmapping} alt="Mapeo" /></center>
 </TabItem>
 </Tabs>
 [[Regresar a la lista de instrumentos]](../../main/)

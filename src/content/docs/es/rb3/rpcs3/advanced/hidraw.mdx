@@ -1,0 +1,67 @@
+---
+title: "[Linux] HIDRAW"
+slug: "es/rb3pc/advanced/hidraw"
+description: "How to add set up passthrough devices for RPCS3."
+tableOfContents: false
+---
+import terminsthid from '@assets/rb3/rpcs3/instruments/setup/passthrough/terminsthides.png';
+import doludev from '@assets/rb3/rpcs3/instruments/setup/passthrough/doludeves.png';
+import dolnewfile from '@assets/rb3/rpcs3/instruments/setup/passthrough/dolnewfilees.png';
+import dolhidrules from '@assets/rb3/rpcs3/instruments/setup/passthrough/dolhidruleses.png';
+import katehid from '@assets/rb3/rpcs3/instruments/setup/passthrough/katehides.png';
+import termreloadrules from '@assets/rb3/rpcs3/instruments/setup/passthrough/termreloadruleses.png';
+import termlsusb from '@assets/rb3/rpcs3/instruments/setup/passthrough/termlsusbes.png';
+import { Image } from 'astro:assets';
+import { Aside } from '@astrojs/starlight/components';
+import { Icon } from '@astrojs/starlight/components';
+import { Steps } from '@astrojs/starlight/components';
+
+<Aside type="caution"><Icon name="linux" label="Linux"/>Las instrucciones de esta pagina son solo para Linux.</Aside>
+<Aside>Esto requiere permisos de admin/sudo.</Aside>
+<Aside>Si haz <a href="https://github.com/YARC-Official/YARG#linux" target="_blank" rel="noopener noreferrer">[configurado YARG de la manera correcta anteriormente]</a>, es muy probable que ya hiciste esto.</Aside>
+
+Ciertos instrumentos requieren ajustes adicionales para funcionar en totalidad, como el sensor de ladeo/tilt en las guitarras de Guitar Hero para PS3.
+
+<Steps>
+1. Instala los paquetes de `hidapi` and `libudev`.  
+	En distros que usan "apt" (como **Debian**, incluso Ubuntu y Mint), puedes usar este comando en la terminal:  
+	```bash
+	sudo apt install libhidapi-hidraw0 libudev1
+	```
+	<br></br>
+	En distros que usan "pacman" (como **Arch**, incluso CachyOS y SteamOS), puedes usar este comando en la terminal:  
+	```bash
+	pacman -S hidapi systemd-libs
+	```
+	<br></br>
+	En distros que usan DFN (como **Fedora**, incluso Bazzite y Nobara), puedes usar este comando en la terminal:
+	```bash
+	dnf install hidapi systemd-libs
+	```
+	<br></br>
+	La imagen abajo muestra el proceso en Arch.
+	> <Image src={terminsthid} alt="Una terminal abierta con el comando escrito." />
+2. Navega a `/etc/udev/` en tu explorador de archivos.  
+ Entra a la carpeta de `rules.d`.  
+ Si no existe, créala.
+	> <Image src={doludev} alt="Un navegador de archivos dentro de la carpeta de 'udev', con el cursor resaltando la carpeta de 'rules.d'." />
+
+3. Crea un archivo nuevo.
+	> <Image src={dolnewfile} alt="Creando un archivo vació nuevo dentro de la carpeta de 'rules.d'." />
+	Nómbralo  `69-hid.rules`.  
+	> <Image src={dolhidrules} alt="Nombrando el archivo." />
+
+3. Abre el archivo dentro de un editor de texto.   
+Agrega esta entrada:  
+	```
+	KERNEL=="hidraw*", TAG+="uaccess"
+	```
+	Cuando termines, guarda tus cambios.
+	> <Image src={katehid} alt="Un editor de texto mostrando el archivo de '69-hid.rules' abierto." />
+
+4. Ejecuta `sudo udevadm control --reload-rules` en una terminal o reinicia tu sistema.
+	> <Image src={termreloadrules} alt="Una terminal abierta con el comando escrito." />
+5. Desconecta tu(s) instrumento(s).
+
+6. Abre Rock Band 3 en RPCS3 y el sensor de ladeo/tilt debe de funcionar correctamente.
+</Steps>

@@ -23,6 +23,10 @@ import macgcdis from '@assets/rb3/rpcs3/instruments/setup/passthrough/macgcdis.p
 import macsysex from '@assets/rb3/rpcs3/instruments/setup/passthrough/macsysex.png';
 import macauth from '@assets/rb3/rpcs3/instruments/setup/passthrough/macauth.png';
 import macgcen from '@assets/rb3/rpcs3/instruments/setup/passthrough/macgcen.png';
+import rpcs3pad from '@assets/rb3/rpcs3/instruments/rpcs3pad.png';
+import rpcs3padprofadd from '@assets/rb3/rpcs3/instruments/rpcs3padprofadd.png';
+import padlegend from '@assets/rb3/rpcs3/instruments/padlegend.png';
+import drmswiirbmapping from '@assets/rb3/rpcs3/instruments/maps/drmswiirbmapping.png';
 import { Image } from 'astro:assets';
 import { Aside } from '@astrojs/starlight/components';
 import { Tabs, TabItem } from '@astrojs/starlight/components';
@@ -31,11 +35,6 @@ import { Steps } from '@astrojs/starlight/components';
 <div align="center"> ![Nintendo Wii](/assets/instruments/logos/wii.png "Nintendo Wii")</div>
 
 <center><Image src={wiirbdrmscontroller} alt="Controller" /></center>
-
-<Aside type="caution"><Image src={rpcs3nomap} alt="A warning that says not to map this controller!" />  
-Do NOT map this instrument via the `Pads` menu!
-</Aside>
-<Aside type="caution">RPCN Menus (for sending or accepting online invites) **will** cause a softlock. You will need an alternative input method to navigate these menus, such as a <a href="../../main#gamepads" target="_blank" rel="noopener noreferrer">[typing keyboard or a gamepad.]</a></Aside>
 
 * Rock Band 1 Drums are connected via USB. Rock Band 1 drums are white with grey pads and lack the connectors for cymbals. 
 * Rock Band 2 (and later) Drums **require their respective drum dongles to connect to your computer.**  
@@ -50,9 +49,17 @@ Model#: `WDMSELEA3B`
 
 <Tabs>
   <TabItem label="Windows">
+<Aside type="caution"><Image src={rpcs3nomap} alt="A warning that says not to map this controller!" />  
+Do NOT map this instrument via the `Pads` menu!
+</Aside>
+<Aside type="caution">RPCN Menus (for sending or accepting online invites) **will** cause a softlock. You will need an alternative input method to navigate these menus, such as a <a href="../../main#gamepads" target="_blank" rel="noopener noreferrer">[typing keyboard or a gamepad.]</a></Aside>
 There is no configuration for this instrument. Simply connect the receiver to your computer and that's it!
 </TabItem>
   <TabItem label="Linux">
+<Aside type="caution"><Image src={rpcs3nomap} alt="A warning that says not to map this controller!" />  
+Do NOT map this instrument via the `Pads` menu!
+</Aside>
+<Aside type="caution">RPCN Menus (for sending or accepting online invites) **will** cause a softlock. You will need an alternative input method to navigate these menus, such as a <a href="../../main#gamepads" target="_blank" rel="noopener noreferrer">[typing keyboard or a gamepad.]</a></Aside>
 <Aside>This requires admin/sudo permissions.</Aside>
 <Steps>
 1. Navigate to `/etc/udev/` in your file browser.  
@@ -82,12 +89,18 @@ If it doesn't exist, make it.
 4. Run `sudo udevadm control --reload-rules` in a terminal or reboot your system.
     > <Image src={termreloadrules} alt="A terminal with the command typed in." />
 
-5. Open up Rock Band 3 in RPCS3 and connect your drums.  
+5. Disconnect your drum's dongle, then reconnect it.
+
+6. Open up Rock Band 3 in RPCS3 and sync your drums.  
     You should see it automatically assign a player number.  
     Likewise, in Rock Band 3, you will see your drums ready to join.
 </Steps>
 </TabItem>
   <TabItem label="macOS">
+<Aside type="caution"><Image src={rpcs3nomap} alt="A warning that says not to map this controller!" />  
+Do NOT map this instrument via the `Pads` menu!
+</Aside>
+<Aside type="caution">RPCN Menus (for sending or accepting online invites) **will** cause a softlock. You will need an alternative input method to navigate these menus, such as a <a href="../../main#gamepads" target="_blank" rel="noopener noreferrer">[typing keyboard or a gamepad.]</a></Aside>
 By default, macOS will attempt to load its own drivers when trying to use passthrough instruments on RPCS3.  
 Luckily, this is easy to fix!
 
@@ -117,6 +130,36 @@ Luckily, this is easy to fix!
     You should see it automatically assign a player number.  
     Likewise, in Rock Band 3, you will see your drums ready to join.  
 </Steps>
+</TabItem>
+  <TabItem label="Manual Mapping">
+<Aside type="caution">You should only do this if passthrough doesn't work!  
+Manually mapping can lead to duplicate instruments!</Aside>
+
+* There is no input profile as all controls are default.
+
+<details>
+<summary>How do I map my drums?</summary>
+**Click on the `Pads` icon at the top of RPCS3**.
+> <Image src={rpcs3pad} alt="The Pads menu in RPCS3." />
+It’s suggested to create a new configuration by clicking `Add Configuration` at the top right of the `Pads` window.  
+This is so you can change configuration profiles in case you want to play other games.
+> <Image src={rpcs3padprofadd} alt="The top right of RPCS3's Pads window. 'Add Configuration' is being clicked on by the mouse cursor" />
+Follow the instructions and/or match the assignments below.  
+> <Image src={padlegend} alt="The instrument page being used as a as a mapping reference for RPCS3." /></details>
+
+## Pad Information
+| Handlers | Devices |
+|:--------:|:-------:|
+| SDL | Licensed by Nintendo of America Harmonix Drum Controller for Nintendo Wii |
+
+| Device Class | Device Subtype |
+|:------------:|:--------------:|
+| Drums | Rock Band Pro |
+
+## Mapping
+**By default, everything is bound correctly. You only need to set Handlers, Device, and Device Class.**
+
+<center><Image src={drmswiirbmapping} alt="Mapping" /></center>
 </TabItem>
 </Tabs>
 [[Back to Controllers]](../../main/)

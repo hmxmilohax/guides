@@ -1,0 +1,67 @@
+---
+title: "[Linux] HIDRAW"
+slug: "en/rb3pc/advanced/hidraw"
+description: "How to add set up passthrough devices for RPCS3."
+tableOfContents: false
+---
+import terminsthid from '@assets/rb3/rpcs3/instruments/setup/passthrough/terminsthid.png';
+import doludev from '@assets/rb3/rpcs3/instruments/setup/passthrough/doludev.png';
+import dolnewfile from '@assets/rb3/rpcs3/instruments/setup/passthrough/dolnewfile.png';
+import dolhidrules from '@assets/rb3/rpcs3/instruments/setup/passthrough/dolhidrules.png';
+import katehid from '@assets/rb3/rpcs3/instruments/setup/passthrough/katehid.png';
+import termreloadrules from '@assets/rb3/rpcs3/instruments/setup/passthrough/termreloadrules.png';
+import termlsusb from '@assets/rb3/rpcs3/instruments/setup/passthrough/termlsusb.png';
+import { Image } from 'astro:assets';
+import { Aside } from '@astrojs/starlight/components';
+import { Icon } from '@astrojs/starlight/components';
+import { Steps } from '@astrojs/starlight/components';
+
+<Aside type="caution"><Icon name="linux" label="Linux"/>This is a Linux focused article. Please do not follow this on any other operating system.</Aside>
+<Aside>This requires admin/sudo permissions.</Aside>
+<Aside>If you've <a href="https://github.com/YARC-Official/YARG#linux" target="_blank" rel="noopener noreferrer">[set up YARG correctly before]</a>, you probably already did this.</Aside>
+
+Certain instruments require additional setup for full functionality, namely the tilt sensor on PS3 Guitar Hero guitars.
+
+<Steps>
+1. Install the `hidapi` and `libudev`'s packages.  
+	On distros using "apt" (like **Debian**, including Ubuntu and Mint), you can use the follow terminal command:  
+	```bash
+	sudo apt install libhidapi-hidraw0 libudev1
+	```
+	<br></br>
+	On distros using "pacman" (such as **Arch**, including CachyOS and SteamOS), you can use the follow terminal command:  
+	```bash
+	pacman -S hidapi systemd-libs
+	```
+	<br></br>
+	On distros using DFN (such as **Fedora**, including Bazzite and Nobara), you can use the follow terminal command:
+	```bash
+	dnf install hidapi systemd-libs
+	```
+	<br></br>
+	The image below shows the installation process on Arch.
+	> <Image src={terminsthid} alt="A terminal with the command typed in." />
+2. Navigate to `/etc/udev/` in your file browser.  
+Enter the `rules.d` folder.  
+If it doesn't exist, make it.
+	> <Image src={doludev} alt="A file browser in the 'udev' folder, with a cursor highlighting and clicking on a folder called 'rules.d'." />
+
+3. Create a new file.
+	> <Image src={dolnewfile} alt="Creating a new empty file within the 'rules.d' folder." />
+	Name it `69-hid.rules`.  
+	> <Image src={dolhidrules} alt="Naming the new file." />
+
+3. Open the file in a text editor.  
+Add the following entry:  
+	```
+	KERNEL=="hidraw*", TAG+="uaccess"
+	```
+	When you're done, save your edits to the file.
+	> <Image src={katehid} alt="A text editor showing the '.rules' file open." />
+
+4. Run `sudo udevadm control --reload-rules` in a terminal or reboot your system.
+	> <Image src={termreloadrules} alt="A terminal with the command typed in." />
+5. Disconnect your controller(s) then reconnect them.
+
+6. Open up Rock Band 3 in RPCS3 and your controller's tilt feature should work as expected.
+</Steps>

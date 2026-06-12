@@ -114,19 +114,21 @@ Add an entry for your controller(s) using this format:
 	```
 	SUBSYSTEM=="usb", ATTRS{idVendor}=="ABCD", ATTRS{idProduct}=="1234", MODE="0666"
 	```
-	**Replace `ABCD` with the vendor ID and `1234` with the product ID for your controller**.  
+	**Replace `ABCD` with the vendor ID and `1234` with the product ID for your controller(s)**.  
 	Check below for instructions on how to find this information.  
 	In this example, a PS3 Mustang and PS3 Keyboard are being added.  
 	When you're done, save your edits to the file.
-	> <Image src={kateps3} alt="A text editor showing the '.rules' file open. There are two entries in the text file." />
+	> <Image src={kateps3} alt="A text editor showing the '99-ps3-peripherals.rules' file open. There are two entries in the text file." />
 
 4. Run `sudo udevadm control --reload-rules` in a terminal or reboot your system.
 	> <Image src={termreloadrules} alt="A terminal with the command typed in." />
 
-5. Open up Rock Band 3 in RPCS3 and connect your controller.  
+5. Disconnect your controller(s).
+
+6. Open up Rock Band 3 in RPCS3 and connect your controller(s).  
 You should see it automatically assign a player number.  
 	> <Image src={protaron} alt="A Mustang Pro Guitar with the second player LED lit up." />
-	Likewise, in Rock Band 3, you will see the instrument ready to join.  
+	Likewise, in Rock Band 3, you will see your instrument(s) ready to join.  
 	> <Image src={rb3player} alt="Rock Band 3 with a Pro Guitar ready to join." />
 </Steps>
 

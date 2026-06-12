@@ -16,6 +16,7 @@ import padlegend from '@assets/rb3/rpcs3/instruments/padlegend.png';
 import instrepoinstall from '@assets/rb3/rpcs3/instruments/instrepoinstall.gif';
 import rpcs3padprofile from '@assets/rb3/rpcs3/instruments/rpcs3padprofile.png';
 import gtrps3ghmapping from '@assets/rb3/rpcs3/instruments/maps/gtrps3ghmapping.png';
+import { Icon } from '@astrojs/starlight/components';
 import { Steps } from '@astrojs/starlight/components';
 import { Aside } from '@astrojs/starlight/components';
 import { Image } from 'astro:assets';
@@ -23,9 +24,8 @@ import { Image } from 'astro:assets';
 <center><img src="/assets/instruments/logos/ps3.png" alt="Platform" title="Platform"></img></center>
 <center><Image src={ghgtrscontroller} alt="Controller" /></center>
 
-<Aside>RPCN Menus (for sending or accepting online invites) _may_ cause a softlock. You will need an alternative input method to navigate these menus, such as a <a href="../../main#gamepads" target="_blank" rel="noopener noreferrer">[typing keyboard or a gamepad.]</a></Aside>
 <Aside type="caution">PS3 Les Paul guitars are notorious for having horrible connection issues and latency. They are NOT recommended without modding.</Aside>
-<Aside>Tilt doesn't work on this controller.</Aside>
+<Aside><Icon name="linux" label="Linux" />If tilt doesn't work on your Linux setup, <a href="../../../advanced/hidraw" target="_blank" rel="noopener noreferrer">[you will need to do additional configuration]</a>.</Aside>
 * Guitar Hero 3 Les Paul guitars **require their respective guitar dongle to connect to your computer.**  
 **This dongle is not interchangable with other guitar types!**  
 ![Les Paul PlayStation 3 Guitar Hero 3 Guitar Dongle](/assets/instruments/adapters/ps3guitargh3.png "Les Paul PlayStation 3 Guitar Hero 3 Guitar Dongle")
@@ -62,67 +62,18 @@ Follow the instructions and/or match the assignments below.
 
 | Handlers | Devices |
 |:--------:|:-------:|
-| MMJoystick | Joystick |
+| SDL | Licensed by Sony Computer Entertainment Guitar Hero4 for PlayStation (R) 3<sup>*</sup> |
+
+<sup>*\**</sup>This is but one of many device names.
 
 | Device Class | Device Subtype |
 |:------------:|:--------------:|
 | Guitar | Guitar Hero |
 
-## Mappings
-
-**UNMAP THE FOLLOWING** or guitar solos will auto-strum!  
-Use Right Click to unmap a button.
-
-| **RPCS3** | **Guitar** |
-|:--------:|:-----------:|
-| L2 | Solo Modifier |
-
-**Map** the following:
-
-* Tilt can be set up but it is very complicated and will take up the Select button. You will have have to mess with "Filter Noise" until it catches the tilt accelerometer. It's suggested to not bother with this and not use tilt.
-	* To bind multiple buttons to one RPCS3 button, hold Shift then click on the RPCS3 button you want to assign multiple buttons to.
-* Guitar Hero controllers tend to misbehave and **refuse to map sometimes. If you try mapping a button and always get `U+` or something similar, click `Filter Noise`** at the bottom left of the controller configuration window **then try mapping**.
-
-| **RPCS3**          | **Controller** |
-|:------------------:|:---------------------:|
-| Cross | ![Green Fret](/assets/instruments/buttons/guitars/gf.png "Green Fret") |
-| Circle | ![Red Fret](/assets/instruments/buttons/guitars/rf.png "Red Fret") |
-| Square | ![Yellow Fret](/assets/instruments/buttons/guitars/yf.png "Yellow Fret") |
-| Triangle | ![Blue Fret](/assets/instruments/buttons/guitars/bf.png "Blue Fret") |
-| L1 | ![Orange Fret](/assets/instruments/buttons/guitars/of.png "Orange Fret") |
-| D-Pad: Up | ![Strumbar Up](/assets/instruments/buttons/guitars/sbu.png "Strumbar Up") |
-| D-Pad: Down | ![Strumbar Down](/assets/instruments/buttons/guitars/sbd.png "Strumbar Down") |
-| D-Pad: Left | ![D-Pad: Left](/assets/instruments/buttons/guitars/dpl.png "D-Pad: Left") |
-| D-Pad: Right | ![D-Pad: Right](/assets/instruments/buttons/guitars/dpr.png "D-Pad: Right") |
-| Right Stick: <br/> Left/Right | ![Whammy Bar](/assets/instruments/buttons/guitars/wb.png "Whammy Bar") |
-| Select<br>(Not recommended)</br> | ![Tilt](/assets/instruments/buttons/guitars/ts.gif "Tilt Vertical") |
-| Start | ![Start](/assets/instruments/buttons/ps3/sta.png "Start") |
-| Select | ![Select](/assets/instruments/buttons/ps3/sel.png "Select") |
-| PS Button | ![Home](/assets/instruments/buttons/ps3/home.png "Home") |
-
-## Profile
-
-[[Download Profile]](/../downloads/rb3/rpcs3//instrument-repo/PS3%20Guitar%20Hero%20Guitar.7z)
-
-<details>
-<summary>How do I use profiles?</summary>
-
-<Aside type="caution">This is not recommended if you're using multiple controllers at once.</Aside>
-
-After downloading the profile,
-
-1. Extract the .7z file.
-2. Drag the `input_configs` folder into the `configs` folder where you have RPCS3 in.  
-> <Image src={instrepoinstall} alt="Installing a configuration profile from the Instrument Repo" />
-
-3. After that, you can select the profile in the **“Pads”** menu.  
-> <Image src={rpcs3padprofile} alt="RPCS3's Gamepad Settings, showing the cursor over a profile." />
-
-Most of the time, these controller profiles should work out of the box. If they don’t, try changing the controller listed in `Devices`, next to the `Refresh` button until it receives an input. You can edit this while the game is running.
-</details>
-
+## Mapping
+**By default, everything is bound correctly. You only need to set Handlers, Device, and Device Class.**
 <center><Image src={gtrps3ghmapping} alt="Mapping" /></center>
 
 [[Back to Controllers]](../../main/)
 
-Mapped by <a href="https://gonakillya.neocities.org" target="_blank" rel="noopener noreferrer">[gona]</a>
+Research by NarrowCobra. Previous revision by <a href="https://gonakillya.neocities.org" target="_blank" rel="noopener noreferrer">[gona]</a>

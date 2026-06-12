@@ -1,7 +1,7 @@
 ---
-title: Nintendo Wii Rock Band Guitars
+title: Guitarras de Rock Band para Nintendo Wii
 slug: "es/rb3pc/controllers/guitars/wiirb"
-description: "How to setup Nintendo Wii Rock Band guitars on RPCS3."
+description: "Como configurar tu guitarra de Rock Band para Nintendo Wii en RPCS3."
 tableOfContents: false
 prev: false
 next: false
@@ -10,14 +10,26 @@ sidebar:
   label: Wii Rock Band
 ---
 import rbgtrscontroller from '@assets/rb3/rpcs3/instruments/controller/rbgtrscontroller.png';
+import rpcs3nomap from '@assets/rb3/rpcs3/instruments/maps/rpcs3nomapes.png';
+import doludev from '@assets/rb3/rpcs3/instruments/setup/passthrough/doludeves.png';
+import dolnewfile from '@assets/rb3/rpcs3/instruments/setup/passthrough/dolnewfilees.png';
+import dolps3rules from '@assets/rb3/rpcs3/instruments/setup/passthrough/dolps3ruleses.png';
+import kateps3 from '@assets/rb3/rpcs3/instruments/setup/passthrough/kateps3es.png';
+import termreloadrules from '@assets/rb3/rpcs3/instruments/setup/passthrough/termreloadruleses.png';
+import termlsusb from '@assets/rb3/rpcs3/instruments/setup/passthrough/termlsusbes.png';
+import macgcdl from '@assets/rb3/rpcs3/instruments/setup/passthrough/macgcdles.png';
+import macfnddnd from '@assets/rb3/rpcs3/instruments/setup/passthrough/macfnddndes.gif';
+import macgcdis from '@assets/rb3/rpcs3/instruments/setup/passthrough/macgcdis.png';
+import macsysex from '@assets/rb3/rpcs3/instruments/setup/passthrough/macsysexes.png';
+import macauth from '@assets/rb3/rpcs3/instruments/setup/passthrough/macauthes.png';
+import macgcen from '@assets/rb3/rpcs3/instruments/setup/passthrough/macgcen.png';
 import rpcs3pad from '@assets/rb3/rpcs3/instruments/rpcs3pades.png';
 import rpcs3padprofadd from '@assets/rb3/rpcs3/instruments/rpcs3padprofaddes.png';
 import padlegend from '@assets/rb3/rpcs3/instruments/padlegendes.png';
-import instrepoinstall from '@assets/rb3/rpcs3/instruments/instrepoinstall.gif';
-import rpcs3padprofile from '@assets/rb3/rpcs3/instruments/rpcs3padprofilees.png';
 import gtrwiirbmapping from '@assets/rb3/rpcs3/instruments/maps/gtrwiirbmappinges.png';
-import { Steps } from '@astrojs/starlight/components';
 import { Aside } from '@astrojs/starlight/components';
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+import { Steps } from '@astrojs/starlight/components';
 import { Image } from 'astro:assets';
 
 <div align="center"> ![Nintendo Wii](/assets/instruments/logos/wii.png "Nintendo Wii")</div>
@@ -36,6 +48,84 @@ Model#: `PGTSELEA2B`
 Model#: `PGTSELEA2B`  
 ![Receptor de guitarra de The Beatles: Rock Band para Nintendo Wii](/assets/instruments/adapters/wiiguitarbeatles.png "Receptor de guitarra de The Beatles: Rock Band para PlayStation 3")
 Model#: `PGTSELEA3B`
+
+<Tabs>
+  <TabItem label="Windows">
+No necesitas configurar nada para usar este instrumento. Simplemente conecta el receptor a tu computadora, ¡y es todo!
+</TabItem>
+  <TabItem label="Linux">
+<Aside>Esto requiere permisos de admin/sudo.</Aside>
+
+<Steps>
+1. Navega a `/etc/udev/` en tu explorador de archivos.  
+    Entra a la carpeta de `rules.d`.  
+    Si no existe, créala.
+    > <Image src={doludev} alt="Un navegador de archivos dentro de la carpeta de 'udev', con el cursor resaltando la carpeta de 'rules.d'." />
+
+2. Crea un archivo nuevo.
+    > <Image src={dolnewfile} alt="Creando un archivo vació nuevo dentro de la carpeta de 'rules.d'." />
+    Nómbralo `99-ps3-peripherals.rules`.  
+    > <Image src={dolps3rules} alt="Nombrando el archivo." />
+
+3. Abre el archivo dentro de un editor de texto.  
+    Agrega la entrada de para tu guitarra:  
+    * Guitarra de RB1
+      ```
+      SUBSYSTEM=="usb", ATTRS{idVendor}=="1bad", ATTRS{idProduct}=="0004", MODE="0666"
+      ```
+    * Guitarra de RB2
+      ```
+      SUBSYSTEM=="usb", ATTRS{idVendor}=="1bad", ATTRS{idProduct}=="3010", MODE="0666"
+      ```
+    En este ejemplo, se agrego la Mustang de PS3 y el teclado de PS3.  
+    Cuando termines, guarda tus cambios.
+    > <Image src={kateps3} alt="Un editor de texto mostrando el archivo de 'rules.d' abierto. Hay dos entradas en el archivo." />
+
+4. Ejecuta `sudo udevadm control --reload-rules` en una terminal o reinicia tu sistema.
+    > <Image src={termreloadrules} alt="Una terminal abierta con el comando escrito." />
+
+5. Desconecta el receptor de tu guitarra y reconéctalo.
+
+5. Abre Rock Band 3 en RPCS3 y sincroniza tu guitarra.  
+    Deberías de ver que automáticamente se le asigna un número de jugador.  
+    Del mismo modo, en Rock Band 3, verás tu guitarra listo para unirse.  
+</Steps>
+</TabItem>
+  <TabItem label="macOS">
+Por defecto, macOS cargara sus propios controladores cuando intentas tu guitarra con conexión directa en RPCS3.  
+Por suerte, ¡esto es fácil de corregir!
+
+<Steps>
+1. Primero, [[haz click aquí para descargar la versión beta 1.8 de GCAdapterDriver]](https://secretkeys.io/gcadapterdriver/GCAdapterDriver-1.8-beta.app.zip)
+    > <Image src={macgcdl} alt="Un archivo '.zip' de GCAdapterDriver descargando." />
+
+2. Arrastra la aplicación de `GCAdapterDriver-1.8-beta` extraída a la carpeta de Aplicaciones.
+    > <Image src={macfnddnd} alt="Arrastrando la aplicación de GCAdapterDriver a la carpeta de Aplicaciones." />
+
+3. En la barra de menús, haz click en el icono de GCAdapterDriver.  
+    Haz click en el control deslizante para intentar activarlo.
+    > <Image src={macgcdis} alt="GCAdapterDriver esta desactivado." />
+
+4. Inicialmente, el sistema va a bloquear la extensión de sistema.  
+    Haz click en `Abrir el panel de preferencias Seguridad`.
+    > <Image src={macsysex} alt="Una alerta que dice que la extensión de GCAdapterDriver fue bloqueada. El cursor esta sobre 'Abrir el panel de preferencias Seguridad'" />
+
+5. Desbloquea la pagina haciendo click al candado hacia abajo en la izquierda.  
+    Haz click en `Permitir` ahora.  
+    No te olvides de bloquear la pagina cuando termines.
+    > <Image src={macauth} alt="La pagina de 'Seguridad y privacidad' dentro de las preferencias del sistema. El candado esta abierto y el cursor esta sobre 'Permitir'" />
+
+6. Ahora, activa el control deslizante de GCAdapterDriver en la barra de menús.
+    > <Image src={macgcen} alt="GCAdapterDriver esta activo." />
+    Abre Rock Band 3 en RPCS3 y conecta tu guitarra.  
+    Deberías de ver que automáticamente se le asigna un número de jugador.  
+    Del mismo modo, en Rock Band 3, verás tu guitarra listo para unirse.  
+</Steps>
+</TabItem>
+  <TabItem label="Mapeo manual">
+<Aside type="caution">¡Solo mapea manualmente si la conexión directa (passthrough) no funciona!  
+¡Mapeando manualmente puede hacer que se duplique el instrumento!</Aside>
+* No existe un perfil porque todo esta configurado por defecto
 
 <details>
 <summary>¿Como configuro mi guitarra?</summary>
@@ -61,7 +151,8 @@ Sigue las instrucciones y/o copia el mapeo de la lista para tu instrumento.
 **Todo esta configurado bien por defecto. No tienes que remapear nada.**
 
 <center><Image src={gtrwiirbmapping} alt="Mapeo" /></center>
-
+</TabItem>
+</Tabs>
 [[Regresar a la lista de instrumentos]](../../main/)
 
 Mapeado por <a href="www.twitch.tv/carlmylo" target="_blank" rel="noopener noreferrer">[Carl Mylo]</a>
