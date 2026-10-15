@@ -6,170 +6,191 @@ template: splash
 prev: false
 next: false
 ---
+import terminalpy from '@assets/rb3/deluxe/discordrp/terminalpy.png';
 import webpython from '@assets/charting/reaper/webpython-win.png';
-import discordrp from '@assets/rb3/general/discordrp/discordrp.png';
-import pyinstall from '@assets/rb3/general/discordrp/pyinstall.png';
-import pydl from '@assets/rb3/general/discordrp/pydl.png';
-import cmdopen from '@assets/rb3/general/discordrp/cmdopen.png';
-import cmdpip from '@assets/rb3/general/discordrp/cmdpip.png';
-import cmdlastfmintro from '@assets/rb3/general/discordrp/cmdlastfmintro.png';
-import lastfm1 from '@assets/rb3/general/discordrp/lastfm1.png';
-import lastfm2 from '@assets/rb3/general/discordrp/lastfm2.png';
-import cmdlastfm from '@assets/rb3/general/discordrp/cmdlastfm.png';
-import pyopen from '@assets/rb3/general/discordrp/pyopen.png';
-import cmdrun from '@assets/rb3/general/discordrp/cmdrun.png';
-import pydefault from '@assets/rb3/general/discordrp/pydefault.png';
-import rpcs3config from '@assets/rb3/general/discordrp/rpcs3config.png';
-import rpcs3discord from '@assets/rb3/general/discordrp/rpcs3discord.png';
-import cmdrpcs3 from '@assets/rb3/general/discordrp/cmdrpcs3.png';
-import cmdrpcs3dir from '@assets/rb3/general/discordrp/cmdrpcs3dir.gif';
-import cmdconsoles from '@assets/rb3/general/discordrp/cmdconsoles.png';
-import cmdps3intro from '@assets/rb3/general/discordrp/cmdps3intro.png';
-import ps3ip from '@assets/rb3/general/discordrp/ps3ip.png';
-import cmdps3 from '@assets/rb3/general/discordrp/cmdps3.png';
+import discordrp from '@assets/rb3/deluxe/discordrp/discordrp.png';
+import pyinstall from '@assets/rb3/deluxe/discordrp/pyinstall.png';
+import pydl from '@assets/rb3/deluxe/discordrp/pydl.png';
+import cmdpip from '@assets/rb3/deluxe/discordrp/cmdpip.png';
+import cmdlastfmintro from '@assets/rb3/deluxe/discordrp/cmdlastfmintro.png';
+import lastfm1 from '@assets/rb3/deluxe/discordrp/lastfm1.png';
+import lastfm2 from '@assets/rb3/deluxe/discordrp/lastfm2.png';
+import cmdlastfm from '@assets/rb3/deluxe/discordrp/cmdlastfm.png';
+import pyopen from '@assets/rb3/deluxe/discordrp/pyopen.png';
+import cmdrun from '@assets/rb3/deluxe/discordrp/cmdrun.png';
+import pydefault from '@assets/rb3/deluxe/discordrp/pydefault.png';
+import rpcs3config from '@assets/rb3/deluxe/discordrp/rpcs3config.png';
+import rpcs3discord from '@assets/rb3/deluxe/discordrp/rpcs3discord.png';
+import cmdrpcs3 from '@assets/rb3/deluxe/discordrp/cmdrpcs3.png';
+import cmdrpcs3dir from '@assets/rb3/deluxe/discordrp/cmdrpcs3dir.gif';
+import cmdconsoles from '@assets/rb3/deluxe/discordrp/cmdconsoles.png';
+import explorer360 from '@assets/rb3/deluxe/discordrp/explorer360.png';
+import cmd360intro from '@assets/rb3/deluxe/discordrp/cmd360intro.png';
+import cmd360 from '@assets/rb3/deluxe/discordrp/cmd360.png';
+import rbeini from '@assets/rb3/deluxe/discordrp/rbeini.png';
+import xboxip from '@assets/rb3/deluxe/discordrp/xboxip.png';
+import xboxpartyip from '@assets/rb3/deluxe/discordrp/xboxpartyip.png';
+import cmd360outro from '@assets/rb3/deluxe/discordrp/cmd360outro.png';
+import cmdps3intro from '@assets/rb3/deluxe/discordrp/cmdps3intro.png';
+import ps3ip from '@assets/rb3/deluxe/discordrp/ps3ip.png';
+import cmdps3 from '@assets/rb3/deluxe/discordrp/cmdps3.png';
+import { Icon } from '@astrojs/starlight/components';
 import { Image } from 'astro:assets';
 import { Steps } from '@astrojs/starlight/components';
 import { Tabs, TabItem } from '@astrojs/starlight/components';
 import { Aside } from '@astrojs/starlight/components';
 
+
 Want to show off to others what song you're in or just want to share the love of Rock Band 3 Deluxe?  
 You can do this with the Rich Presence script made for Rock Band 3 Deluxe.  
-<Image src={discordrp} alt="A Discord profile showing that they're playing Rock Band 3 Deluxe." />
+<Image src={discordrp} alt="A Discord profile showing Jnack playing Rock Band 3 Deluxe." />
 
 It is compatible with RPCS3, Xbox 360, and PS3!
+
+## Prerequisites
+This script requires Python 3!  
+If you're on Windows <sup><Icon name="seti:windows" label="Windows" /></sup>, you'll need to install it.
+<details>
+<summary>Click here for instructions to install Python 3 on Windows <Icon name="seti:windows" label="Windows" /></summary>
+<Steps>
+1. <a href="https://www.python.org/downloads/" target="_blank" rel="noopener noreferrer">[Click here to go to the download page for Python 3]</a>.  
+	* It is suggested to install the standalone installer.
+	> <a href="https://www.python.org/downloads" target="_blank" rel="noopener noreferrer"><Image src={webpython} alt="Python's download website. A cursor hovers over 'Download Python 3.14.12.'." /></a>
+
+2. When it finishes downloading, open the installer.  
+In the installer:  
+	* Activate `Add python.exe to PATH`
+	* Click `Install now`  
+	> <Image src={pyinstall} alt="Python's installer with 'Add python.exe to PATH' and 'Install now' are highlighted in tan with a dotted black outline." />
+</Steps>
+</details>
+If you're on Linux <sup><Icon name="linux" label="Linux" /></sup> or macOS <sup><Icon name="apple" label="Apple" /></sup>, you likely already have it installed.
+
+You can verify if Python 3 installed correctly by typing:
+```bash
+where python
+python --version
+```
+> Note that on some systems you may have to use:
+> ```bash
+> where python3
+> python3 --version
+> ```
+> <Image src={terminalpy} alt="Python's installer with 'Add python.exe to PATH' and 'Install now' are highlighted in tan with a dotted black outline." />
+
+Once you have verified that Python 3 is installed correctly, it's time to install some packages that the script uses.  
+Type this into command prompt/your terminal:
+```bash
+pip install requests pypresence pylast
+```
+> Note that on some systems you may have to use:
+>```bash
+>pip3 install requests pypresence pylast
+>```
+> <Image src={cmdpip} alt="A Windows command line running the 'pip install requests pypresence pylast' command." />
+
+After that finishes installing, you'll need to download the `dx_discordrp.py` script.  
+<a href="https://raw.github.com/hmxmilohax/rock-band-3-deluxe/develop/scripts/dx_discordrp.py" target="_blank" rel="noopener noreferrer">[Right click here and then 'Save link as' to download `dx_discordrp.py`]</a>
+> <Image src={pydl} alt="The dx_discordrp.py script in a browser's downloads." />
+Put it somewhere convenient as you'll need to launch this every time.
+
+Now open the `dx_discordrp.py` file and follow the setup instructions.
+> <Image src={pyopen} alt="The dx_discordrp.py script in a browser's downloads." />
+
 ## Setup
 <Tabs>
   <TabItem label="RPCS3">
 <Steps>
-1. First, we're going to disable RPCS3's presence because it will conflict and look weird.  
-Open up RPCS3 then click on the `Config` button at the top.  
+1. Leave the `dx_discordrp.py` script running in the background and open RPCS3.  
+Click on the `Config` button at the top.
 	> <Image src={rpcs3config} alt="RPCS3 with the cursor hovering over 'Config'" />
 
 2. Under the `GUI` tab, disable `Use Discord Rich Presence`.  
 	> <Image src={rpcs3discord} alt="Disabling 'Use Discord Rich Presence' in RPCS3." />
 
-3. Now, you'll need to download the latest version of <a href="https://www.python.org/downloads/" target="_blank" rel="noopener noreferrer">[Python 3]</a>.  
-	<a href="https://www.python.org/downloads/" target="_blank" rel="noopener noreferrer">[Click here to go to the download page for Python 3]</a>.  
-	* It is suggested to install the standalone installer.
-	> <a href="https://www.python.org/downloads" target="_blank" rel="noopener noreferrer"><Image src={webpython} alt="Python's download website. A cursor hovers over 'Download Python 3.12.6.'." /></a>
-
-4. Once it finishes downloading, open the installer.  
-In the installer:  
-	* Activate `Add python.exe to PATH`
-	* Click `Install now`  
-	> <Image src={pyinstall} alt="Python's installer with 'Add python.exe to PATH' and 'Install now' are highlighted in tan with a dotted black outline." />
-
-5. After that finishes installing, you'll need to download the `dx_discordrp.py` script.  
-<a href="https://raw.github.com/hmxmilohax/rock-band-3-deluxe/develop/scripts/dx_discordrp.py" target="_blank" rel="noopener noreferrer">[Right click here and then 'Save link as' to download `dx_discordrp.py`]</a>
-	> <Image src={pydl} alt="The dx_discordrp.py script in a browser's downloads." />
-	Put it in a folder of your preference.  
-Since you'll need to launch this every time you want to do this, it should in an easy to reach spot.
-
-6. Go into the folder where you dropped the file.  
-In the address bar at the top of your file browser window, type in `cmd` then press the Enter key.  
-	> <Image src={cmdopen} alt="A file browser window with 'cmd' typed into the address bar." />
-
-7. Once the command line window opens up, type in:  
-`pip install requests pypresence pylast`  
-	> <Image src={cmdpip} alt="A Windows command line running the 'pip install requests pypresence pylast' command." />
-
-8. After it has successfully installed the dependencies, type in:  
-`py dx_discordrp.py`  
-into the command line and press the Enter key.  
-
-9. It will ask you to setup a data path for RPCS3.  
+3. Now swap back to the `dx_discordrp.py` script. It will ask you to setup a data path for RPCS3.  
 Type in `1` and press Enter.  
 	> <Image src={cmdrpcs3} alt="A Windows command line running the 'py dx_discordrp.py' script. It asks the user to select a platform." />
 
-10. After that, you will be asked to enter the path to your RPCS3 installation.  
+4. After that, you will be asked to enter the path to your RPCS3 installation.  
 Drag and drop the folder that contains `dev_hdd0` into the command window then press the Enter key.  
 This is usually `C:\Games\RPCS3`.  
 **If there are quotes around the path, remove them!**  
 	> <Image src={cmdrpcs3dir} alt="Drag and dropping the RPCS3 data path into the 'py dx_discordrp.py' command line." />
 
-11. You will be asked whether you want to set up Xbox 360 or PS3.  
+5. You will be asked whether you want to set up Xbox 360 or PS3.  
 If you want to set those up, please check the other platform tabs.  
 	> <Image src={cmdconsoles} alt="'py dx_discordrp.py' asking the user if they want to set up Xbox 360 or PlayStation 3." />
 
-12. During the last step, you will be asked if you want to set up a Last.fm account.  
+6. During the last step, you will be asked if you want to set up a Last.fm account.  
 Type in `1` and expand the section below if you want to set that up.  
 Otherwise, type in `2` to set it up later or `3` to never ask again.  
 	> <Image src={cmdlastfmintro} alt="A command prompt with the script asking the user if they want to set up Last.fm." />
 </Steps>
-<details>
-<summary>Scrobbling with Last.fm</summary>
-Do you have a <a href="https://www.last.fm/home" target="_blank" rel="noopener noreferrer">[Last.fm account]</a> and want to use Rock Band 3 Deluxe to scrobble? You can do just that!
-<Steps>
-1. Create an <a href="https://www.last.fm/api/account/create" target="_blank" rel="noopener noreferrer">[API account on Last.fm]</a>.  
-Type in the required information, including email, application name, and application description.  
-You can name the application whatever you want and give it whatever description you want.
-When you're done, click on `Submit`.
-	> <a href="https://www.last.fm/api/account/create" target="_blank" rel="noopener noreferrer"><Image src={lastfm1} alt="A Last.fm API creation page with email, application name, and application description filled out." /></a>
-
-2. After submitting the information, you will be given an `API Key` and an `API Secret`.  
-	> <Image src={lastfm2} alt="Last.fm showing that the API account was created. It has the application name, API key, shared secret, and who it's registered to." />
-
-3. Copy those into the command prompt window.  
-You will also be asked for your Last.fm username and password.  
-Type those in as well.
-	> <Image src={cmdlastfm} alt="A command prompt with the script asking the user for the API Key, API Secret. It then asks the user to provide a username and password." />
-</Steps>
-</details>
 </TabItem>
-  <TabItem label="Xbox 360">
-<Aside type="caution">The Xbox 360 guide is under construction and could use volunteer help!  
-Please consider helping via the MiloHax Discord.</Aside>
+<TabItem label="Xbox 360">
+<Aside>This requires having Rock Band 3 Enhanced.  
+<a href="https://rb3e.rbenhanced.rocks/" target="_blank" rel="noopener noreferrer">[Click here to download]</a>.</Aside>
+<Aside>This assumes you are using Aurora.</Aside>
+<Steps>
+1. Before continuing with the setup process, verify that you have `rb3e_index.html` and `rb3.ini` in the root of your Rock Band 3 folder.  
+If you're missing `rb3e_index.html`, <a href="https://raw.github.com/hmxmilohax/rock-band-3-deluxe/develop/scripts/dx_discordrp.py" target="_blank" rel="noopener noreferrer">[right click here and then 'Save link as' to download `rb3e_index.html` and place it in Rock Band 3's folder]</a>.
+	> <Image src={explorer360} alt="A file browser showing Rock Band 3's folder." />
+
+2. Now, open `rb3.ini` in a text editor.  
+Scroll down and change `EnableHTTPServer` to `true`.
+	> <Image src={rbeini} alt="'rb3.ini' with the part being changed highlighted." />
+
+3. Now swap back to the `dx_discordrp.py` script.  
+It will ask you to setup a data path for RPCS3. You can set it up or skip this.  
+For RPCS3 instructions, check the RPCS3 tab.  
+Type in `1` and press Enter when asked about setting up an Xbox console IP.  
+	> <Image src={cmd360intro} alt="A Windows command line running the 'py dx_discordrp.py' script. It asks the user to select a platform." />
+
+10. On the Xbox 360, press the `BACK` button while in Aurora and you should see the console IP.  
+	> <Image src={xboxip} alt="Aurora on an Xbox 360 showing the console's IP." />
+
+	Alternatively, you can enable `Party IP` in Rock Band 3 Deluxe by going to `[Options]` > `[Deluxe Settings]` > `[Advanced]` > `[Menu Options]`.  
+	The IP will be at the top in the music library.
+	> <Image src={xboxpartyip} alt="'Party IP' enabled in Deluxe Settings." />
+
+11. Back on your computer, type in your Xbox 360's IP address then press Enter.
+	> <Image src={cmd360} alt="Typing in the Xbox 360's IP into the 'py dx_discordrp.py' script running in a Windows command line." />
+
+12. After that, you will be asked whether you want to set up a PS3.  
+If you want to set one up, please check the PlayStation 3 tab.
+	> <Image src={cmd360outro} alt="The script asking if they want to set up a PlayStation 3 IP." /> 
+
+13. During the last step, you will be asked if you want to set up a Last.fm account.  
+Type in `1` and expand the section below if you want to set that up.  
+Otherwise, type in `2` to set it up later or `3` to never ask again.  
+	> <Image src={cmdlastfmintro} alt="A command prompt with the script asking the user if they want to set up Last.fm." />
+</Steps>
 </TabItem>
   <TabItem label="PlayStation 3">
-<Aside>Obviously you will need Rock Band 3 Deluxe, which means you have a PlayStation 3 with CFW or HEN.</Aside>
-<Aside>This requires having webMAN-MOD.  
+<Aside>This requires webMAN-MOD.  
 You can download it from the <a href="https://github.com/aldostools/webMAN-MOD/releases" target="_blank" rel="noopener noreferrer">[official GitHub]</a> or from <a href="http://ps3.aldostools.org/links.html" target="_blank" rel="noopener noreferrer">[aldostools' website]</a>.</Aside>
 <Steps>
-1. You'll need to download the latest version of <a href="https://www.python.org/downloads/" target="_blank" rel="noopener noreferrer">[Python 3]</a>.  
-	<a href="https://www.python.org/downloads/" target="_blank" rel="noopener noreferrer">[Click here to go to the download page for Python 3]</a>.  
-	* It is suggested to install the standalone installer.
-	> <a href="https://www.python.org/downloads" target="_blank" rel="noopener noreferrer"><Image src={webpython} alt="Python's download website. A cursor hovers over 'Download Python 3.12.6.'." /></a>
-2. Once it finishes downloading, open the installer.  
-In the installer:  
-	* Activate `Add python.exe to PATH`
-	* Click `Install now`  
-	> <Image src={pyinstall} alt="Python's installer with 'Add python.exe to PATH' and 'Install now' are highlighted in tan with a dotted black outline." />
-
-3. After that finishes installing, you'll need to download the `dx_discordrp.py` script.  
-<a href="https://raw.github.com/hmxmilohax/rock-band-3-deluxe/develop/scripts/dx_discordrp.py" target="_blank" rel="noopener noreferrer">[Right click here and then 'Save link as' to download `dx_discordrp.py`]</a>
-	> <Image src={pydl} alt="The dx_discordrp.py script in a browser's downloads." />
-	Put it in a folder of your preference.  
-Since you'll need to launch this every time you want to do this, it should in an easy to reach spot.
-
-4. Go into the folder where you dropped the file.  
-In the address bar at the top of your file browser window, type in `cmd` then press the Enter key.  
-	> <Image src={cmdopen} alt="A file browser window with 'cmd' typed into the address bar." />
-
-5. Once the command line window opens up, type in:  
-`pip install requests pypresence pylast`  
-	> <Image src={cmdpip} alt="Running 'pip install requests pypresence pylast' within a Windows command line." />
-
-6. After it has successfully installed the dependencies, type in:  
-`py dx_discordrp.py`  
-into the command line and press the Enter key.  
-
-7. It will ask you to setup a data path for RPCS3 and for an Xbox console IP.  
+1. The script will ask you to setup a data path for RPCS3 and for an Xbox console IP.  
 Set those up first or skip them.  
 Type in `1` and press Enter when asked about setting up a PlayStation 3 console IP.  
 	> <Image src={cmdps3intro} alt="A Windows command line running the 'py dx_discordrp.py' script. It asks the user to select a platform." />
 
-8. On the PlayStation 3, go to `[ Settings ]` > `[ Network Settings ]` > `[ Status and Connection Status List ]`.  
+2. On the PlayStation 3, go to `[ Settings ]` > `[ Network Settings ]` > `[ Status and Connection Status List ]`.  
 Find the IP Address and make note of it.
 	> <Image src={ps3ip} alt="The 'Settings and Connection Status List' on a PlayStation 3 showing network information." />
 
-9. Back on your computer, type in your PlayStation 3's IP address then press Enter.
+3. Back on your computer, type in your PlayStation 3's IP address then press Enter.
 	> <Image src={cmdps3} alt="Typing in the PlayStation 3's IP into the 'py dx_discordrp.py' script running in a Windows command line." />
 
-10. During the last step, you will be asked if you want to set up a Last.fm account.  
+4. During the last step, you will be asked if you want to set up a Last.fm account.  
 Type in `1` and expand the section below if you want to set that up.  
 Otherwise, type in `2` to set it up later or `3` to never ask again.  
 	> <Image src={cmdlastfmintro} alt="A command prompt with the script asking the user if they want to set up Last.fm." />
 </Steps>
+</TabItem>
+</Tabs>
+
 <details>
 <summary>Scrobbling with Last.fm</summary>
 Do you have a <a href="https://www.last.fm/home" target="_blank" rel="noopener noreferrer">[Last.fm account]</a> and want to use Rock Band 3 Deluxe to scrobble? You can do just that!
@@ -189,10 +210,8 @@ Type those in as well.
 	> <Image src={cmdlastfm} alt="A command prompt with the script asking the user for the API Key, API Secret. It then asks the user to provide a username and password." />
 </Steps>
 </details>
-</TabItem>
-</Tabs>
 
-## Future Usage
+## Finishing up
 After the initial setup, you won't have to set up anything when you open the file again.
 
 All you have to do is double click the `dx_discordrp.py` file.  
@@ -203,7 +222,7 @@ If you did everything right, it should show that it has connected to Discord RPC
 
 That's it! Remember to close it out after you're done and to open it back up when you want to play again.
 
-If it doesn't open correctly, make sure that you've set Python as the default application for `.py` files.  
+If it doesn't open correctly, make sure that you've set Python (or Python Launcher on macOS <sup><Icon name="apple" label="Apple" /></sup>) as the default application for `.py` files.  
 > <Image src={pydefault} alt="Windows' default application selection. Python is selected and the cursor is over 'Set Default'." />
 
 If you're on <a href="https://discord.gg/milohax" target="_blank" rel="noopener noreferrer">[the MiloHax Discord]</a>, you can use the `!wrapped` to get "Warped"/"Your Year in Review" stats!
