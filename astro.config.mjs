@@ -31,6 +31,7 @@ export default defineConfig({
         { icon: 'information', label: 'Website', href: 'https://milohax.org/' },
         { icon: 'blueSky', label: 'Bluesky', href: 'https://bsky.app/profile/milohax.org' },
         { icon: 'github', label: 'GitHub', href: 'https://github.com/hmxmilohax' },
+          { icon: 'fluxer', label: 'Fluxer', href: 'https://fluxer.gg/z4nhvU9W' },
         { icon: 'discord', label: 'Discord', href: 'https://discord.gg/milohax' },
         { icon: 'youtube', label: 'YouTube', href: 'https://www.youtube.com/@MiloHax' },
       ],
@@ -64,6 +65,14 @@ export default defineConfig({
             icon: 'reaper',
             items: [ { autogenerate: { directory: 'charting/reaper', },},]
           },
+          //{
+          //  label: 
+          //  {en: 'Modeling',
+          //  es: 'Modelando'},
+          //  link: '/modeling/intro',
+          //  icon: 'blender',
+          //  items: [ { autogenerate: { directory: 'modeling', },},]
+          //},
         ], ),
       ],
 

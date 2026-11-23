@@ -11,6 +11,7 @@ sidebar:
 import { Aside } from '@astrojs/starlight/components';
 import mididrumscontroller from '@assets/instruments/controller/mididrumscontroller.png';
 import rpcs3nomap from '@assets/instruments/rpcs3/maps/rpcs3nomap.png';
+import drumnav from '@assets/instruments/setup/midi/drumnav.png';
 import navpad from '@assets/rb3/deluxe/navpad.png';
 import usbdrums from '@assets/instruments/setup/midi/usbdrums.png';
 import mididrums from '@assets/instruments/setup/midi/mididrums.png';
@@ -26,15 +27,18 @@ import { Image } from 'astro:assets';
 <Aside type="caution"><Image src={rpcs3nomap} alt="A warning that says not to map this controller!" />  
 Do NOT map this instrument via the `Pads` menu!
 </Aside>
-<Aside type="caution">RPCN Menus (for sending or accepting online invites) **will** cause a softlock. You will need an alternative input method to navigate these menus, such as a <a href="../../main#gamepads" target="_blank" rel="noopener noreferrer">[typing keyboard or a gamepad.]</a></Aside>
+<Aside type="caution">**Alesis Drums Owners**  
+It is strongly suggested to use a USB hub with external power!</Aside>
 * Your MIDI Drum Kit needs to:
 	* **be set to MIDI Channel 10.**
 	* **be set to standard GM mapping.**  
 These should be default settings but consult the manual for your MIDI Drum Kit to make sure.
+* It's recommended to enable `Drum Navigation` in `[Menu] > [Modifiers]` with another controller/instrument to easily sign in by pressing the floor tom.
+	> <Image src={drumnav} alt="Rock Band 3 Deluxe's Navigation Pad menu." />
 * You will need to additionally map <a href="../../main#gamepads" target="_blank" rel="noopener noreferrer">[a dedicated gamepad for navigation]</a>. You can use a typing keyboard or a gamepad.
-	* You can enable this in `[Menu] > [Options] > [Deluxe Settings] > [Controller] > [Navigation Pad]`  
-	**To sign in, you have to close the Hi-Hat Pedal three times then hit the Snare within 2 seconds.**
-	><Image src={navpad} alt="Rock Band 3 Deluxe's Navigation Pad menu." />
+	* You can enable this in `[Menu] > [Options] > [Deluxe Settings] > [Controller] > [Navigation Pad]`
+	* It is strongly suggested to map the navigation pad as Player 7
+	> <Image src={navpad} alt="Rock Band 3 Deluxe's Navigation Pad menu." />
 
 ## Setting Up
 **If your MIDI Drum Kit has a USB port**, all you need to do is **plug it into your computer**.  

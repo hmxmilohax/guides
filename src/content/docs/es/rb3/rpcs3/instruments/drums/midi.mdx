@@ -11,6 +11,7 @@ sidebar:
 import { Aside } from '@astrojs/starlight/components';
 import mididrumscontroller from '@assets/instruments/controller/mididrumscontroller.png';
 import rpcs3nomap from '@assets/instruments/rpcs3/maps/rpcs3nomapes.png';
+import drumnav from '@assets/instruments/setup/midi/drumnaves.png';
 import navpad from '@assets/rb3/deluxe/navpades.png';
 import usbdrums from '@assets/instruments/setup/midi/usbdrums.png';
 import mididrums from '@assets/instruments/setup/midi/mididrums.png';
@@ -26,17 +27,19 @@ import { Image } from 'astro:assets';
 <Aside type="caution"><Image src={rpcs3nomap} alt="Una advertencia que dice que no mapeés este instrumento por el menu de 'Pads'." />  
 ¡NO mapeés este instrumento por el menú de `Mandos`!
 </Aside>
-<Aside type="caution">Menús de RPCN (para aceptar y mandar invitaciones para jugar en linea) causan que el juego se quede atorado.  
-	Necesitas tener otra manera de controlar estos menús, como <a href="../../main#mandos" target="_blank" rel="noopener noreferrer">[un teclado de PC o un mando estándar.]</a></Aside>
+<Aside type="caution">**Usuarios de baterías Alesis**  
+¡Se recomienda usar una hub USB con poder externo!</Aside>
 
 * Tu batería MIDI necesita estar:
 	* **en canal de MIDI 10.**
-	* **estar configurada a el mapeo de GM.**  
+	* **configurada a el mapeo de GM.**  
 Esto debe de ser lo que viene por defecto con mayoría de las baterías MIDI. Consulta el manual de tu batería para estar seguro.
+* Se recomienda activar `Navegación Batería` in `[Menú] > [Modificadores]` con otro instrumento/mando para entrar con la batería presionando el tom de piso.
+	> <Image src={drumnav} alt="Rock Band 3 Deluxe's Navigation Pad menu." />
 * Necesitas mapear <a href="../../main#mandos" target="_blank" rel="noopener noreferrer">[un mando dedicado para navegación]</a>. Puedes usar un teclado de PC o un mando estándar.
-	* Puedes activar esto en `[Menú] > [Opciones] > [Opciones Deluxe] > [Controlador] > [Mando de Nav.]`  
-	**Para iniciar sesión, presiona el pedal de hi-hat tres veces y luego la tarola (snare) entre dos segundos**.
-	><Image src={navpad} alt="El menú de mando de navegación dentro de los menús de Rock Band 3." />
+	* Puedes activar esto en `[Menú] > [Opciones] > [Opciones Deluxe] > [Controlador] > [Mando de Nav.]`
+	* Se recomienda configurar el mando de navegación como Jugador 7
+	> <Image src={navpad} alt="El menú de mando de navegación dentro de los menús de Rock Band 3." />
 
 ## Instrucciones
 **Si tu batería MIDI tiene un puerto de USB**, solo necesitas **conectarla a tu computadora**.  
